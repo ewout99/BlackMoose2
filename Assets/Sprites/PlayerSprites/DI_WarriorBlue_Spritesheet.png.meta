@@ -1,0 +1,501 @@
+fileFormatVersion: 2
+guid: 27e3cb25c05d455499d1df12a1044490
+timeCreated: 1463135452
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: DI_WarriorBlue_Spritesheet_0
+    21300002: DI_WarriorBlue_Spritesheet_1
+    21300004: DI_WarriorBlue_Spritesheet_2
+    21300006: DI_WarriorBlue_Spritesheet_3
+    21300008: DI_WarriorBlue_Spritesheet_4
+    21300010: DI_WarriorBlue_Spritesheet_5
+    21300012: DI_WarriorBlue_Spritesheet_6
+    21300014: DI_WarriorBlue_Spritesheet_7
+    21300016: DI_WarriorBlue_Spritesheet_8
+    21300018: DI_WarriorBlue_Spritesheet_9
+    21300020: DI_WarriorBlue_Spritesheet_10
+    21300022: DI_WarriorBlue_Spritesheet_11
+    21300024: DI_WarriorBlue_Spritesheet_12
+    21300026: DI_WarriorBlue_Spritesheet_13
+    21300028: DI_WarriorBlue_Spritesheet_14
+    21300030: DI_WarriorBlue_Spritesheet_15
+    21300032: DI_WarriorBlue_Spritesheet_16
+    21300034: DI_WarriorBlue_Spritesheet_17
+    21300036: DI_WarriorBlue_Spritesheet_18
+    21300038: DI_WarriorBlue_Spritesheet_19
+    21300040: DI_WarriorBlue_Spritesheet_20
+    21300042: DI_WarriorBlue_Spritesheet_21
+    21300044: DI_WarriorBlue_Spritesheet_22
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 32
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: DI_WarriorBlue_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 12}
+        - {x: -9, y: 6}
+        - {x: -9, y: -16}
+        - {x: 10, y: -16}
+        - {x: 10, y: 9}
+        - {x: 3, y: 12}
+    - name: DI_WarriorBlue_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 12}
+        - {x: -9, y: 8}
+        - {x: -9, y: -16}
+        - {x: 11, y: -16}
+        - {x: 11, y: 9}
+        - {x: 5, y: 12}
+    - name: DI_WarriorBlue_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 11}
+        - {x: 3, y: 12}
+        - {x: -4, y: 12}
+        - {x: -9, y: 8}
+        - {x: -9, y: -16}
+        - {x: 8, y: -16}
+        - {x: 9, y: -15}
+        - {x: 11, y: -8}
+        - {x: 11, y: 6}
+    - name: DI_WarriorBlue_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 12}
+        - {x: -9, y: 8}
+        - {x: -9, y: -16}
+        - {x: 11, y: -16}
+        - {x: 11, y: 9}
+        - {x: 5, y: 12}
+    - name: DI_WarriorBlue_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 6}
+        - {x: -16, y: 4}
+        - {x: -16, y: -2}
+        - {x: -14, y: -5}
+        - {x: 6, y: -5}
+        - {x: 16, y: -4}
+        - {x: 16, y: 4}
+        - {x: 15, y: 6}
+    - name: DI_WarriorBlue_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 12}
+        - {x: -9, y: 6}
+        - {x: -9, y: -16}
+        - {x: 10, y: -16}
+        - {x: 10, y: 6}
+        - {x: 4, y: 12}
+    - name: DI_WarriorBlue_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 12}
+        - {x: -9, y: 5}
+        - {x: -9, y: -16}
+        - {x: 11, y: -16}
+        - {x: 11, y: 6}
+        - {x: 4, y: 12}
+    - name: DI_WarriorBlue_Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 13}
+        - {x: -9, y: 9}
+        - {x: -9, y: -16}
+        - {x: 12, y: -16}
+        - {x: 12, y: 9}
+        - {x: 9, y: 13}
+    - name: DI_WarriorBlue_Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 12}
+        - {x: -9, y: 12}
+        - {x: -9, y: -16}
+        - {x: 10, y: -16}
+        - {x: 12, y: -1}
+        - {x: 12, y: 7}
+    - name: DI_WarriorBlue_Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 12}
+        - {x: -9, y: 8}
+        - {x: -9, y: -16}
+        - {x: 11, y: -16}
+        - {x: 11, y: 8}
+        - {x: 4, y: 12}
+    - name: DI_WarriorBlue_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 13}
+        - {x: -9, y: 8}
+        - {x: -9, y: -16}
+        - {x: 10, y: -16}
+        - {x: 10, y: 7}
+        - {x: 4, y: 13}
+    - name: DI_WarriorBlue_Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 12}
+        - {x: -9, y: 6}
+        - {x: -9, y: -16}
+        - {x: 10, y: -16}
+        - {x: 10, y: 9}
+        - {x: 3, y: 12}
+    - name: DI_WarriorBlue_Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 11}
+        - {x: -9, y: 8}
+        - {x: -9, y: -16}
+        - {x: 10, y: -16}
+        - {x: 10, y: 8}
+        - {x: 4, y: 11}
+    - name: DI_WarriorBlue_Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 11}
+        - {x: -9, y: 8}
+        - {x: -9, y: -16}
+        - {x: 10, y: -16}
+        - {x: 10, y: 8}
+        - {x: 4, y: 11}
+    - name: DI_WarriorBlue_Spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 11}
+        - {x: -9, y: 8}
+        - {x: -9, y: -16}
+        - {x: 10, y: -16}
+        - {x: 10, y: 8}
+        - {x: 4, y: 11}
+    - name: DI_WarriorBlue_Spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 12}
+        - {x: -9, y: 5}
+        - {x: -9, y: -16}
+        - {x: 10, y: -16}
+        - {x: 10, y: 5}
+        - {x: 4, y: 12}
+    - name: DI_WarriorBlue_Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 12}
+        - {x: -9, y: 6}
+        - {x: -9, y: -16}
+        - {x: 10, y: -16}
+        - {x: 10, y: 9}
+        - {x: 3, y: 12}
+    - name: DI_WarriorBlue_Spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 13}
+        - {x: -12, y: 13}
+        - {x: -16, y: 10}
+        - {x: -16, y: -16}
+        - {x: 10, y: -16}
+        - {x: 10, y: 6}
+        - {x: 3, y: 12}
+    - name: DI_WarriorBlue_Spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 13}
+        - {x: -16, y: 12}
+        - {x: -16, y: -15}
+        - {x: -15, y: -16}
+        - {x: 10, y: -16}
+        - {x: 10, y: 9}
+        - {x: 0, y: 13}
+    - name: DI_WarriorBlue_Spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 9}
+        - {x: -4, y: 6}
+        - {x: -8, y: 1}
+        - {x: -8, y: -5}
+        - {x: -8, y: 5}
+        - {x: -5, y: 7}
+        - {x: -5, y: 8}
+        - {x: -10, y: 13}
+        - {x: -11, y: 13}
+        - {x: -16, y: 8}
+        - {x: -16, y: -15}
+        - {x: -15, y: -16}
+        - {x: 11, y: -16}
+        - {x: 11, y: 5}
+        - {x: 4, y: 9}
+    - name: DI_WarriorBlue_Spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 9}
+        - {x: -7, y: 2}
+        - {x: -8, y: -6}
+        - {x: -7, y: -5}
+        - {x: -8, y: 5}
+        - {x: -5, y: 7}
+        - {x: -5, y: 8}
+        - {x: -10, y: 13}
+        - {x: -11, y: 13}
+        - {x: -16, y: 8}
+        - {x: -16, y: -16}
+        - {x: 12, y: -16}
+        - {x: 12, y: 2}
+        - {x: 7, y: 11}
+    - name: DI_WarriorBlue_Spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: 13}
+        - {x: -12, y: 13}
+        - {x: -16, y: 8}
+        - {x: -16, y: -16}
+        - {x: 15, y: -16}
+        - {x: 15, y: 7}
+        - {x: 14, y: 9}
+    - name: DI_WarriorBlue_Spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 3}
+        - {x: -4, y: -1}
+        - {x: -4, y: 9}
+        - {x: -10, y: 13}
+        - {x: -11, y: 13}
+        - {x: -16, y: 8}
+        - {x: -16, y: -16}
+        - {x: 15, y: -16}
+        - {x: 16, y: -12}
+        - {x: 16, y: 2}
+        - {x: 13, y: 4}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
