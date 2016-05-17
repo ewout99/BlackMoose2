@@ -3,13 +3,60 @@ using System.Collections;
 
 public class MovementPlayer : MonoBehaviour {
 
+    //Editor Varibles
+    [SerializeField]
+    private bool physicsBased;
+
+
+    //Public Variables
+
+    // Private Refremces
+    private GameObject oracleThing;
+    // RigidBody movement
+    private Rigidbody2D rBody2D;
+    private Vector2 moveVecRB;
+    private float moveSpeedRB;
+    // Time Based movement
+    private Vector2 moveVecTB;
+    private float moveSpeedTB;
+
+
 	// Use this for initialization
-	void Start () {
+	void Awake () {
+        oracleThing = GameObject.Find("Oracle");
+        rBody2D = GetComponent<Rigidbody2D>();
+
+    }
 	
-	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    public void Move(float horizontal, float vertical, float speed)
+    {
+        if (physicsBased)
+        {
+            moveVecRB.x = horizontal;
+            moveVecRB.y = vertical;
+            moveSpeedRB = speed;
+        }
+        else
+        {
+            moveVecTB.x = horizontal;
+            moveVecTB.y = vertical;
+            moveSpeedTB = speed;
+        }
+    }
+
+    // Update is called once per frame
+    // Used for time based movement
+    void Update()
+    {
+        float dt = Time.deltaTime;
+        gameObject.transform.Translate(moveVecTB.x * dt * moveSpeedTB, moveVecTB.x * dt * moveSpeedTB, 0f);
+    }
+
+    // Used for physics based movenmetn
+    void FixedUpdate()
+    {
+        rBody2D.AddForce(moveVecRB.normalized * moveSpeedRB * rBody2D.mass);
+    }
 }

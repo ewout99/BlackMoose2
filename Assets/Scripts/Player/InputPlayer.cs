@@ -17,11 +17,11 @@ public class InputPlayer : NetworkBehaviour {
     //Private Variables
     private Vector3 mousePosition = Vector3.zero;
     private Vector2 aimVec = Vector2.right;
-    private Vector2 moveVec = Vector2.zero;
+    private Vector2 moveVecInput;
     private float targetAngle;
 
     private float inverseAttackspeed;
-    private float moveSpeed;
+    private float moveSpeedInput;
 
     //Editor Refrences
     public GameObject bulletPrefab;
@@ -35,12 +35,14 @@ public class InputPlayer : NetworkBehaviour {
     private Rigidbody2D rBody2D;
     private GameObject weaponRef;
     private GameObject OracleRef;
+    private MovementPlayer moveRef;
 
 
     // Use this for initialization
     void Start () {
         playerCamera = GetComponent<Camera>();
         rBody2D = GetComponent<Rigidbody2D>();
+        moveRef = GetComponent<MovementPlayer>();
         inverseAttackspeed = 1f / attackSpeed;
 	}
 	
@@ -56,18 +58,22 @@ public class InputPlayer : NetworkBehaviour {
         targetAngle = Mathf.Atan2(aimVec.y, aimVec.x) * Mathf.Rad2Deg;
         AdjustWeaponRotation();
 
-        moveVec.x = Input.GetAxis("Horizontal");
-        moveVec.y = Input.GetAxis("Vertical");
+        moveVecInput.x = Input.GetAxis("Horizontal");
+        moveVecInput.y = Input.GetAxis("Vertical");
 
-        if (Input.GetButtonDown("Walk") && oracleAttached == false)
+        if (Input.GetButtonDown("Walk") && oracleAttached)
         {
-            moveSpeed = walkSpeed;
+            moveSpeedInput = walkSpeed;
         }
         else
         {
-            moveSpeed = normalSpeed;
+            moveSpeedInput = normalSpeed;
         }
 
+        // Call the Movement class
+        moveRef.Move(moveVecInput.x, moveVecInput.y, moveSpeedInput);
+
+        // Firing bullet
         if (Input.GetButton("Fire") && canShoot)
         {
             canShoot = false;
@@ -75,6 +81,7 @@ public class InputPlayer : NetworkBehaviour {
             CmdShoot();
         }
 
+        // Pick up and drop the oracle
         if (Input.GetButtonDown("PickUp"))
         {
             CmdAttachOracle();
