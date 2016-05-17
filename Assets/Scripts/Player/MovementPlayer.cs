@@ -23,13 +23,9 @@ public class MovementPlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        oracleThing = GameObject.Find("Oracle");
         rBody2D = GetComponent<Rigidbody2D>();
-
     }
 	
-	
-
     public void Move(float horizontal, float vertical, float speed)
     {
         if (physicsBased)
@@ -51,7 +47,7 @@ public class MovementPlayer : MonoBehaviour {
     void Update()
     {
         float dt = Time.deltaTime;
-        gameObject.transform.Translate(moveVecTB.x * dt * moveSpeedTB, moveVecTB.x * dt * moveSpeedTB, 0f);
+        gameObject.transform.Translate(moveVecTB.x * dt * moveSpeedTB, moveVecTB.y * dt * moveSpeedTB, 0f);
     }
 
     // Used for physics based movenmetn

@@ -8,7 +8,9 @@ public class InputPlayer : NetworkBehaviour {
     //Editors Variables
     [SerializeField]
     private float attackSpeed;
+    [SerializeField]
     private float walkSpeed;
+    [SerializeField]
     private float normalSpeed;
     
     public bool canShoot;
@@ -32,17 +34,17 @@ public class InputPlayer : NetworkBehaviour {
 
     //Private Refrences
     private Camera playerCamera;
-    private Rigidbody2D rBody2D;
     private GameObject weaponRef;
     private GameObject OracleRef;
     private MovementPlayer moveRef;
+    private Animator aniRef;
 
 
     // Use this for initialization
     void Start () {
-        playerCamera = GetComponent<Camera>();
-        rBody2D = GetComponent<Rigidbody2D>();
+        playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         moveRef = GetComponent<MovementPlayer>();
+        aniRef = GetComponent<Animator>();
         inverseAttackspeed = 1f / attackSpeed;
 	}
 	
@@ -61,7 +63,7 @@ public class InputPlayer : NetworkBehaviour {
         moveVecInput.x = Input.GetAxis("Horizontal");
         moveVecInput.y = Input.GetAxis("Vertical");
 
-        if (Input.GetButtonDown("Walk") && oracleAttached)
+        if (Input.GetButton("Walk") || oracleAttached)
         {
             moveSpeedInput = walkSpeed;
         }
@@ -72,6 +74,26 @@ public class InputPlayer : NetworkBehaviour {
 
         // Call the Movement class
         moveRef.Move(moveVecInput.x, moveVecInput.y, moveSpeedInput);
+
+        // Check which animation needs to be played
+        if ( moveVecInput.x > 0 || moveVecInput.x < 0 || moveVecInput.y > 0 || moveVecInput.y < 0)
+        {
+            if ( moveSpeedInput == walkSpeed)
+            {
+                aniRef.SetBool("walking", true);
+                aniRef.SetBool("running", false);
+            }
+            else
+            {
+                aniRef.SetBool("walking", false);
+                aniRef.SetBool("running", true);
+            }
+        }
+        else
+        {
+            aniRef.SetBool("walking", false);
+            aniRef.SetBool("running", false);
+        }
 
         // Firing bullet
         if (Input.GetButton("Fire") && canShoot)
@@ -96,7 +118,8 @@ public class InputPlayer : NetworkBehaviour {
 
     void AdjustWeaponRotation()
     {
-        weaponRef.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, targetAngle));
+        // Add weapons to player then enable
+        // weaponRef.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, targetAngle));
     }
 
     [Command]

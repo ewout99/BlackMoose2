@@ -31,8 +31,7 @@ public class IngamePlayer : NetworkBehaviour {
     // Use this for initialization
     void Start ()
     {
-        // Getting refrences
-        oracleRef = GameObject.FindGameObjectWithTag("Oracle");
+        // Getting oracleRef = GameObject.FindGameObjectWithTag("Oracle");
         GetComponent<SpriteRenderer>().color = colorIngame;
         pickRef = GetComponent<PickUp>();
 
@@ -40,6 +39,7 @@ public class IngamePlayer : NetworkBehaviour {
         if (isLocalPlayer)
         {
             Instantiate(Player_Camera, transform.position, Quaternion.identity);
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>().target = gameObject.transform;
         }
 	}
 	
@@ -51,7 +51,11 @@ public class IngamePlayer : NetworkBehaviour {
             return;
 
         // If the oracle is near by send your flux to the oracle
-        if (flux > 0 || (oracleRef.transform.position - transform.position).magnitude <= fluxDeliveryRange)
+        if (true)
+        {
+            // Temp blockade
+        }
+        else if (flux > 0 || (oracleRef.transform.position - transform.position).magnitude <= fluxDeliveryRange)
         {
             // Call oracle ref send flux to it
 
