@@ -3,24 +3,41 @@ using System.Collections;
 
 public class DestructableObject : MonoBehaviour {
 
-    public Animator AniRef;
+    public AudioClip objectHitSound;
+
+    private Animator aniRef;
+
+    private bool objectHit = false;
 
     // Use this for initialization
-    void Start () {
-        AniRef = GetComponent<Animator>();
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+    void Start ()
+    {
+        aniRef = GetComponent<Animator>();
 	}
 
-    void OnTriggerEnter2D(Collider2D Other)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        if (Other.tag != gameObject.tag)
+        if (transform.tag != gameObject.tag && !objectHit)
         {
-            // Trigger Destroy animation
+            Hit();
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.transform.tag != gameObject.tag && !objectHit)
+        {
+            Hit();
+        }
+    }
+
+    private void Hit()
+    {
+        objectHit = true;
+        // Trigger Destroy animation
+        aniRef.SetTrigger("destroy");
+        // Play sound
+
+        // Play Particle Effect
     }
 }

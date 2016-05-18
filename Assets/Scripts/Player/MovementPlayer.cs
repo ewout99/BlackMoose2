@@ -38,6 +38,7 @@ public class MovementPlayer : MonoBehaviour {
         {
             moveVecTB.x = horizontal;
             moveVecTB.y = vertical;
+            moveVecTB = moveVecTB.normalized;
             moveSpeedTB = speed;
         }
     }
