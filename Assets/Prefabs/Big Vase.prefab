@@ -9,9 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 440628}
   - 212: {fileID: 21212156}
-  - 61: {fileID: 6124636}
   - 114: {fileID: 11411370}
   - 95: {fileID: 9527048}
+  - 60: {fileID: 6079894}
   m_Layer: 0
   m_Name: Big Vase
   m_TagString: Untagged
@@ -31,8 +31,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6124636
-BoxCollider2D:
+--- !u!60 &6079894
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -42,9 +42,17 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0.016693115}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.3004608}
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 0.17512894, y: 0.6936226}
+      - {x: -0.20065212, y: 0.6910095}
+      - {x: -0.43174076, y: 0.37172318}
+      - {x: -0.4369545, y: -0.12579727}
+      - {x: -0.22368908, y: -0.6869545}
+      - {x: 0.26782227, y: -0.6806488}
+      - {x: 0.44956398, y: -0.12008667}
+      - {x: 0.4369545, y: 0.39694214}
 --- !u!95 &9527048
 Animator:
   serializedVersion: 3

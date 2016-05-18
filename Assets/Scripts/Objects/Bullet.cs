@@ -11,20 +11,16 @@ public class Bullet : MonoBehaviour {
     public string origion;
 
     [SerializeField]
-    private float initTime;
-    [SerializeField]
     private float autoDestroy;
 
     public float bulletDmg;
     public float bulletSpeed;
 
     // Private variables
-    private float lauchTime;
 
 
     // Use this for initialization
-    void Start () {
-        lauchTime = Time.time;
+    void Awake () {
         aniRef = GetComponent<Animator>();
         rBody2D = GetComponent<Rigidbody2D>();
         // Play Fireing sound
@@ -35,10 +31,6 @@ public class Bullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-        if ((Time.time - lauchTime) < initTime)
-        {
-            // set trigger to move to next phase flying animation
-        }       
 	}
     
     // Used to initate the bullet and fire it
@@ -64,13 +56,13 @@ public class Bullet : MonoBehaviour {
 
     private void Destroy()
     {
-        aniRef.SetTrigger("destroy");
+        aniRef.SetTrigger("end");
         // Play sound
 
         // Particle
         StopAllCoroutines();
         // Set alpha to zero and destroy object after sfx finish
-        Destroy(gameObject);
+        Destroy(gameObject, aniRef.GetCurrentAnimatorStateInfo(0).length);
     }
 
     IEnumerator Autodestroy()

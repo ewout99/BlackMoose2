@@ -49,12 +49,12 @@ public class InputPlayer : NetworkBehaviour {
         aniRef = GetComponent<Animator>();
         spRef = GetComponent<SpriteRenderer>();
         weaponRef = transform.FindChild("Temp Weapon").gameObject;
-        bulletSpawnRef = transform.FindChild("Temp Spawn");
+        bulletSpawnRef = transform.FindChild("Temp Weapon").gameObject.transform.FindChild("Temp Spawn");
         inverseAttackspeed = 1f / attackSpeed;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () { 
 
         // Check for Local Player
         if (!isLocalPlayer)
@@ -97,7 +97,7 @@ public class InputPlayer : NetworkBehaviour {
             {
                 spRef.flipX = true;
             }
-            else if (moveVecInput.x < 0)
+            else if (moveVecInput.x > 0)
             {
                 spRef.flipX = false;
             }
@@ -113,7 +113,7 @@ public class InputPlayer : NetworkBehaviour {
         {
             canShoot = false;
             StartCoroutine(ShootDelay());
-            CmdShoot(mousePosition);
+            CmdShoot(aimVec);
         }
 
         // Pick up and drop the oracle
@@ -139,7 +139,7 @@ public class InputPlayer : NetworkBehaviour {
     void CmdShoot(Vector2 direction)
     {
         // Spawn Bullet prefab at the edge fo the gun
-        GameObject bullet = (GameObject)Instantiate(bulletPrefabs[0], transform.position + new Vector3(direction.x, direction.y, 0).normalized * 1f, transform.rotation);
+        GameObject bullet = (GameObject)Instantiate(bulletPrefabs[0], bulletSpawnRef.position + new Vector3(direction.x, direction.y, 0).normalized * 1f, bulletSpawnRef.rotation);
         bullet.GetComponent<Bullet>().Go(direction, transform.tag);
         NetworkServer.Spawn(bullet);
     }

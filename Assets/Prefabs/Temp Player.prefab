@@ -236,9 +236,10 @@ MonoBehaviour:
   attackSpeed: 2
   walkSpeed: 2
   normalSpeed: 4
-  canShoot: 0
+  canShoot: 1
   oracleAttached: 0
-  bulletPrefabs: []
+  bulletPrefabs:
+  - {fileID: 187820, guid: 88370fc409e007e4fbebfc602b5f8257, type: 2}
   weaponsFire1: {fileID: 0}
   weaponsFire2: {fileID: 0}
 --- !u!114 &11432868
@@ -348,7 +349,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: canShoot
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 102752}

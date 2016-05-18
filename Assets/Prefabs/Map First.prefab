@@ -50,7 +50,7 @@ GameObject:
   - 4: {fileID: 407370}
   - 114: {fileID: 11426442}
   m_Layer: 0
-  m_Name: New Map
+  m_Name: Map First
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
