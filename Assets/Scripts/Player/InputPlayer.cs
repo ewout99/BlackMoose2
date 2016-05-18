@@ -139,7 +139,7 @@ public class InputPlayer : NetworkBehaviour {
     void CmdShoot(Vector2 direction)
     {
         // Spawn Bullet prefab at the edge fo the gun
-        GameObject bullet = (GameObject)Instantiate(bulletPrefabs[0], bulletSpawnRef.position + new Vector3(direction.x, direction.y, 0).normalized * 1f, bulletSpawnRef.rotation);
+        GameObject bullet = (GameObject)Instantiate(bulletPrefabs[0], bulletSpawnRef.position, bulletSpawnRef.rotation);
         bullet.GetComponent<Bullet>().Go(direction, transform.tag);
         NetworkServer.Spawn(bullet);
     }

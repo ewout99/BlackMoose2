@@ -10,8 +10,12 @@ public class ExtendedLobbyHook : LobbyHook {
         LobbyPlayer lobbyRef = lobbyPlayer.GetComponent<LobbyPlayer>();
         IngamePlayer gameRef = gamePlayer.GetComponent<IngamePlayer>();
 
+        // Implement lobby player selection load the right Animation Controller
+        // And load the right weapons sprite
+
+
         gameRef.nameIngame = lobbyRef.playerName;
-        gameRef.colorIngame = lobbyRef.playerColor;
+        //gameRef.colorIngame = lobbyRef.playerColor;
         Debug.Log("Color and name set");
 
         base.OnLobbyServerSceneLoadedForPlayer(manager, lobbyPlayer, gamePlayer);
