@@ -127,6 +127,7 @@ public class InputPlayer : NetworkBehaviour {
             CmdDettachOracle();
         }
 
+        RpcAniUpdate();
     }
 
     void AdjustWeaponRotation()
@@ -154,6 +155,13 @@ public class InputPlayer : NetworkBehaviour {
     void CmdDettachOracle()
     {
 
+    }
+
+    void RpcAniUpdate()
+    {
+        aniRef.SetBool("walking", aniRef.GetBool("walking"));
+        aniRef.SetBool("running", aniRef.GetBool("running"));
+        spRef.flipX = spRef.flipX;
     }
 
     IEnumerator ShootDelay()
