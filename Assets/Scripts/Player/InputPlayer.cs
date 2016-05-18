@@ -26,7 +26,7 @@ public class InputPlayer : NetworkBehaviour {
     private float moveSpeedInput;
 
     //Editor Refrences
-    public GameObject bulletPrefab;
+    public GameObject[] bulletPrefabs;
 
     //Audio Clips
     public AudioClip weaponsFire1;
@@ -35,9 +35,11 @@ public class InputPlayer : NetworkBehaviour {
     //Private Refrences
     private Camera playerCamera;
     private GameObject weaponRef;
+    private Transform bulletSpawnRef;
     private GameObject OracleRef;
     private MovementPlayer moveRef;
     private Animator aniRef;
+    private SpriteRenderer spRef;
 
 
     // Use this for initialization
@@ -45,6 +47,9 @@ public class InputPlayer : NetworkBehaviour {
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         moveRef = GetComponent<MovementPlayer>();
         aniRef = GetComponent<Animator>();
+        spRef = GetComponent<SpriteRenderer>();
+        weaponRef = transform.FindChild("Temp Weapon").gameObject;
+        bulletSpawnRef = transform.FindChild("Temp Spawn");
         inverseAttackspeed = 1f / attackSpeed;
 	}
 	
@@ -88,6 +93,14 @@ public class InputPlayer : NetworkBehaviour {
                 aniRef.SetBool("walking", false);
                 aniRef.SetBool("running", true);
             }
+            if (moveVecInput.x < 0)
+            {
+                spRef.flipX = true;
+            }
+            else if (moveVecInput.x < 0)
+            {
+                spRef.flipX = false;
+            }
         }
         else
         {
@@ -100,7 +113,7 @@ public class InputPlayer : NetworkBehaviour {
         {
             canShoot = false;
             StartCoroutine(ShootDelay());
-            CmdShoot();
+            CmdShoot(mousePosition);
         }
 
         // Pick up and drop the oracle
@@ -119,13 +132,16 @@ public class InputPlayer : NetworkBehaviour {
     void AdjustWeaponRotation()
     {
         // Add weapons to player then enable
-        // weaponRef.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, targetAngle));
+        weaponRef.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, targetAngle));
     }
 
     [Command]
-    void CmdShoot()
+    void CmdShoot(Vector2 direction)
     {
         // Spawn Bullet prefab at the edge fo the gun
+        GameObject bullet = (GameObject)Instantiate(bulletPrefabs[0], transform.position + new Vector3(direction.x, direction.y, 0).normalized * 1f, transform.rotation);
+        bullet.GetComponent<Bullet>().Go(direction, transform.tag);
+        NetworkServer.Spawn(bullet);
     }
 
     [Command]

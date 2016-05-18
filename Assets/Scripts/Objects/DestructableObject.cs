@@ -39,5 +39,6 @@ public class DestructableObject : MonoBehaviour {
         // Play sound
 
         // Play Particle Effect
+        gameObject.GetComponent<PolygonCollider2D>().enabled = false;
     }
 }

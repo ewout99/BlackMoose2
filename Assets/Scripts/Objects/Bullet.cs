@@ -5,7 +5,7 @@ public class Bullet : MonoBehaviour {
 
     // Refrences
     private Animator aniRef;
-
+    private Rigidbody2D rBody2D;
 
     // Editor variables
     public string origion;
@@ -16,14 +16,17 @@ public class Bullet : MonoBehaviour {
     private float autoDestroy;
 
     public float bulletDmg;
+    public float bulletSpeed;
 
     // Private variables
     private float lauchTime;
+
 
     // Use this for initialization
     void Start () {
         lauchTime = Time.time;
         aniRef = GetComponent<Animator>();
+        rBody2D = GetComponent<Rigidbody2D>();
         // Play Fireing sound
         // Player firing Animation
         // Play start particle
@@ -37,12 +40,20 @@ public class Bullet : MonoBehaviour {
             // set trigger to move to next phase flying animation
         }       
 	}
-
-    void OnCollisionEnter2D (Collider2D other)
+    
+    // Used to initate the bullet and fire it
+    public void Go(Vector2 direction, string og)
     {
-        if (other.tag != origion && other.GetComponent<Entity>())
+        origion = og;
+        rBody2D.AddForce(direction.normalized * bulletSpeed);
+    }
+
+    // If the origion and the hit target don't match the bullet tries to damage the object
+    void OnCollisionEnter2D (Collision2D col)
+    {
+        if (col.collider.tag != origion && col.collider.GetComponent<Entity>())
         {
-            other.GetComponent<Entity>().subtractHealth(bulletDmg);
+            col.collider.GetComponent<Entity>().subtractHealth(bulletDmg);
             Destroy();
         }
         else
