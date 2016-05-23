@@ -7,7 +7,6 @@ public class MovementPlayer : MonoBehaviour {
     [SerializeField]
     private bool physicsBased;
 
-
     //Public Variables
 
     // Private Refremces
@@ -43,17 +42,29 @@ public class MovementPlayer : MonoBehaviour {
         }
     }
 
-    // Update is called once per frame
-    // Used for time based movement
+    public void Recoil(Vector2 shootDirection)
+    {
+        Vector2 recoilDirection = -shootDirection;
+        recoilDirection = recoilDirection.normalized;
+        recoilDirection.x *= 0.1f;
+        recoilDirection.y *= 0.1f;
+        rBody2D.MovePosition(new Vector2(transform.position.x, transform.position.y) + recoilDirection);
+    }
+
+    /*  Update is called once per frame
+        Used for time based movement
+    */
     void Update()
     {
         float dt = Time.deltaTime;
         gameObject.transform.Translate(moveVecTB.x * dt * moveSpeedTB, moveVecTB.y * dt * moveSpeedTB, 0f);
+        moveVecTB = Vector2.zero;
     }
 
-    // Used for physics based movenmetn
+    // Used for physics based movement
     void FixedUpdate()
     {
-        rBody2D.AddForce(moveVecRB.normalized * moveSpeedRB * rBody2D.mass);
+        rBody2D.AddForce(moveVecRB.normalized * moveSpeedRB * rBody2D.mass,ForceMode2D.Force);
+        moveVecRB = Vector2.zero;
     }
 }

@@ -5,11 +5,11 @@ using System.Collections;
 
 public class IngamePlayer : NetworkBehaviour {
 
-    [SyncVar(hook = "NameChange")]
+    [SyncVar]
     public string nameIngame;
-    [SyncVar(hook = "TypeChange")]
+    [SyncVar]
     public string typeIngame;
-    [SyncVar(hook = "ColorChange")]
+    [SyncVar]
     public Color colorIngame;
 
     [SyncVar]
@@ -63,19 +63,4 @@ public class IngamePlayer : NetworkBehaviour {
             flux = 0;
         }
 	}
-    
-    void NameChange(string newName)
-    {
-        nameIngame = newName;
-    }
-
-    void TypeChange(string newType)
-    {
-        typeIngame = newType;
-    }
-
-    void ColorChange (Color newColor)
-    {
-        colorIngame = newColor;
-    }
 }

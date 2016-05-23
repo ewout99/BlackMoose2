@@ -21,12 +21,15 @@ public class InputPlayer : NetworkBehaviour {
     private Vector2 aimVec = Vector2.right;
     private Vector2 moveVecInput;
     private float targetAngle;
+    [SyncVar(hook = "FlipXHook")]
+    private bool CurrentFlipX;
 
     private float inverseAttackspeed;
     private float moveSpeedInput;
 
     //Editor Refrences
     public GameObject[] bulletPrefabs;
+    public Sprite[] gunPrefabs;
 
     //Audio Clips
     public AudioClip weaponsFire1;
@@ -96,10 +99,12 @@ public class InputPlayer : NetworkBehaviour {
             if (moveVecInput.x < 0)
             {
                 spRef.flipX = true;
+                CmdFlipX(true);
             }
             else if (moveVecInput.x > 0)
             {
                 spRef.flipX = false;
+                CmdFlipX(false);
             }
         }
         else
@@ -112,6 +117,8 @@ public class InputPlayer : NetworkBehaviour {
         if (Input.GetButton("Fire") && canShoot)
         {
             canShoot = false;
+            playerCamera.GetComponent<CameraFollow>().ScreenShake(20, 28);
+            moveRef.Recoil(aimVec);
             StartCoroutine(ShootDelay());
             CmdShoot(aimVec);
         }
@@ -127,13 +134,20 @@ public class InputPlayer : NetworkBehaviour {
             CmdDettachOracle();
         }
 
-        RpcAniUpdate();
     }
 
-    void AdjustWeaponRotation()
+    private void AdjustWeaponRotation()
     {
         // Add weapons to player then enable
         weaponRef.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, targetAngle));
+    }
+
+    public void WeaponSwitch(int weaponIndex)
+    {
+        // Set new attackspeed;
+        inverseAttackspeed = 1/  bulletPrefabs[weaponIndex].GetComponent<Bullet>().attackSpeed;
+        // Set new spriterender;
+        weaponRef.GetComponent<SpriteRenderer>().sprite = gunPrefabs[weaponIndex];
     }
 
     [Command]
@@ -157,11 +171,17 @@ public class InputPlayer : NetworkBehaviour {
 
     }
 
-    void RpcAniUpdate()
+    // A Command and a hook to set the flipX for the SpriteRenderer
+    [Command]
+    void CmdFlipX(bool setTo)
     {
-        aniRef.SetBool("walking", aniRef.GetBool("walking"));
-        aniRef.SetBool("running", aniRef.GetBool("running"));
-        spRef.flipX = spRef.flipX;
+        gameObject.GetComponent<SpriteRenderer>().flipX = setTo;
+        CurrentFlipX = setTo;
+    }
+    // Hook for SyncVar
+    private void FlipXHook(bool setTo)
+    {
+        gameObject.GetComponent<SpriteRenderer>().flipX = setTo;
     }
 
     IEnumerator ShootDelay()

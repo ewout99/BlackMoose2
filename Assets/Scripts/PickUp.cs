@@ -12,4 +12,20 @@ public class PickUp : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Weapon")
+        {
+            // Get index of the weapon about to be picked up
+            
+            //Send it to the inputclass
+            GetComponent<InputPlayer>().WeaponSwitch(0);
+        }
+
+        if (other.tag == "Flux")
+        {
+
+        }
+    }
 }

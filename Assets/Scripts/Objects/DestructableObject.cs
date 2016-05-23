@@ -15,9 +15,9 @@ public class DestructableObject : MonoBehaviour {
         aniRef = GetComponent<Animator>();
 	}
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnCollisionEnter2D(Collision2D coll)
     {
-        if (transform.tag != gameObject.tag && !objectHit)
+        if (transform.tag != coll.gameObject.tag && !objectHit)
         {
             Hit();
         }
@@ -25,7 +25,7 @@ public class DestructableObject : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.tag != gameObject.tag && !objectHit)
+        if (transform.tag != other.tag && !objectHit)
         {
             Hit();
         }

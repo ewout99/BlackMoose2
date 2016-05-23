@@ -9,6 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 435886}
   - 212: {fileID: 21246612}
+  - 114: {fileID: 11424886}
+  - 114: {fileID: 11407266}
   m_Layer: 0
   m_Name: Temp Weapon
   m_TagString: Untagged
@@ -26,6 +28,7 @@ GameObject:
   - 4: {fileID: 427616}
   - 114: {fileID: 11413062}
   - 114: {fileID: 11403430}
+  - 114: {fileID: 11493352}
   - 114: {fileID: 11494020}
   - 114: {fileID: 11420258}
   - 114: {fileID: 11432868}
@@ -36,6 +39,7 @@ GameObject:
   - 95: {fileID: 9559828}
   - 60: {fileID: 6027136}
   - 114: {fileID: 11436640}
+  - 114: {fileID: 11467850}
   m_Layer: 0
   m_Name: Temp Player
   m_TagString: Player
@@ -103,8 +107,8 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102752}
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 0.5667447
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -182,8 +186,28 @@ MonoBehaviour:
   m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_TransformSyncMode: 2
+  m_SendInterval: 0.03448276
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
+--- !u!114 &11407266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 0.05
+  m_SendInterval: 0.033333335
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
@@ -243,6 +267,38 @@ MonoBehaviour:
   - {fileID: 187820, guid: 88370fc409e007e4fbebfc602b5f8257, type: 2}
   weaponsFire1: {fileID: 0}
   weaponsFire2: {fileID: 0}
+--- !u!114 &11424886
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 66
+    i1: 138
+    i2: 96
+    i3: 190
+    i4: 139
+    i5: 199
+    i6: 25
+    i7: 68
+    i8: 121
+    i9: 123
+    i10: 188
+    i11: 66
+    i12: 163
+    i13: 105
+    i14: 123
+    i15: 174
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &11432868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -274,6 +330,25 @@ MonoBehaviour:
   param3: 
   param4: 
   param5: 
+--- !u!114 &11467850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 435886}
+  m_ChildIndex: 0
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
 --- !u!114 &11485830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -285,6 +360,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 579f380f886b04046a502c1f57bf0946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11493352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c945260ba62aab4c8df13179fd0d2bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 100
 --- !u!114 &11494020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -358,7 +445,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -354108773
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 9954236850dae8d4e9c7b77ef4e5e045, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -373,6 +460,34 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: canShoot
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: aniRef
+      value: 
+      objectReference: {fileID: 9559828}
+    - target: {fileID: 0}
+      propertyPath: healthPoints
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SendInterval
+      value: 0.05263158
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Target
+      value: 
+      objectReference: {fileID: 435886}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SyncSpin
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

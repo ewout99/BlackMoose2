@@ -8,13 +8,18 @@ public class Bullet : MonoBehaviour {
     private Rigidbody2D rBody2D;
 
     // Editor variables
+    [HideInInspector]
     public string origion;
 
     [SerializeField]
     private float autoDestroy;
 
     public float bulletDmg;
-    public float bulletSpeed;
+    [SerializeField]
+    private float bulletSpeed;
+    public float attackSpeed;
+    [SerializeField]
+    public float randomFactor;
 
     // Private variables
 
@@ -27,16 +32,14 @@ public class Bullet : MonoBehaviour {
         // Player firing Animation
         // Play start particle
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
     
     // Used to initate the bullet and fire it
     public void Go(Vector2 direction, string og)
     {
         origion = og;
+        direction = direction.normalized;
+        direction.x += Random.Range(-randomFactor, randomFactor);
+        direction.y += Random.Range(-randomFactor, randomFactor);
         rBody2D.AddForce(direction.normalized * bulletSpeed);
     }
 
@@ -45,7 +48,7 @@ public class Bullet : MonoBehaviour {
     {
         if (col.collider.tag != origion && col.collider.GetComponent<Entity>())
         {
-            col.collider.GetComponent<Entity>().subtractHealth(bulletDmg);
+            col.collider.GetComponent<Entity>().CmdSubtractHealth(bulletDmg);
             Destroy();
         }
         else
