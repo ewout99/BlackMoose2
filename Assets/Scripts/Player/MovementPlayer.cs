@@ -19,32 +19,61 @@ public class MovementPlayer : MonoBehaviour {
     private Vector2 moveVecTB;
     private float moveSpeedTB;
 
+
     [SerializeField]
     private float rampUpTime;
 
     [SerializeField]
     private float slowDownTime;
 
+    // Speed && direction in the previous frame
+    private float lastFrameSpeed;
+    private Vector2 lastDirection;
+    // Speed to calculate
+    private float calSpeed;
+    // Float for calculating smoothdamping 
+    private float velocityCalSpeed;
 
 	// Use this for initialization
 	void Awake () {
         rBody2D = GetComponent<Rigidbody2D>();
     }
 	
+    /// <summary>
+    /// Moves the charcter either based on physiscs or on a translate
+    /// </summary>
+    /// <param name="horizontal">The horizontal input</param>
+    /// <param name="vertical">The vertical input </param>
+    /// <param name="speed">The current given movespeed</param>
     public void Move(float horizontal, float vertical, float speed)
     {
+        // Physics based movment if enabled
         if (physicsBased)
         {
             moveVecRB.x = horizontal;
             moveVecRB.y = vertical;
             moveSpeedRB = speed;
         }
+        // Time based movment
         else
         {
-            moveVecTB.x = horizontal;
-            moveVecTB.y = vertical;
+            if (horizontal != 0 || vertical != 0 && lastFrameSpeed != speed)
+            {
+                calSpeed = Mathf.SmoothDamp(calSpeed, speed, ref velocityCalSpeed, rampUpTime);
+                moveVecTB.x = horizontal;
+                moveVecTB.y = vertical;
+                lastDirection.x = horizontal;
+                lastDirection.y = vertical;
+            }
+            else if(horizontal == 0 || vertical == 0 && lastFrameSpeed > 0)
+            {
+                calSpeed = Mathf.SmoothDamp(calSpeed, 0, ref velocityCalSpeed , slowDownTime);
+                moveVecTB = lastDirection;
+            }
+            calSpeed = Mathf.Clamp(calSpeed, 0, speed);
             moveVecTB = moveVecTB.normalized;
-            moveSpeedTB = speed;
+            moveSpeedTB = calSpeed;
+            lastFrameSpeed = calSpeed;
         }
     }
 
