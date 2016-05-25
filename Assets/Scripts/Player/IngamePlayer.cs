@@ -29,13 +29,13 @@ public class IngamePlayer : NetworkBehaviour {
     private GameObject oracleRef;
 
     [SerializeField]
-    private Animator[] AnimCons;
+    private string[] AnimCons;
 
 
     // Use this for initialization
     void Start ()
     {
-        // GetComponent<Animator>().runtimeAnimatorController = AnimCons[typeIngame].runtimeAnimatorController;
+        GetComponent<Animator>().runtimeAnimatorController = ((RuntimeAnimatorController)(Resources.Load(AnimCons[typeIngame])));
         nameField.text = nameIngame;
         nameField.color = colorIngame;
         pickRef = GetComponent<PickUp>();

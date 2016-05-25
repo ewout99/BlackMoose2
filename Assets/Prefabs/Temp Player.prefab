@@ -379,7 +379,10 @@ MonoBehaviour:
   Player_Camera: {fileID: 122702, guid: 9c8d6ad983965ac4c8b65e0f49ca32cc, type: 2}
   Oracle_Camer: {fileID: 0}
   fluxDeliveryRange: 0
-  AnimCons: []
+  AnimCons:
+  - PlayerConBlue
+  - PlayerConGreen
+  - PlayerConRed
 --- !u!114 &11449336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -629,7 +632,23 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: AnimCons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: AnimCons.Array.data[0]
+      value: PlayerConBlue
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: AnimCons.Array.data[1]
+      value: PlayerConGreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: AnimCons.Array.data[2]
+      value: PlayerConRed
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 138796}
