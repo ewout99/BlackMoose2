@@ -117,7 +117,7 @@ public class InputPlayer : NetworkBehaviour {
         if (Input.GetButton("Fire") && canShoot)
         {
             canShoot = false;
-            playerCamera.GetComponent<CameraFollow>().ScreenShake(20, 28);
+            playerCamera.GetComponent<CameraFollow>().ScreenShake(5, 14);
             moveRef.Recoil(aimVec);
             StartCoroutine(ShootDelay());
             CmdShoot(aimVec);
