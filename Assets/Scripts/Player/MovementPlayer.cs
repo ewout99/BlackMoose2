@@ -19,6 +19,12 @@ public class MovementPlayer : MonoBehaviour {
     private Vector2 moveVecTB;
     private float moveSpeedTB;
 
+    [SerializeField]
+    private float rampUpTime;
+
+    [SerializeField]
+    private float slowDownTime;
+
 
 	// Use this for initialization
 	void Awake () {

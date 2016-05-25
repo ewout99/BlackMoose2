@@ -68,8 +68,8 @@ public class InputPlayer : NetworkBehaviour {
         targetAngle = Mathf.Atan2(aimVec.y, aimVec.x) * Mathf.Rad2Deg;
         AdjustWeaponRotation();
 
-        moveVecInput.x = Input.GetAxis("Horizontal");
-        moveVecInput.y = Input.GetAxis("Vertical");
+        moveVecInput.x = Input.GetAxisRaw("Horizontal");
+        moveVecInput.y = Input.GetAxisRaw("Vertical");
 
         if (Input.GetButton("Walk") || oracleAttached)
         {
