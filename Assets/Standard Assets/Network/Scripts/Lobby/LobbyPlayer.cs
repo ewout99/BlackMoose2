@@ -12,11 +12,17 @@ namespace UnityStandardAssets.Network
     public class LobbyPlayer : NetworkLobbyPlayer
     {
         static Color[] Colors = new Color[] { Color.magenta, Color.red, Color.cyan, Color.blue, Color.green, Color.yellow };
+        static int[] Sprites = new int[] { 0, 1, 2 };
+
+        [SerializeField]
+        private Sprite[] localSprites;
         //used on server to avoid assigning the same color to two player
         static List<int> _colorInUse = new List<int>();
+        static List<int> _spriteInUse = new List<int>();
 
         public Button colorButton;
         public InputField nameInput;
+        public Button spriteButton;
         public Button readyButton;
         public Button waitingPlayerButton;
         public Button removePlayerButton;
@@ -29,6 +35,8 @@ namespace UnityStandardAssets.Network
         public string playerName = "";
         [SyncVar(hook = "OnMyColor")]
         public Color playerColor = Color.white;
+        [SyncVar(hook = "OnMySprite")]
+        public int playerSprite;
 
         public Color OddRowColor = new Color(250.0f / 255.0f, 250.0f / 255.0f, 250.0f / 255.0f, 1.0f);
         public Color EvenRowColor = new Color(180.0f / 255.0f, 180.0f / 255.0f, 180.0f / 255.0f, 1.0f);
@@ -64,6 +72,7 @@ namespace UnityStandardAssets.Network
             //will be created with the right value currently on server
             OnMyName(playerName);
             OnMyColor(playerColor);
+            OnMySprite(playerSprite);
         }
 
         public override void OnStartAuthority()
@@ -108,7 +117,10 @@ namespace UnityStandardAssets.Network
             CheckRemoveButton();
 
             if (playerColor == Color.white)
+            {
                 CmdColorChange();
+                CmdSpriteChanged();
+            }
 
             ChangeReadyButtonColor(JoinColor);
 
@@ -129,8 +141,13 @@ namespace UnityStandardAssets.Network
             colorButton.onClick.RemoveAllListeners();
             colorButton.onClick.AddListener(OnColorClicked);
 
+            spriteButton.onClick.RemoveAllListeners();
+            spriteButton.onClick.AddListener(OnSpriteChanged);
+
             readyButton.onClick.RemoveAllListeners();
             readyButton.onClick.AddListener(OnReadyClicked);
+
+
 
             //when OnClientEnterLobby is called, the loval PlayerController is not yet created, so we need to redo that here to disable
             //the add button if we reach maxLocalPlayer. We pass 0, as it was already counted on OnClientEnterLobby
@@ -195,6 +212,12 @@ namespace UnityStandardAssets.Network
             colorButton.GetComponent<Image>().color = newColor;
         }
 
+        public void OnMySprite(int Index)
+        {
+            playerSprite = Index;
+            spriteButton.GetComponent<Image>().sprite = localSprites[Index];
+        }
+
         //===== UI Handler
 
         //Note that those handler use Command function, as we need to change the value on the server not locally
@@ -213,6 +236,11 @@ namespace UnityStandardAssets.Network
         {
             CmdNameChanged(str);
         }
+
+        public void OnSpriteChanged()
+        {
+            CmdSpriteChanged();
+        } 
 
         public void OnRemovePlayerClick()
         {
@@ -291,6 +319,46 @@ namespace UnityStandardAssets.Network
             playerName = name;
         }
 
+        [Command]
+        public void CmdSpriteChanged()
+        {
+            {
+                int idx = System.Array.IndexOf(Sprites, playerSprite);
+
+                int inUseIdx = _spriteInUse.IndexOf(idx);
+
+                if (idx < 0) idx = 0;
+
+                idx = (idx + 1) % Sprites.Length;
+
+                bool alreadyInUse = false;
+
+                do
+                {
+                    alreadyInUse = false;
+                    for (int i = 0; i < _spriteInUse.Count; ++i)
+                    {
+                        if (_spriteInUse[i] == idx)
+                        {//that Sprite is already in use
+                            alreadyInUse = true;
+                            idx = (idx + 1) % Sprites.Length;
+                        }
+                    }
+                }
+                while (alreadyInUse);
+
+                if (inUseIdx >= 0)
+                {//if we already add an entry in the spriteTabs, we change it
+                    _spriteInUse[inUseIdx] = idx;
+                }
+                else
+                {//else we add it
+                    _spriteInUse.Add(idx);
+                }
+
+                playerSprite = Sprites[idx];
+            }
+        }
         //Cleanup thing when get destroy (which happen when client kick or disconnect)
         public void OnDestroy()
         {
@@ -304,6 +372,20 @@ namespace UnityStandardAssets.Network
                 if (_colorInUse[i] == idx)
                 {//that color is already in use
                     _colorInUse.RemoveAt(i);
+                    break;
+                }
+            }
+
+            int idx2 = System.Array.IndexOf(Sprites, playerSprite);
+
+            if (idx2 < 0)
+                return;
+
+            for (int i = 0; i < _spriteInUse.Count; ++i)
+            {
+                if (_spriteInUse[i] == idx2)
+                {//that color is already in use
+                    _spriteInUse.RemoveAt(i);
                     break;
                 }
             }
