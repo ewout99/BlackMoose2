@@ -7,6 +7,7 @@ public class IngamePlayer : NetworkBehaviour {
 
     [SyncVar]
     public string nameIngame;
+    public Text nameField;
     [SyncVar]
     public int typeIngame;
     [SyncVar]
@@ -32,11 +33,11 @@ public class IngamePlayer : NetworkBehaviour {
 
 
     // Use this for initialization
-    void Awake ()
+    void Start ()
     {
-        // Getting oracleRef = GameObject.FindGameObjectWithTag("Oracle");
-        GetComponent<SpriteRenderer>().color = colorIngame;
-        GetComponent<Animator>().runtimeAnimatorController = AnimCons[typeIngame].runtimeAnimatorController;
+        // GetComponent<Animator>().runtimeAnimatorController = AnimCons[typeIngame].runtimeAnimatorController;
+        nameField.text = nameIngame;
+        nameField.color = colorIngame;
         pickRef = GetComponent<PickUp>();
 
         // Create Camera if this is the local player

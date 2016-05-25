@@ -169,6 +169,190 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbdbefa37b9bdf041b7bcd34b381bafa, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &268043487
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 46.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 190470, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_Name
+      value: Big Vase (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &281495499
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 8.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 55.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 190470, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_Name
+      value: Small Vase (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &665924135
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 55.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 190470, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_Name
+      value: Big Vase (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &713007341
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 8.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 190470, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_Name
+      value: Small Vase (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &776938729
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +483,7 @@ Transform:
   - {fileID: 776938730}
   - {fileID: 1961075604}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1 &1098066538
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,6 +584,52 @@ MonoBehaviour:
   m_Script: {fileID: -1050975500, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1237506425
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 50.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 190470, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_Name
+      value: Big Vase (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1305916889
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +746,98 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1001 &1339246138
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 10.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 55.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 190470, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_Name
+      value: Small Vase (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1464927048
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 52.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 190470, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_Name
+      value: Small Vase (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1491579789
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,6 +877,98 @@ MonoBehaviour:
   m_Script: {fileID: -1050975500, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1523409292
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 42.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 190470, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_Name
+      value: Big Vase (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1580163580
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 20.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 48.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 190470, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_Name
+      value: Small Vase (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1806907122
 Prefab:
   m_ObjectHideFlags: 0
@@ -597,6 +1011,52 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1881050113
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 55.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 190470, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_Name
+      value: Big Vase (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1961075603
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,3 +1096,95 @@ MonoBehaviour:
   m_Script: {fileID: -1050975500, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &2016544498
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 54.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 190470, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+      propertyPath: m_Name
+      value: Big Vase (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &2147004249
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 48.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 440628, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 190470, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+      propertyPath: m_Name
+      value: Small Vase (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+  m_IsPrefabParent: 0
