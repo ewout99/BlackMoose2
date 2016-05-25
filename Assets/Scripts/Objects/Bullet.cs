@@ -20,6 +20,8 @@ public class Bullet : MonoBehaviour {
     public float attackSpeed;
     [SerializeField]
     public float randomFactor;
+    [SerializeField]
+    private bool friendlyFire;
 
     // Private variables
 
@@ -46,7 +48,7 @@ public class Bullet : MonoBehaviour {
     // If the origion and the hit target don't match the bullet tries to damage the object
     void OnCollisionEnter2D (Collision2D col)
     {
-        if (col.collider.tag != origion && col.collider.GetComponent<Entity>())
+        if ((col.collider.tag != origion && col.collider.GetComponent<Entity>()) || !friendlyFire)
         {
             col.collider.GetComponent<Entity>().CmdSubtractHealth(bulletDmg);
             Destroy();
