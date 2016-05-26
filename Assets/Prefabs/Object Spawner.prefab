@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 468826}
   - 114: {fileID: 11477804}
   - 114: {fileID: 11417628}
-  - 114: {fileID: 11480898}
   m_Layer: 0
   m_Name: Object Spawner
   m_TagString: Untagged
@@ -63,23 +62,6 @@ MonoBehaviour:
   m_ServerOnly: 1
   m_LocalPlayerAuthority: 0
 --- !u!114 &11477804
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 130152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b099fbcee8329d478b03dff7bcdb71f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Objects:
-  - {fileID: 190470, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
-  - {fileID: 190470, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
-  SizeX: 3
-  SizeY: 3
-  maxObjectAmount: 5
---- !u!114 &11480898
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
