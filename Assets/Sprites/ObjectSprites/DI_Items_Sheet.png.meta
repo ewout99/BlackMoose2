@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 97708ead22551447894b432cb56881d2
-timeCreated: 1463476582
+timeCreated: 1464265174
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8,6 +8,8 @@ TextureImporter:
     21300002: DI_Items_Sheet_1
     21300004: DI_Items_Sheet_2
     21300006: DI_Items_Sheet_3
+    21300008: DI_Items_Sheet_4
+    21300010: DI_Items_Sheet_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -91,6 +93,28 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
+        y: 0
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DI_Items_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DI_Items_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 80
         y: 0
         width: 16
         height: 24
