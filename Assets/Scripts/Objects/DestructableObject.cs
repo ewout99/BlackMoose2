@@ -56,7 +56,9 @@ public class DestructableObject : NetworkBehaviour {
 
         if (ParentSpawner != null)
         {
+            // needs fixing Trhoes errors when the objects are placed.
             StartCoroutine(NetworkDestroy(3f));
+
         }
     }
 
@@ -69,7 +71,7 @@ public class DestructableObject : NetworkBehaviour {
     // When destroyed it and it has a parentSpawner it makes sure to create a new object
     void OnDestroy()
     {
-        if (ParentSpawner != null)
+        if (ParentSpawner == true)
         {
             ParentSpawner.GetComponent<Spawner>().CmdRemoveObject(transform.position);
         }
@@ -78,7 +80,15 @@ public class DestructableObject : NetworkBehaviour {
     // Delayed Network Destroy
     IEnumerator NetworkDestroy(float Wait)
     {
+        Debug.Log("Destoy Coroutine started");
         yield return new WaitForSeconds(Wait);
+        Debug.Log("Destoy Coroutine Finished");
+        CmdDestroyGameObject();
+    }
+
+    [Command]
+    void CmdDestroyGameObject()
+    {
         NetworkServer.Destroy(gameObject);
     }
 }

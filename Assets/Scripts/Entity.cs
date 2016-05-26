@@ -8,57 +8,114 @@ public class Entity : NetworkBehaviour {
     public float healthPoints;
     private float previousHealth;
 
+    [SyncVar(hook = "DeathStateChange")]
+    public bool deathState = false;
+
     private Animator aniRef;
     private SpriteRenderer spRef;
     private Camera camRef;
+    private Rigidbody2D rBody2D;
 
-    void Awake()
+    void Start()
     {
         previousHealth = healthPoints;
         spRef = gameObject.GetComponent<SpriteRenderer>();
         aniRef = gameObject.GetComponent<Animator>();
-        if (isLocalPlayer)
+        rBody2D = gameObject.GetComponent<Rigidbody2D>();
+
+        if (isLocalPlayer || isServer)
         {
-            camRef = FindObjectOfType<Camera>();
+            StartCoroutine(GetCameraDealy());
         }
     }
     // Update is called once per frame
-    void Update(){
-        if (healthPoints <= 0)
+    void Update()
+    {
+        if (!isLocalPlayer)
+            return;
+
+        if (healthPoints <= 0 && !deathState)
         {
             CmdDeath();
         }
+
+        if (healthPoints > 0 && deathState)
+        {
+            CmdRevive();
+        }
     }
 
+  
+    // Commands for Chaning deathstate
+    [Command]
+    public void CmdDeath()
+    {
+        deathState = true;
+        // DeathStateChange(deathState);
+    }
+
+    /// <summary>
+    /// Revive the player
+    /// </summary>
+    [Command]
+    public void CmdRevive()
+    {
+        deathState = false;
+        // DeathStateChange(deathState);
+    }
+
+    // Hook for Deathstate
+    private void DeathStateChange(bool state)
+    {
+        deathState = state;
+        if (state)
+        {
+            // Play Sound
+
+            // Play Animation
+            aniRef.SetTrigger("death");
+
+            // Contrain rigidbody
+            rBody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+
+            // For Players
+            if (gameObject.tag == "Player")
+            {
+                if (isLocalPlayer)
+                {
+                    camRef.GetComponent<CameraFollow>().ScreenShake(10, 28);
+                }
+            }
+            // For Enemies
+            else
+            {
+                NetworkDestroy(aniRef.GetCurrentAnimatorClipInfo(0).Length);
+            }
+        }
+        else 
+        {
+            healthPoints = 100;
+        }
+    }
+
+    // Commands for chaging health
+    [Command]
     public void CmdAddHealth(float amount)
     {
-        if (!isServer)
-            return;
         healthPoints += amount;
     }
 
-
+    [Command]
     public void CmdSubtractHealth(float amount)
     {
-        if (!isServer)
-            return;
         healthPoints -= amount;
     }
 
-
-    [Command]
-    private void CmdDeath()
-    {
-        // Play Sound
-
-        // Play Animation
-
-        // Destroy
-        NetworkServer.Destroy(gameObject);
-    }
-
+    // Hook for the healthvariable
     private void HealthChange(float input)
     {
+        healthPoints = input;
+        Debug.Log("Health Changed");
         if (healthPoints > previousHealth)
         {
             HealFlash();
@@ -71,28 +128,55 @@ public class Entity : NetworkBehaviour {
         }
     }
 
+    // Flash when damaged
     private void HitFlash()
     {
         Debug.Log("Health Down");
         StartCoroutine(ColorFlash(Color.red));
         if (isLocalPlayer)
         {
-            Debug.Log("Camera Shake");
-            camRef.GetComponent<CameraFollow>().ScreenShake(2, 10);
+            camRef.GetComponent<CameraFollow>().ScreenShake(7, 14);
         }
     }
 
+    // Flash when healed
     private void HealFlash()
     {
         Debug.Log("Health up");
         StartCoroutine(ColorFlash(Color.green));
     }
 
+    /// <summary>
+    /// Flash with color
+    /// </summary>
+    /// <param name="toColor">The Color it flashes to</param>
+    /// <returns>No return, is wait time</returns>
     IEnumerator ColorFlash(Color toColor)
     {
         Color hold = gameObject.GetComponent<SpriteRenderer>().color;
         spRef.color = toColor;
         yield return new WaitForSeconds(0.1f);
         spRef.color = hold;
+    }
+
+    // Delayed Network Destroy
+    IEnumerator NetworkDestroy(float Wait)
+    {
+        Debug.Log("Destoy Coroutine started");
+        yield return new WaitForSeconds(Wait);
+        Debug.Log("Destoy Coroutine Finished");
+        CmdDestroyGameObject();
+    }
+
+    [Command]
+    void CmdDestroyGameObject()
+    {
+        NetworkServer.Destroy(gameObject);
+    }
+
+    IEnumerator GetCameraDealy()
+    {
+        yield return new WaitForSeconds(1f);
+        camRef = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 }

@@ -43,8 +43,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 453986}
-  - 114: {fileID: 11438560}
-  - 114: {fileID: 11417410}
   - 114: {fileID: 11489866}
   - 114: {fileID: 11447558}
   - 114: {fileID: 11423288}
@@ -52,9 +50,11 @@ GameObject:
   - 114: {fileID: 11449336}
   - 50: {fileID: 5046836}
   - 60: {fileID: 6092458}
+  - 60: {fileID: 6083928}
   - 212: {fileID: 21221176}
   - 95: {fileID: 9525728}
-  - 60: {fileID: 6083928}
+  - 114: {fileID: 11438560}
+  - 114: {fileID: 11417410}
   - 114: {fileID: 11489836}
   - 114: {fileID: 11413898}
   m_Layer: 0
@@ -290,7 +290,7 @@ MonoBehaviour:
   bulletPrefabs:
   - {fileID: 187820, guid: 88370fc409e007e4fbebfc602b5f8257, type: 2}
   gunPrefabs:
-  - {fileID: 21300000, guid: 9954236850dae8d4e9c7b77ef4e5e045, type: 3}
+  - {fileID: 0}
   weaponsFire1: {fileID: 0}
   weaponsFire2: {fileID: 0}
 --- !u!114 &11438560
@@ -511,6 +511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 100
+  deathState: 0
 --- !u!212 &21221176
 SpriteRenderer:
   m_ObjectHideFlags: 1

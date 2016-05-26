@@ -36,7 +36,11 @@ public class CameraFollow : MonoBehaviour {
         }
     }
 
-    // Can be called from other places to make the camera shake
+    /// <summary>
+    /// Shakes the camera
+    /// </summary>
+    /// <param name="intetsity">The Intesisty of the shake</param>
+    /// <param name="count">The times it shakes 1 sec = 28 Shakes</param>
     public void ScreenShake(float intetsity, int count)
     {
         shakeIntesity = intetsity;
@@ -45,7 +49,7 @@ public class CameraFollow : MonoBehaviour {
     }
 
     // Copy of the previous funtion without params
-    public void ScreenShake()
+    private void ScreenShake()
     {
         StartCoroutine(StartScreenShake());
     }
@@ -60,7 +64,7 @@ public class CameraFollow : MonoBehaviour {
     // Corotine for camera shake
     IEnumerator StartScreenShake()
     {
-        // shaking = true;
+        Debug.Log("Camera Shake Intesity: " + shakeIntesity + " Times: " + shakeCount);
         Vector3 newPos;
         for (int i = 0; i < shakeCount; i++)
         {
@@ -73,7 +77,8 @@ public class CameraFollow : MonoBehaviour {
             shakeIntesity *= 0.8f;
             yield return new WaitForSeconds(0.03f);
         }
-       // shaking = false;
+
+        // try perlin noise here
     }
 
     IEnumerator ColorFlash()

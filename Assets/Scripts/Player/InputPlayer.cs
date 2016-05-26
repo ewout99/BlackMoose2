@@ -43,25 +43,38 @@ public class InputPlayer : NetworkBehaviour {
     private MovementPlayer moveRef;
     private Animator aniRef;
     private SpriteRenderer spRef;
+    private Entity entiRef;
 
 
     // Use this for initialization
     void Start () {
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        moveRef = GetComponent<MovementPlayer>();
-        aniRef = GetComponent<Animator>();
-        spRef = GetComponent<SpriteRenderer>();
+        moveRef = gameObject.GetComponent<MovementPlayer>();
+        aniRef = gameObject.GetComponent<Animator>();
+        spRef = gameObject.GetComponent<SpriteRenderer>();
+        entiRef = gameObject.GetComponent<Entity>();
         weaponRef = transform.FindChild("Temp Weapon").gameObject;
         bulletSpawnRef = transform.FindChild("Temp Weapon").gameObject.transform.FindChild("Temp Spawn");
         inverseAttackspeed = 1f / attackSpeed;
 	}
 	
 	// Update is called once per frame
-	void Update () { 
+	void Update () {
 
         // Check for Local Player
         if (!isLocalPlayer)
+        {
+            if (entiRef.deathState)
+            {
+                weaponRef.SetActive(false);
+            }
             return;
+        }
+        else if (entiRef.deathState)
+        {
+            weaponRef.SetActive(false);
+            return;
+        }
 
         // Check the aim of the player
         mousePosition = playerCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -138,12 +151,16 @@ public class InputPlayer : NetworkBehaviour {
 
     }
 
+    // Does what is says
     private void AdjustWeaponRotation()
     {
-        // Add weapons to player then enable
         weaponRef.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, targetAngle));
     }
 
+    /// <summary>
+    /// Makes the player switch out to the desired weapon
+    /// </summary>
+    /// <param name="weaponIndex">Weapon that it needs to switch to. Look in inspector</param>
     public void WeaponSwitch(int weaponIndex)
     {
         // Set new attackspeed;

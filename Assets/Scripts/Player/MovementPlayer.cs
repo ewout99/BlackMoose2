@@ -36,7 +36,7 @@ public class MovementPlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        rBody2D = GetComponent<Rigidbody2D>();
+        rBody2D = gameObject.GetComponent<Rigidbody2D>();
     }
 	
     /// <summary>
@@ -47,6 +47,7 @@ public class MovementPlayer : MonoBehaviour {
     /// <param name="speed">The current given movespeed</param>
     public void Move(float horizontal, float vertical, float speed)
     {
+        rBody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         // Physics based movment if enabled
         if (physicsBased)
         {

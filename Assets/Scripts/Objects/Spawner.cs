@@ -56,17 +56,20 @@ public class Spawner :  NetworkBehaviour{
         {
             return;
         }
-
-        // Gets a random Position and Object to be spawned
-        while (currentObjectAmount < maxObjectAmount)
+        
+        if (currentObjectAmount == 0)
         {
-            GameObject randomObject = Objects[Random.Range(0, Objects.Length)];
-            Vector2 randomPosition = Availible[Random.Range(0, Availible.Count)];
-            Availible.Remove(randomPosition);
-            NotAvailible.Add(randomPosition);
-            currentObjectAmount++;
-            // Debug.Log(randomObject +" "+ randomPosition);
-            CmdPlaceObject(randomObject, randomPosition);
+            // Gets a random Position and Object to be spawned
+            while (currentObjectAmount < maxObjectAmount)
+            {
+                GameObject randomObject = Objects[Random.Range(0, Objects.Length)];
+                Vector2 randomPosition = Availible[Random.Range(0, Availible.Count)];
+                Availible.Remove(randomPosition);
+                NotAvailible.Add(randomPosition);
+                currentObjectAmount++;
+                // Debug.Log(randomObject +" "+ randomPosition);
+                CmdPlaceObject(randomObject, randomPosition);
+            }
         }
 	}
 
