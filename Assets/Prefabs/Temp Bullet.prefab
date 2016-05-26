@@ -151,7 +151,7 @@ MonoBehaviour:
   bulletSpeed: 20
   attackSpeed: 5
   randomFactor: 0.1
-  friendlyFire: 0
+  friendlyFire: 1
 --- !u!212 &21205430
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -227,7 +227,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: friendlyFire
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

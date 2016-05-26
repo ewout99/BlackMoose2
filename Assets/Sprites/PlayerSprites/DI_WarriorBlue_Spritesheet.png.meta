@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 27e3cb25c05d455499d1df12a1044490
-timeCreated: 1463574646
+timeCreated: 1464253581
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -151,18 +151,18 @@ TextureImporter:
         y: 96
         width: 32
         height: 32
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.4, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 2, y: 6}
-        - {x: 0, y: 4}
-        - {x: 0, y: -2}
-        - {x: 2, y: -5}
-        - {x: 22, y: -5}
-        - {x: 32, y: -4}
-        - {x: 32, y: 4}
-        - {x: 31, y: 6}
+      - - {x: -10.800003, y: -0.40000153}
+        - {x: -12.800003, y: -2.4000015}
+        - {x: -12.800003, y: -8.400002}
+        - {x: -10.800003, y: -11.400002}
+        - {x: 9.199997, y: -11.400002}
+        - {x: 19.199997, y: -10.400002}
+        - {x: 19.199997, y: -2.4000015}
+        - {x: 18.199997, y: -0.40000153}
     - name: DI_WarriorBlue_Spritesheet_5
       rect:
         serializedVersion: 2

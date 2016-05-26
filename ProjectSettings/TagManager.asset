@@ -8,6 +8,7 @@ TagManager:
   - Basic Ground
   - Panel
   - Bullet
+  - Weapon
   layers:
   - Default
   - TransparentFX

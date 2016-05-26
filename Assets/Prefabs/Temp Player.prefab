@@ -92,7 +92,7 @@ GameObject:
   - 114: {fileID: 11464822}
   m_Layer: 0
   m_Name: Temp Weapon
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -383,6 +383,10 @@ MonoBehaviour:
   - PlayerConBlue
   - PlayerConGreen
   - PlayerConRed
+  WeaponSprites:
+  - {fileID: 21300008, guid: 27e3cb25c05d455499d1df12a1044490, type: 3}
+  - {fileID: 21300008, guid: adb051d02e730064282dcf4cf7717e9c, type: 3}
+  - {fileID: 21300008, guid: 25efc96878c919347af216f75393c5ca, type: 3}
 --- !u!114 &11449336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -563,7 +567,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -354108773
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 9954236850dae8d4e9c7b77ef4e5e045, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 27e3cb25c05d455499d1df12a1044490, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

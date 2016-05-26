@@ -63,11 +63,13 @@ public class InputPlayer : NetworkBehaviour {
         if (!isLocalPlayer)
             return;
 
+        // Check the aim of the player
         mousePosition = playerCamera.ScreenToWorldPoint(Input.mousePosition);
         aimVec = mousePosition - transform.position;
         targetAngle = Mathf.Atan2(aimVec.y, aimVec.x) * Mathf.Rad2Deg;
         AdjustWeaponRotation();
 
+        // Check the button input of the player
         moveVecInput.x = Input.GetAxisRaw("Horizontal");
         moveVecInput.y = Input.GetAxisRaw("Vertical");
 
@@ -184,6 +186,7 @@ public class InputPlayer : NetworkBehaviour {
         gameObject.GetComponent<SpriteRenderer>().flipX = setTo;
     }
 
+    // Determines the fire rate of the shooting
     IEnumerator ShootDelay()
     {
         yield return new WaitForSeconds(inverseAttackspeed);
