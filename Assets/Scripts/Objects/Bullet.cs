@@ -111,9 +111,7 @@ public class Bullet : NetworkBehaviour {
     // Delayed Network Destroy
     IEnumerator NetworkDestroy(float Wait)
     {
-        Debug.Log("Destoy Coroutine started " + Wait);
         yield return new WaitForSeconds(Wait);
-        Debug.Log("Destoy Coroutine Finished");
         CmdDestroyGameObject();
     }
 

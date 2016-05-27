@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11438956}
   - 114: {fileID: 11496408}
   m_Layer: 0
-  m_Name: Big Vase
+  m_Name: do_BigVase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,22 +98,22 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
+    i0: 237
+    i1: 35
+    i2: 15
+    i3: 203
+    i4: 253
+    i5: 128
+    i6: 28
+    i7: 196
+    i8: 42
+    i9: 239
+    i10: 183
+    i11: 242
+    i12: 237
+    i13: 179
+    i14: 41
+    i15: 43
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
 --- !u!114 &11496408

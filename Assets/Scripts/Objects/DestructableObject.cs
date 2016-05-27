@@ -80,9 +80,7 @@ public class DestructableObject : NetworkBehaviour {
     // Delayed Network Destroy
     IEnumerator NetworkDestroy(float Wait)
     {
-        Debug.Log("Destoy Coroutine started");
         yield return new WaitForSeconds(Wait);
-        Debug.Log("Destoy Coroutine Finished");
         CmdDestroyGameObject();
     }
 

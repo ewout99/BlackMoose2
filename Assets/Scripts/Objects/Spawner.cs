@@ -63,7 +63,7 @@ public class Spawner :  NetworkBehaviour{
             while (currentObjectAmount < maxObjectAmount)
             {
                 GameObject randomObject = Objects[Random.Range(0, Objects.Length)];
-                Vector2 randomPosition = Availible[Random.Range(0, Availible.Count)];
+                Vector2 randomPosition = Availible[Random.Range(0, Availible.Count-1)];
                 Availible.Remove(randomPosition);
                 NotAvailible.Add(randomPosition);
                 currentObjectAmount++;
