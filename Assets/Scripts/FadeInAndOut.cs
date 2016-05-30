@@ -31,6 +31,16 @@ public class FadeInAndOut : MonoBehaviour {
         StartCoroutine(FadeIn(fadeCanvasGroups[currentPanel]));
     }
 
+    void Update()
+    {
+        fadeCanvasGroups[currentPanel].GetComponent<Image>().sprite = fadeCanvasGroups[currentPanel].GetComponent<SpriteRenderer>().sprite;
+
+        if ( Input.GetKey("space"))
+        {
+            SceneManager.LoadScene("02MenuScreen");
+        }
+    }
+
 	
 	IEnumerator FadeIn(CanvasGroup Panel)
     {
@@ -40,6 +50,7 @@ public class FadeInAndOut : MonoBehaviour {
             Panel.alpha += fadinspeed * Time.deltaTime;
             yield return null;
         }
+        Panel.GetComponent<Animator>().SetTrigger("playNext");
         yield return new WaitForSeconds(waitTime);
         while (Panel.alpha != 0)
         {

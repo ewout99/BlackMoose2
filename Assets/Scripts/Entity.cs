@@ -15,6 +15,11 @@ public class Entity : NetworkBehaviour {
     private SpriteRenderer spRef;
     private Camera camRef;
     private Rigidbody2D rBody2D;
+    private Color hold;
+
+    [SerializeField]
+    private int hitShakeIntesity, hitShakeAmount, deathShakeIntesity, deathShakeAmount;
+
 
     void Start()
     {
@@ -22,6 +27,7 @@ public class Entity : NetworkBehaviour {
         spRef = gameObject.GetComponent<SpriteRenderer>();
         aniRef = gameObject.GetComponent<Animator>();
         rBody2D = gameObject.GetComponent<Rigidbody2D>();
+        hold = spRef.color;
 
         if (isLocalPlayer || isServer)
         {
@@ -83,7 +89,7 @@ public class Entity : NetworkBehaviour {
             {
                 if (isLocalPlayer)
                 {
-                    camRef.GetComponent<CameraFollow>().ScreenShake(10, 28);
+                    camRef.GetComponent<CameraFollow>().ScreenShake(deathShakeIntesity, deathShakeAmount);
                 }
             }
             // For Enemies
@@ -135,7 +141,7 @@ public class Entity : NetworkBehaviour {
         StartCoroutine(ColorFlash(Color.red));
         if (isLocalPlayer)
         {
-            camRef.GetComponent<CameraFollow>().ScreenShake(7, 14);
+            camRef.GetComponent<CameraFollow>().ScreenShake(hitShakeIntesity, hitShakeAmount);
         }
     }
 
@@ -153,7 +159,6 @@ public class Entity : NetworkBehaviour {
     /// <returns>No return, is wait time</returns>
     IEnumerator ColorFlash(Color toColor)
     {
-        Color hold = gameObject.GetComponent<SpriteRenderer>().color;
         spRef.color = toColor;
         yield return new WaitForSeconds(0.1f);
         spRef.color = hold;

@@ -75,7 +75,7 @@ MonoBehaviour:
   Objects:
   - {fileID: 190470, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
   - {fileID: 190470, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
-  - {fileID: 190470, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
+  - {fileID: 138732, guid: 2e1588e38202d97438cff2555edd95e9, type: 2}
   SizeX: 3
   SizeY: 3
   maxObjectAmount: 5
@@ -90,6 +90,10 @@ Prefab:
       propertyPath: m_ServerOnly
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Objects.Array.data[2]
+      value: 
+      objectReference: {fileID: 138732, guid: 2e1588e38202d97438cff2555edd95e9, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 130152}

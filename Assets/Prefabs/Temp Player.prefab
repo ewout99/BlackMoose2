@@ -293,6 +293,8 @@ MonoBehaviour:
   - {fileID: 0}
   weaponsFire1: {fileID: 0}
   weaponsFire2: {fileID: 0}
+  shakeIntesityFire: 5
+  shakeAmountFire: 14
 --- !u!114 &11438560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -512,6 +514,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 100
   deathState: 0
+  hitShakeIntesity: 7
+  hitShakeAmount: 14
+  deathShakeIntesity: 10
+  deathShakeAmount: 28
 --- !u!212 &21221176
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -653,6 +659,30 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: AnimCons.Array.data[2]
       value: PlayerConRed
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hitShakeIntesity
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hitShakeAmount
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: deathShakeIntesity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: deathShakeAmount
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shakeIntesityFire
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shakeAmountFire
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

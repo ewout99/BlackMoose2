@@ -45,6 +45,9 @@ public class InputPlayer : NetworkBehaviour {
     private SpriteRenderer spRef;
     private Entity entiRef;
 
+    [SerializeField]
+    private int shakeIntesityFire, shakeAmountFire;
+
 
     // Use this for initialization
     void Start () {
@@ -82,6 +85,19 @@ public class InputPlayer : NetworkBehaviour {
         targetAngle = Mathf.Atan2(aimVec.y, aimVec.x) * Mathf.Rad2Deg;
         AdjustWeaponRotation();
 
+        if (mousePosition.x < transform.position.x && !spRef.flipX)
+        {
+            Debug.Log("Flipped");
+            spRef.flipX = true;
+            CmdFlipX(true);
+        }
+        else if (mousePosition.x > transform.position.x && spRef.flipX)
+        {
+            Debug.Log("No Flip");
+            spRef.flipX = false;
+            CmdFlipX(false);
+        }
+
         // Check the button input of the player
         moveVecInput.x = Input.GetAxisRaw("Horizontal");
         moveVecInput.y = Input.GetAxisRaw("Vertical");
@@ -111,16 +127,6 @@ public class InputPlayer : NetworkBehaviour {
                 aniRef.SetBool("walking", false);
                 aniRef.SetBool("running", true);
             }
-            if (moveVecInput.x < 0)
-            {
-                spRef.flipX = true;
-                CmdFlipX(true);
-            }
-            else if (moveVecInput.x > 0)
-            {
-                spRef.flipX = false;
-                CmdFlipX(false);
-            }
         }
         else
         {
@@ -132,7 +138,7 @@ public class InputPlayer : NetworkBehaviour {
         if (Input.GetButton("Fire") && canShoot)
         {
             canShoot = false;
-            playerCamera.GetComponent<CameraFollow>().ScreenShake(5, 14);
+            playerCamera.GetComponent<CameraFollow>().ScreenShake(shakeIntesityFire, shakeAmountFire);
             moveRef.Recoil(aimVec);
             StartCoroutine(ShootDelay());
             CmdShoot(aimVec);
