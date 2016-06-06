@@ -5,26 +5,18 @@ public class MovementPlayer : MonoBehaviour {
 
     //Editor Varibles
     [SerializeField]
-    private bool physicsBased;
-
-    //Public Variables
-
-    // Private Refremces
-    private GameObject oracleThing;
-    // RigidBody movement
-    private Rigidbody2D rBody2D;
-    private Vector2 moveVecRB;
-    private float moveSpeedRB;
-    // Time Based movement
-    private Vector2 moveVecTB;
-    private float moveSpeedTB;
-
-
-    [SerializeField]
     private float rampUpTime;
 
     [SerializeField]
     private float slowDownTime;
+
+    // Private Refremces
+    private GameObject oracleThing;
+    // RigidBody 
+    private Rigidbody2D rBody2D;
+    // Time Based movement
+    private Vector2 moveVecTB;
+    private float moveSpeedTB;
 
     // Speed && direction in the previous frame
     private float lastFrameSpeed;
@@ -35,7 +27,8 @@ public class MovementPlayer : MonoBehaviour {
     private float velocityCalSpeed;
 
 	// Use this for initialization
-	void Awake () {
+	void Awake ()
+    {
         rBody2D = gameObject.GetComponent<Rigidbody2D>();
     }
 	
@@ -48,16 +41,10 @@ public class MovementPlayer : MonoBehaviour {
     public void Move(float horizontal, float vertical, float speed)
     {
         rBody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-        // Physics based movment if enabled
-        if (physicsBased)
-        {
-            moveVecRB.x = horizontal;
-            moveVecRB.y = vertical;
-            moveSpeedRB = speed;
-        }
+
         // Time based movment
-        else
         {
+            // Speed Up
             if (horizontal != 0 || vertical != 0 && lastFrameSpeed != speed)
             {
                 calSpeed = Mathf.SmoothDamp(calSpeed, speed, ref velocityCalSpeed, rampUpTime);
@@ -66,6 +53,7 @@ public class MovementPlayer : MonoBehaviour {
                 lastDirection.x = horizontal;
                 lastDirection.y = vertical;
             }
+            // Slow Down
             else if(horizontal == 0 || vertical == 0 && lastFrameSpeed > 0)
             {
                 calSpeed = Mathf.SmoothDamp(calSpeed, 0, ref velocityCalSpeed , slowDownTime);
@@ -87,20 +75,14 @@ public class MovementPlayer : MonoBehaviour {
         rBody2D.MovePosition(new Vector2(transform.position.x, transform.position.y) + recoilDirection);
     }
 
-    /*  Update is called once per frame
-        Used for time based movement
-    */
+    /// <summary>
+    /// Update is called once per frame
+    /// Used for time based movement
+    /// </summary>
     void Update()
     {
         float dt = Time.deltaTime;
         gameObject.transform.Translate(moveVecTB.x * dt * moveSpeedTB, moveVecTB.y * dt * moveSpeedTB, 0f);
         moveVecTB = Vector2.zero;
-    }
-
-    // Used for physics based movement
-    void FixedUpdate()
-    {
-        rBody2D.AddForce(moveVecRB.normalized * moveSpeedRB * rBody2D.mass,ForceMode2D.Force);
-        moveVecRB = Vector2.zero;
     }
 }

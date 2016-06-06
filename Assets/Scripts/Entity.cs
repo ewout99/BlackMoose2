@@ -37,9 +37,17 @@ public class Entity : NetworkBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (!isLocalPlayer)
-            return;
-
+        if (gameObject.tag == "Player")
+        {
+            if (!isLocalPlayer)
+                return;
+        }
+        if (gameObject.tag == "Enemy")
+        {
+            if (!isServer)
+                return;
+        }
+        
         if (healthPoints <= 0 && !deathState)
         {
             CmdDeath();
@@ -78,8 +86,7 @@ public class Entity : NetworkBehaviour {
         {
             // Play Sound
 
-            // Play Animation
-            aniRef.SetTrigger("death");
+            // Play Animation           
 
             // Contrain rigidbody
             rBody2D.constraints = RigidbodyConstraints2D.FreezeAll;
@@ -87,6 +94,8 @@ public class Entity : NetworkBehaviour {
             // For Players
             if (gameObject.tag == "Player")
             {
+                aniRef.SetTrigger("death");
+
                 if (isLocalPlayer)
                 {
                     camRef.GetComponent<CameraFollow>().ScreenShake(deathShakeIntesity, deathShakeAmount);
@@ -95,9 +104,11 @@ public class Entity : NetworkBehaviour {
             // For Enemies
             else
             {
-                NetworkDestroy(aniRef.GetCurrentAnimatorClipInfo(0).Length);
+                // Add animtion on complete network destroy float 0.1f
+                StartCoroutine(NetworkDestroy(1f));
             }
         }
+
         else 
         {
             healthPoints = 100;

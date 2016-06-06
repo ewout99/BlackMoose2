@@ -14,7 +14,7 @@ GameObject:
   - 60: {fileID: 6079894}
   - 114: {fileID: 11438956}
   - 114: {fileID: 11496408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: do_BigVase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,6 +189,10 @@ Prefab:
       propertyPath: m_Animator
       value: 
       objectReference: {fileID: 9527048}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 190470}
