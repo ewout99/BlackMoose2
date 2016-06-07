@@ -127,7 +127,19 @@ public class InputPlayer : NetworkBehaviour {
                 aniRef.SetBool("walking", false);
                 aniRef.SetBool("running", true);
             }
+
+            if (CurrentFlipX == (moveVecInput.x < 0))
+            {
+                aniRef.SetBool("backwards", false);
+            }
+            else
+            {
+                aniRef.SetBool("backwards", true);
+            }
+
         }
+
+
         else
         {
             aniRef.SetBool("walking", false);
