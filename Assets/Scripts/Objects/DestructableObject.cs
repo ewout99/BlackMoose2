@@ -14,7 +14,7 @@ public class DestructableObject : NetworkBehaviour {
     private bool objectHit = false;
 
     // Refrence if for if it's created with a Object Spawner
-    private GameObject ParentSpawner;
+    private GameObject ParentSpawner = null;
 
     // Use this for initialization
     void Start ()
@@ -49,17 +49,28 @@ public class DestructableObject : NetworkBehaviour {
         objectHit = true;
         // Trigger Destroy animation
         aniRef.SetTrigger("destroy");
+
         // Play sound
 
         // Play Particle Effect
+
         gameObject.GetComponent<PolygonCollider2D>().enabled = false;
 
         if (ParentSpawner != null)
         {
             // needs fixing Trhoes errors when the objects are placed.
             StartCoroutine(NetworkDestroy(3f));
-
         }
+        // Sync Effects to client
+        RpcHit();
+    }
+
+    [ClientRpc]
+    private void RpcHit()
+    {
+        // Play Sound
+        // Play particle
+        gameObject.GetComponent<PolygonCollider2D>().enabled = false;
     }
 
     // Pulic function to assign a parent to the object 
@@ -71,7 +82,7 @@ public class DestructableObject : NetworkBehaviour {
     // When destroyed it and it has a parentSpawner it makes sure to create a new object
     void OnDestroy()
     {
-        if (ParentSpawner == true)
+        if (ParentSpawner != null)
         {
             ParentSpawner.GetComponent<Spawner>().CmdRemoveObject(transform.position);
         }

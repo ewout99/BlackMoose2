@@ -42,6 +42,7 @@ public class InputPlayer : NetworkBehaviour {
     private GameObject OracleRef;
     private MovementPlayer moveRef;
     private Animator aniRef;
+    private Animator weaponAniRef;
     private SpriteRenderer spRef;
     private Entity entiRef;
 
@@ -57,6 +58,7 @@ public class InputPlayer : NetworkBehaviour {
         spRef = gameObject.GetComponent<SpriteRenderer>();
         entiRef = gameObject.GetComponent<Entity>();
         weaponRef = transform.FindChild("Temp Weapon").gameObject;
+        weaponAniRef = weaponRef.GetComponent<Animator>();
         bulletSpawnRef = transform.FindChild("Temp Weapon").gameObject.transform.FindChild("Temp Spawn");
         inverseAttackspeed = 1f / attackSpeed;
 	}
@@ -87,14 +89,16 @@ public class InputPlayer : NetworkBehaviour {
 
         if (mousePosition.x < transform.position.x && !spRef.flipX)
         {
-            Debug.Log("Flipped");
+            // Debug.Log("Flipped");
             spRef.flipX = true;
+            weaponAniRef.SetBool("facingRight",false);
             CmdFlipX(true);
         }
         else if (mousePosition.x > transform.position.x && spRef.flipX)
         {
-            Debug.Log("No Flip");
+            // Debug.Log("No Flip");
             spRef.flipX = false;
+            weaponAniRef.SetBool("facingRight", true);
             CmdFlipX(false);
         }
 
@@ -117,6 +121,7 @@ public class InputPlayer : NetworkBehaviour {
         // Check which animation needs to be played
         if ( moveVecInput.x > 0 || moveVecInput.x < 0 || moveVecInput.y > 0 || moveVecInput.y < 0)
         {
+            // Are we running or walking
             if ( moveSpeedInput == walkSpeed)
             {
                 aniRef.SetBool("walking", true);
@@ -127,19 +132,17 @@ public class InputPlayer : NetworkBehaviour {
                 aniRef.SetBool("walking", false);
                 aniRef.SetBool("running", true);
             }
-
+            // Are we walking forward or backwards
             if (CurrentFlipX == (moveVecInput.x < 0))
             {
                 aniRef.SetBool("backwards", false);
             }
             else
             {
-                aniRef.SetBool("backwards", true);
+                aniRef.SetBool("backwards", true);              
             }
-
         }
-
-
+        // Not moving
         else
         {
             aniRef.SetBool("walking", false);
@@ -154,6 +157,7 @@ public class InputPlayer : NetworkBehaviour {
             moveRef.Recoil(aimVec);
             StartCoroutine(ShootDelay());
             CmdShoot(aimVec);
+            weaponAniRef.SetTrigger("fire");
         }
 
         // Pick up and drop the oracle
@@ -219,6 +223,7 @@ public class InputPlayer : NetworkBehaviour {
     private void FlipXHook(bool setTo)
     {
         gameObject.GetComponent<SpriteRenderer>().flipX = setTo;
+        CurrentFlipX = setTo;
     }
 
     // Determines the fire rate of the shooting

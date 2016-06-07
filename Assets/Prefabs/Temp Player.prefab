@@ -90,6 +90,8 @@ GameObject:
   - 212: {fileID: 21265224}
   - 114: {fileID: 11461824}
   - 114: {fileID: 11464822}
+  - 95: {fileID: 9580404}
+  - 114: {fileID: 11436636}
   m_Layer: 0
   m_Name: Temp Weapon
   m_TagString: Weapon
@@ -104,7 +106,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2, y: -0.35, z: 0}
+  m_LocalPosition: {x: 1.1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 463974}
@@ -130,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 0.08, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 443762}
@@ -204,6 +206,23 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 197c13817960d97468a157115ffe6b2f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &9580404
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194526}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4987b573130b449fb86b74b3f27843ac, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -295,6 +314,25 @@ MonoBehaviour:
   weaponsFire2: {fileID: 0}
   shakeIntesityFire: 5
   shakeAmountFire: 14
+--- !u!114 &11436636
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 0}
+  m_ParameterSendBits: 0
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
 --- !u!114 &11438560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -411,7 +449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cefea8be7e8e3e4cb5b4fbb16c01f48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  physicsBased: 0
   rampUpTime: 0.2
   slowDownTime: 0.1
 --- !u!114 &11461824
@@ -574,7 +611,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -354108773
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300008, guid: 27e3cb25c05d455499d1df12a1044490, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e302f9392b56b467aa534e8e456dfd9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

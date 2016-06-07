@@ -41,7 +41,7 @@ public class MovementPlayer : MonoBehaviour {
     public void Move(float horizontal, float vertical, float speed)
     {
         rBody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-
+        rBody2D.velocity = Vector2.zero;
         // Time based movment
         {
             // Speed Up
