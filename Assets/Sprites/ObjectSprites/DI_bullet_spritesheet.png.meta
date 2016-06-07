@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b7b4b52aa73f547bbba86cb0af9b61f6
-timeCreated: 1464793424
+timeCreated: 1465310069
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8,6 +8,8 @@ TextureImporter:
     21300002: DI_bullet_spritesheet_1
     21300004: DI_bullet_spritesheet_2
     21300006: DI_bullet_spritesheet_3
+    21300008: DI_bullet_spritesheet_4
+    21300010: DI_bullet_spritesheet_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -91,6 +93,28 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 36
+        y: 0
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DI_bullet_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DI_bullet_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 60
         y: 0
         width: 12
         height: 9
