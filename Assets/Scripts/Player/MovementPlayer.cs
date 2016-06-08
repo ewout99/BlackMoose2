@@ -72,7 +72,7 @@ public class MovementPlayer : MonoBehaviour {
         recoilDirection = recoilDirection.normalized;
         recoilDirection.x *= 0.1f;
         recoilDirection.y *= 0.1f;
-        rBody2D.MovePosition(new Vector2(transform.position.x, transform.position.y) + recoilDirection);
+        transform.Translate(recoilDirection);
     }
 
     /// <summary>

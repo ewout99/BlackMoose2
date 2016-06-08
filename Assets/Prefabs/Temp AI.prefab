@@ -66,9 +66,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.2}
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.4}
+  m_Size: {x: 1.4, y: 1.4}
 --- !u!95 &9572578
 Animator:
   serializedVersion: 3
@@ -76,9 +76,9 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121480}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 769244edbe3a443708ff00626a54ab6b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fe9c9736542ae74eba72c97fc59a987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveDistance: 15
+  attackDistance: 2
   targetObject: {fileID: 0}
   targetTransform: {fileID: 0}
   targetVector: {x: 0, y: 0, z: 0}
@@ -115,10 +117,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 100
   deathState: 0
-  hitShakeIntesity: 0
-  hitShakeAmount: 0
-  deathShakeIntesity: 0
-  deathShakeAmount: 0
+  hitShakeIntesity: 2
+  hitShakeAmount: 2
+  deathShakeIntesity: 2
+  deathShakeAmount: 2
 --- !u!114 &11445908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,12 +206,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121480}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1590678366, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Animator: {fileID: 0}
+  m_Animator: {fileID: 9572578}
   m_ParameterSendBits: 0
   param0: 
   param1: 
@@ -263,7 +265,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -354108773
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: da0069809ff7efc45abd6fbf92725e4d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 403311a4fbdc148658999431e184bffa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -313,6 +315,30 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: healthPoints
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: moveDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: attackDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hitShakeIntesity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hitShakeAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: deathShakeIntesity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: deathShakeAmount
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

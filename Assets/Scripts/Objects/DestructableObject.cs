@@ -82,7 +82,7 @@ public class DestructableObject : NetworkBehaviour {
     // When destroyed it and it has a parentSpawner it makes sure to create a new object
     void OnDestroy()
     {
-        if (ParentSpawner != null)
+        if (ParentSpawner)
         {
             ParentSpawner.GetComponent<Spawner>().CmdRemoveObject(transform.position);
         }

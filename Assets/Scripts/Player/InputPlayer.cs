@@ -42,7 +42,7 @@ public class InputPlayer : NetworkBehaviour {
     private GameObject OracleRef;
     private MovementPlayer moveRef;
     private Animator aniRef;
-    private Animator weaponAniRef;
+    private CustomNetworkAnim weaponAniRef;
     private SpriteRenderer spRef;
     private Entity entiRef;
 
@@ -58,7 +58,7 @@ public class InputPlayer : NetworkBehaviour {
         spRef = gameObject.GetComponent<SpriteRenderer>();
         entiRef = gameObject.GetComponent<Entity>();
         weaponRef = transform.FindChild("Temp Weapon").gameObject;
-        weaponAniRef = weaponRef.GetComponent<Animator>();
+        weaponAniRef = gameObject.GetComponent<CustomNetworkAnim>();
         bulletSpawnRef = transform.FindChild("Temp Weapon").gameObject.transform.FindChild("Temp Spawn");
         inverseAttackspeed = 1f / attackSpeed;
 	}
@@ -91,14 +91,14 @@ public class InputPlayer : NetworkBehaviour {
         {
             // Debug.Log("Flipped");
             spRef.flipX = true;
-            weaponAniRef.SetBool("facingRight",false);
+            weaponAniRef.CmdDirection(false);
             CmdFlipX(true);
         }
         else if (mousePosition.x > transform.position.x && spRef.flipX)
         {
             // Debug.Log("No Flip");
             spRef.flipX = false;
-            weaponAniRef.SetBool("facingRight", true);
+            weaponAniRef.CmdDirection(true);
             CmdFlipX(false);
         }
 
@@ -157,7 +157,7 @@ public class InputPlayer : NetworkBehaviour {
             moveRef.Recoil(aimVec);
             StartCoroutine(ShootDelay());
             CmdShoot(aimVec);
-            weaponAniRef.SetTrigger("fire");
+            weaponAniRef.CmdFire(true);
         }
 
         // Pick up and drop the oracle
@@ -186,7 +186,7 @@ public class InputPlayer : NetworkBehaviour {
     public void WeaponSwitch(int weaponIndex)
     {
         // Set new attackspeed;
-        inverseAttackspeed = 1/  bulletPrefabs[weaponIndex].GetComponent<Bullet>().attackSpeed;
+        inverseAttackspeed = 1 /  bulletPrefabs[weaponIndex].GetComponent<Bullet>().attackSpeed;
         // Set new spriterender;
         weaponRef.GetComponent<SpriteRenderer>().sprite = gunPrefabs[weaponIndex];
     }
@@ -230,6 +230,7 @@ public class InputPlayer : NetworkBehaviour {
     IEnumerator ShootDelay()
     {
         yield return new WaitForSeconds(inverseAttackspeed);
+        weaponAniRef.CmdFire(false);
         canShoot = true;
     }
 

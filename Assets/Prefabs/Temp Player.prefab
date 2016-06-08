@@ -57,6 +57,7 @@ GameObject:
   - 114: {fileID: 11417410}
   - 114: {fileID: 11489836}
   - 114: {fileID: 11413898}
+  - 114: {fileID: 11447170}
   m_Layer: 0
   m_Name: Temp Player
   m_TagString: Player
@@ -91,7 +92,6 @@ GameObject:
   - 114: {fileID: 11461824}
   - 114: {fileID: 11464822}
   - 95: {fileID: 9580404}
-  - 114: {fileID: 11436636}
   m_Layer: 0
   m_Name: Temp Weapon
   m_TagString: Weapon
@@ -314,25 +314,6 @@ MonoBehaviour:
   weaponsFire2: {fileID: 0}
   shakeIntesityFire: 5
   shakeAmountFire: 14
---- !u!114 &11436636
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1590678366, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Animator: {fileID: 9580404}
-  m_ParameterSendBits: 0
-  param0: 
-  param1: 
-  param2: 
-  param3: 
-  param4: 
-  param5: 
 --- !u!114 &11438560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -400,6 +381,17 @@ MonoBehaviour:
   m_Text: 'Player 1
 
 '
+--- !u!114 &11447170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29119b358bde74469fd82e0d2681434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11447558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -720,6 +712,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: shakeAmountFire
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPlayerAuthority
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
