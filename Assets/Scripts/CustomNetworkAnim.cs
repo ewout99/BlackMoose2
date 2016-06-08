@@ -32,7 +32,6 @@ public class CustomNetworkAnim : NetworkBehaviour {
     [Command]
     public void CmdDirection(bool right)
     {
-        Debug.Log("Cmd Direction");
         direction = right;
     }
 
@@ -48,7 +47,6 @@ public class CustomNetworkAnim : NetworkBehaviour {
 
     void SetDirection(bool state)
     {
-        Debug.Log("Facing hook");
         weaponAniRef.SetBool("facingRight", state);
         direction = state;
     }

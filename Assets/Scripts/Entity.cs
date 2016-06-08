@@ -106,6 +106,7 @@ public class Entity : NetworkBehaviour {
             {
                 // Add animtion on complete network destroy float 0.1f
                 StartCoroutine(NetworkDestroy(1f));
+                gameObject.GetComponent<AiEnemy>().EnemyDestoryed();
             }
         }
 

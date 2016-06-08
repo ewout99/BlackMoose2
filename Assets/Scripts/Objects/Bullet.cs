@@ -58,10 +58,15 @@ public class Bullet : NetworkBehaviour {
         {
             return;
         }
+
         if ((col.collider.tag != origion && col.collider.GetComponent<Entity>()) || (friendlyFire && col.collider.GetComponent<Entity>()))
         {
             col.collider.GetComponent<Entity>().CmdSubtractHealth(bulletDmg);
             RpcDestroyThis();
+        }
+        else if (col.collider.tag == gameObject.tag)
+        {
+            // Do nothing
         }
         else
         {
@@ -75,10 +80,15 @@ public class Bullet : NetworkBehaviour {
         {
             return;
         }
+
         if ((other.tag != origion && other.GetComponent<Entity>()) || (friendlyFire && other.GetComponent<Entity>()))
         {
             other.GetComponent<Entity>().CmdSubtractHealth(bulletDmg);
             RpcDestroyThis();
+        }
+        else if (other.tag == gameObject.tag)
+        {
+            // Do nothing
         }
         else
         {

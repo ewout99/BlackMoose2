@@ -97,12 +97,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fe9c9736542ae74eba72c97fc59a987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDistance: 15
-  attackDistance: 2
+  moveDistance: 200
+  attackDistance: 2.5
+  attackDamage: 15
   targetObject: {fileID: 0}
   targetTransform: {fileID: 0}
   targetVector: {x: 0, y: 0, z: 0}
-  speed: 2
+  speed: 3
   nextWaypointDistance: 1
 --- !u!114 &11444722
 MonoBehaviour:
@@ -171,7 +172,7 @@ MonoBehaviour:
     i13: 188
     i14: 253
     i15: 49
-  m_ServerOnly: 1
+  m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
 --- !u!114 &11457846
 MonoBehaviour:
@@ -290,7 +291,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_ServerOnly
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled
@@ -318,11 +319,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: moveDistance
-      value: 15
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: attackDistance
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: hitShakeIntesity
@@ -339,6 +340,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: deathShakeAmount
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: attackDamage
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

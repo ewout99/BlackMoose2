@@ -3200,6 +3200,7 @@ MonoBehaviour:
   - {fileID: 190470, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
   - {fileID: 190470, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
   - {fileID: 138732, guid: 2e1588e38202d97438cff2555edd95e9, type: 2}
+  - {fileID: 121480, guid: 84a710ac8b4f4664691d16a79dbcfd31, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -3241,8 +3242,8 @@ MonoBehaviour:
   matchSize: 4
   m_ShowLobbyGUI: 0
   m_MaxPlayers: 4
-  m_MaxPlayersPerConnection: 2
-  m_MinPlayers: 1
+  m_MaxPlayersPerConnection: 1
+  m_MinPlayers: 3
   m_LobbyPlayerPrefab: {fileID: 11487034, guid: ad727d7e1462ecc4f83c898ecc501997,
     type: 2}
   m_GamePlayerPrefab: {fileID: 138796, guid: 428a60be8bc71944797bbc42a3697bae, type: 2}
@@ -5523,7 +5524,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_GamePlayerPrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 138796, guid: 428a60be8bc71944797bbc42a3697bae, type: 2}
     - target: {fileID: 0}
       propertyPath: m_MatchWidthOrHeight
       value: 1
@@ -5607,6 +5608,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_CustomConfig
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_UseSimulator
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PlayerPrefab
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

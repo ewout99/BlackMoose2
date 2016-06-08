@@ -10,13 +10,16 @@ public class AiController : NetworkBehaviour {
     // All the currently conneted players
     private GameObject[] Players;
 
+    //Private Ref
+    private GameObject PathfinderRef;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         // Enable random spawnpoints
-
-	}
+        PathfinderRef = GameObject.Find("PathFinder");
+        PathfinderRef.GetComponent<AstarPath>().Scan();
+    }
 	
 	// Update is called once per frame
 	void Update () {

@@ -39,7 +39,6 @@ public class IngamePlayer : NetworkBehaviour {
     void Start ()
     {
         GetComponent<Animator>().runtimeAnimatorController = ((RuntimeAnimatorController)(Resources.Load(AnimCons[typeIngame])));
-        transform.FindChild("Temp Weapon").GetComponent<SpriteRenderer>().sprite = WeaponSprites[typeIngame];
         nameField.text = nameIngame;
         nameField.color = colorIngame;
         pickRef = GetComponent<PickUp>();

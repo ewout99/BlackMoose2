@@ -12,7 +12,7 @@ namespace UnityStandardAssets.Network
     public class LobbyPlayer : NetworkLobbyPlayer
     {
         static Color[] Colors = new Color[] { Color.magenta, Color.red, Color.cyan, Color.blue, Color.green, Color.yellow };
-        static int[] Sprites = new int[] { 0, 1, 2 };
+        static int[] Sprites = new int[] { 0, 1, 2, 3};
 
         [SerializeField]
         private Sprite[] localSprites;
@@ -73,6 +73,7 @@ namespace UnityStandardAssets.Network
             OnMyName(playerName);
             OnMyColor(playerColor);
             OnMySprite(playerSprite);
+            readyToBegin = false;
         }
 
         public override void OnStartAuthority()

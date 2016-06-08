@@ -5,16 +5,25 @@ using Pathfinding;
 
 public class AiEnemy : NetworkBehaviour {
 
+    // Inspector fields
     [SerializeField]
     private float moveDistance;
 
     [SerializeField]
     private float attackDistance;
 
+    [SerializeField]
+    private float attackDamage;
+
     // Targets to move to
     public GameObject targetObject = null;
     public Transform targetTransform = null;
     public Vector3 targetVector = Vector3.zero;
+
+    // Private variables
+    private Vector3 storedTargetPoint;
+
+    private bool gettingPath;
 
     // Private refs
     private Entity entiyRef;
@@ -22,8 +31,7 @@ public class AiEnemy : NetworkBehaviour {
     private GameObject PathfinderRef;
     private Seeker sRef;
     private SpriteRenderer spRef;
-
-    private bool gettingPath;
+    private GameObject ParentSpawner = null;
 
     // State Enum
     enum States
@@ -57,9 +65,7 @@ public class AiEnemy : NetworkBehaviour {
         spRef = GetComponent<SpriteRenderer>();
         entiyRef = GetComponent<Entity>();
         PathfinderRef = GameObject.Find("PathFinder");
-        PathfinderRef.GetComponent<AstarPath>().Scan();
         targetObject = PathfinderRef.GetComponent<AiController>().GetTarget();
-
     }
 
     // Update is called once per frame
@@ -69,14 +75,36 @@ public class AiEnemy : NetworkBehaviour {
         if (!isServer)
         {
             return;
-        }     
-        
-        if (moveDistance > Vector3.SqrMagnitude(targetObject.transform.position - transform.position ))
-        {
-            currentState = States.Walking;
         }
 
-        if (attackDistance > Vector3.SqrMagnitude(targetObject.transform.position - transform.position))
+        // Determine State
+        if (targetObject != null)
+        {
+            if (moveDistance > Vector3.Distance(targetObject.transform.position , transform.position))
+            {
+                currentState = States.Walking;
+            }
+        }
+        else if (targetTransform != null)
+        {
+            if (moveDistance > Vector3.Distance(targetTransform.position , transform.position))
+            {
+                currentState = States.Walking;
+            }
+        }
+        else if (targetVector != Vector3.zero)
+        {
+            if (moveDistance > Vector3.Distance(targetVector , transform.position))
+            {
+                currentState = States.Walking;
+            }
+        }
+        else
+        {
+            currentState = States.Idle;
+        }
+
+        if (targetObject != null && (attackDistance > Vector3.Distance(targetObject.transform.position, transform.position)))
         {
             currentState = States.Attacking;
         }
@@ -132,6 +160,10 @@ public class AiEnemy : NetworkBehaviour {
             {
                 Debug.Log("Getting new target");
                 targetObject = PathfinderRef.GetComponent<AiController>().GetTarget();
+                if (targetObject.GetComponent<Entity>().deathState)
+                {
+                    targetObject = PathfinderRef.GetComponent<AiController>().GetTarget();
+                }
             }
             //We have no path and no target to move
             return;
@@ -181,6 +213,7 @@ public class AiEnemy : NetworkBehaviour {
             currentWaypoint++;
             return;
         }
+        ReEvalutePath();
     }
 
     /// <summary>
@@ -190,18 +223,53 @@ public class AiEnemy : NetworkBehaviour {
     {
         gettingPath = true;
         sRef.StartPath(gameObject.transform.position, tVector, OnPathComplete);
+        storedTargetPoint = tVector;
     }
 
     public void GoToTarget(Transform tTransform)
     {
         gettingPath = true;
         sRef.StartPath(gameObject.transform.position, tTransform.position, OnPathComplete);
+        storedTargetPoint = tTransform.position;
     }
 
     public void GoToTarget(GameObject tObject)
     {
         gettingPath = true;
         sRef.StartPath(gameObject.transform.position, tObject.transform.position, OnPathComplete);
+        storedTargetPoint = tObject.transform.position;
+    }
+
+
+    /// <summary>
+    ///  Re Evaluthe the path if the target is way of reset the path
+    /// </summary>
+    private void ReEvalutePath()
+    {
+        if (targetObject != null)
+        {
+            if ((attackDistance * 3) < Vector3.Distance(storedTargetPoint , targetObject.transform.position))
+            {
+                ResetPath();
+            }
+            return;
+        }
+        else if (targetTransform != null)
+        {
+            if ((attackDistance * 3) < Vector3.Distance(storedTargetPoint , targetTransform.position))
+            {
+                ResetPath();
+            }
+            return;
+        }
+        else if (targetVector != Vector3.zero)
+        {
+            if ((attackDistance * 3) < Vector3.Distance(storedTargetPoint , targetVector))
+            {
+                ResetPath();
+            }
+            return;
+        }
     }
 
     /// <summary>
@@ -239,9 +307,28 @@ public class AiEnemy : NetworkBehaviour {
     // Attack functions
     private void Attack()
     {
+        if (targetObject.GetComponent<Entity>().deathState)
+        {
+            targetObject = PathfinderRef.GetComponent<AiController>().GetTarget();
+            return;
+        }
         aniRef.SetTrigger("attack");
     }
 
+    public void OnAttackComplete()
+    {
+        if ( attackDistance > Vector3.Magnitude(transform.position - targetObject.transform.position))
+        {
+            Debug.Log("attack succes");
+            targetObject.GetComponent<Entity>().CmdSubtractHealth(attackDamage);
+        }
+        else
+        {
+            Debug.Log("attack failed");
+        }
+    }
+
+    // Idle functions
     private void Idling()
     {
         aniRef.SetBool("walking", false);
@@ -258,6 +345,20 @@ public class AiEnemy : NetworkBehaviour {
         Debug.Log("I'm defaulting something went wrong");
     }
 
+
+    public void Spawned(GameObject parent)
+    {
+        ParentSpawner = parent;
+    }
+
+    public void EnemyDestoryed()
+    {
+        Debug.Log("EnemyDesrotyed Called");
+        if (ParentSpawner)
+        {
+            ParentSpawner.GetComponent<EnemySpawner>().RemoveObject();
+        }
+    }
 
     [Command]
     void CmdFlipX(bool setTo)
