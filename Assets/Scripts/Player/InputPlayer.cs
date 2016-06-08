@@ -59,7 +59,7 @@ public class InputPlayer : NetworkBehaviour {
         entiRef = gameObject.GetComponent<Entity>();
         weaponRef = transform.FindChild("Temp Weapon").gameObject;
         weaponAniRef = gameObject.GetComponent<CustomNetworkAnim>();
-        bulletSpawnRef = transform.FindChild("Temp Weapon").gameObject.transform.FindChild("Temp Spawn");
+        bulletSpawnRef = weaponRef.gameObject.transform.FindChild("Temp Spawn");
         inverseAttackspeed = 1f / attackSpeed;
 	}
 	
@@ -69,15 +69,10 @@ public class InputPlayer : NetworkBehaviour {
         // Check for Local Player
         if (!isLocalPlayer)
         {
-            if (entiRef.deathState)
-            {
-                weaponRef.SetActive(false);
-            }
             return;
         }
         else if (entiRef.deathState)
         {
-            weaponRef.SetActive(false);
             return;
         }
 
@@ -147,7 +142,13 @@ public class InputPlayer : NetworkBehaviour {
         {
             aniRef.SetBool("walking", false);
             aniRef.SetBool("running", false);
+            if (Input.GetButtonDown("Dance"))
+            {
+                aniRef.SetTrigger("dancing");
+            }
         }
+
+       
 
         // Firing bullet
         if (Input.GetButton("Fire") && canShoot)
