@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: e302f9392b56b467aa534e8e456dfd9b
-timeCreated: 1464609437
+timeCreated: 1465398914
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -76,7 +76,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 36
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -85,9 +85,9 @@ TextureImporter:
     - name: wpn_Staff_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 38
         y: 36
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -96,9 +96,9 @@ TextureImporter:
     - name: wpn_Staff_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 76
         y: 36
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -107,9 +107,9 @@ TextureImporter:
     - name: wpn_Staff_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 114
         y: 36
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -118,9 +118,9 @@ TextureImporter:
     - name: wpn_Staff_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 160
+        x: 190
         y: 36
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -131,7 +131,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 24
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -140,9 +140,9 @@ TextureImporter:
     - name: wpn_Staff_spritesheet_6
       rect:
         serializedVersion: 2
-        x: 32
+        x: 38
         y: 24
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -151,9 +151,9 @@ TextureImporter:
     - name: wpn_Staff_spritesheet_7
       rect:
         serializedVersion: 2
-        x: 64
+        x: 76
         y: 24
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -162,9 +162,9 @@ TextureImporter:
     - name: wpn_Staff_spritesheet_8
       rect:
         serializedVersion: 2
-        x: 96
+        x: 114
         y: 24
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -173,9 +173,9 @@ TextureImporter:
     - name: wpn_Staff_spritesheet_9
       rect:
         serializedVersion: 2
-        x: 128
+        x: 152
         y: 24
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -184,9 +184,9 @@ TextureImporter:
     - name: wpn_Staff_spritesheet_10
       rect:
         serializedVersion: 2
-        x: 160
+        x: 190
         y: 24
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -197,7 +197,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 12
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -206,9 +206,9 @@ TextureImporter:
     - name: wpn_Staff_spritesheet_12
       rect:
         serializedVersion: 2
-        x: 32
+        x: 38
         y: 12
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -217,9 +217,9 @@ TextureImporter:
     - name: wpn_Staff_spritesheet_13
       rect:
         serializedVersion: 2
-        x: 64
+        x: 76
         y: 12
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -228,9 +228,9 @@ TextureImporter:
     - name: wpn_Staff_spritesheet_14
       rect:
         serializedVersion: 2
-        x: 96
+        x: 114
         y: 12
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -239,9 +239,9 @@ TextureImporter:
     - name: wpn_Staff_spritesheet_15
       rect:
         serializedVersion: 2
-        x: 128
+        x: 152
         y: 12
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -250,9 +250,9 @@ TextureImporter:
     - name: wpn_Staff_spritesheet_16
       rect:
         serializedVersion: 2
-        x: 160
+        x: 190
         y: 12
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -263,7 +263,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -272,9 +272,9 @@ TextureImporter:
     - name: wpn_Staff_spritesheet_18
       rect:
         serializedVersion: 2
-        x: 32
+        x: 38
         y: 0
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -283,9 +283,9 @@ TextureImporter:
     - name: wpn_Staff_spritesheet_19
       rect:
         serializedVersion: 2
-        x: 64
+        x: 76
         y: 0
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -294,9 +294,9 @@ TextureImporter:
     - name: wpn_Staff_spritesheet_20
       rect:
         serializedVersion: 2
-        x: 96
+        x: 114
         y: 0
-        width: 32
+        width: 38
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
