@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 403311a4fbdc148658999431e184bffa
-timeCreated: 1465310188
+timeCreated: 1465390122
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -76,407 +76,381 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
+        y: 102
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -7, y: 11}
-        - {x: -15, y: 6}
-        - {x: -15, y: -15}
-        - {x: -14, y: -16}
-        - {x: 15, y: -16}
-        - {x: 16, y: -15}
-        - {x: 16, y: 2}
-        - {x: 11, y: 11}
+      - - {x: -12, y: 12}
+        - {x: -16, y: 3}
+        - {x: -16, y: -17}
+        - {x: 15, y: -17}
+        - {x: 15, y: 8}
+        - {x: 11, y: 12}
     - name: DI_Enemy_Spritesheet_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 96
+        y: 102
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -7, y: 12}
-        - {x: -15, y: 4}
-        - {x: -15, y: -13}
-        - {x: -12, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 9}
-        - {x: 10, y: 12}
+      - - {x: -11, y: 13}
+        - {x: -16, y: 10}
+        - {x: -16, y: -17}
+        - {x: 15, y: -17}
+        - {x: 15, y: 7}
+        - {x: 11, y: 13}
     - name: DI_Enemy_Spritesheet_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 96
+        y: 102
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -7, y: 12}
-        - {x: -15, y: 4}
-        - {x: -15, y: -10}
-        - {x: -12, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 9}
-        - {x: 8, y: 12}
+      - - {x: -16, y: 13}
+        - {x: -16, y: -17}
+        - {x: 15, y: -17}
+        - {x: 15, y: 7}
+        - {x: 12, y: 13}
     - name: DI_Enemy_Spritesheet_3
       rect:
         serializedVersion: 2
         x: 96
-        y: 96
+        y: 102
         width: 32
-        height: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 12}
+        - {x: -16, y: 4}
+        - {x: -16, y: -17}
+        - {x: 15, y: -17}
+        - {x: 15, y: 6}
+        - {x: 8, y: 12}
+    - name: DI_Enemy_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 68
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 11}
+        - {x: -16, y: 2}
+        - {x: -16, y: -17}
+        - {x: 16, y: -17}
+        - {x: 16, y: 5}
+        - {x: 14, y: 11}
+    - name: DI_Enemy_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 68
+        width: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -8, y: 11}
-        - {x: -15, y: 9}
-        - {x: -15, y: -11}
-        - {x: -13, y: -16}
-        - {x: 15, y: -16}
-        - {x: 16, y: -14}
-        - {x: 16, y: 1}
-        - {x: 13, y: 11}
-    - name: DI_Enemy_Spritesheet_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 7, y: 10}
-        - {x: -8, y: 10}
-        - {x: -16, y: 1}
-        - {x: -16, y: -5}
-        - {x: -14, y: -12}
-        - {x: -12, y: -16}
-        - {x: 13, y: -16}
-        - {x: 16, y: -12}
-        - {x: 16, y: -1}
-        - {x: 14, y: 4}
-    - name: DI_Enemy_Spritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -7, y: 10}
-        - {x: -16, y: 3}
-        - {x: -16, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 5}
-        - {x: 8, y: 10}
+        - {x: -15, y: 6}
+        - {x: -16, y: 2}
+        - {x: -16, y: -17}
+        - {x: 16, y: -17}
+        - {x: 16, y: 3}
+        - {x: 6, y: 11}
     - name: DI_Enemy_Spritesheet_6
       rect:
         serializedVersion: 2
         x: 64
-        y: 64
+        y: 68
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -10, y: 9}
-        - {x: -15, y: 1}
-        - {x: -15, y: -10}
-        - {x: -10, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 1}
-        - {x: 8, y: 9}
+      - - {x: -9, y: 10}
+        - {x: -16, y: 3}
+        - {x: -16, y: -17}
+        - {x: 15, y: -17}
+        - {x: 15, y: 6}
+        - {x: 7, y: 10}
     - name: DI_Enemy_Spritesheet_7
       rect:
         serializedVersion: 2
         x: 96
-        y: 64
+        y: 68
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -13, y: 11}
-        - {x: -15, y: 8}
-        - {x: -15, y: -7}
-        - {x: -10, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 10}
-        - {x: 12, y: 11}
+      - - {x: -14, y: 12}
+        - {x: -16, y: 5}
+        - {x: -16, y: -17}
+        - {x: 15, y: -17}
+        - {x: 15, y: 12}
     - name: DI_Enemy_Spritesheet_8
       rect:
         serializedVersion: 2
         x: 128
-        y: 64
+        y: 68
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -16, y: 12}
-        - {x: -16, y: -14}
-        - {x: -13, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 9}
-        - {x: 8, y: 12}
+      - - {x: 4, y: 13}
+        - {x: -8, y: 13}
+        - {x: -14, y: 4}
+        - {x: -16, y: -6}
+        - {x: -16, y: -17}
+        - {x: 15, y: -17}
+        - {x: 16, y: -12}
+        - {x: 16, y: 7}
+        - {x: 9, y: 12}
     - name: DI_Enemy_Spritesheet_9
       rect:
         serializedVersion: 2
         x: 160
-        y: 64
+        y: 68
         width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -15, y: 10}
-        - {x: -16, y: 9}
-        - {x: -16, y: -14}
-        - {x: -15, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 7}
-        - {x: 7, y: 10}
-    - name: DI_Enemy_Spritesheet_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -7, y: 11}
-        - {x: -16, y: 1}
-        - {x: -16, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 3}
-        - {x: 12, y: 11}
+        - {x: -13, y: 10}
+        - {x: -16, y: 0}
+        - {x: -16, y: -17}
+        - {x: 15, y: -17}
+        - {x: 16, y: -14}
+        - {x: 16, y: 4}
+        - {x: 11, y: 11}
+    - name: DI_Enemy_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 34
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 12}
+        - {x: -16, y: 3}
+        - {x: -16, y: -17}
+        - {x: 16, y: -17}
+        - {x: 16, y: 4}
+        - {x: 7, y: 12}
     - name: DI_Enemy_Spritesheet_11
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 34
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -8, y: 11}
-        - {x: -16, y: 8}
-        - {x: -16, y: -15}
-        - {x: -14, y: -16}
-        - {x: 15, y: -16}
-        - {x: 16, y: -15}
-        - {x: 16, y: 6}
-        - {x: 14, y: 11}
+      - - {x: -11, y: 12}
+        - {x: -16, y: 3}
+        - {x: -16, y: -17}
+        - {x: 16, y: -17}
+        - {x: 16, y: 11}
+        - {x: 6, y: 12}
     - name: DI_Enemy_Spritesheet_12
       rect:
         serializedVersion: 2
         x: 64
-        y: 32
+        y: 34
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -16, y: 15}
-        - {x: -16, y: -11}
-        - {x: -12, y: -16}
-        - {x: 15, y: -16}
-        - {x: 16, y: -11}
-        - {x: 16, y: 9}
-        - {x: 4, y: 15}
+      - - {x: -16, y: 6}
+        - {x: -16, y: -17}
+        - {x: 15, y: -17}
+        - {x: 16, y: -14}
+        - {x: 16, y: 16}
+        - {x: 5, y: 16}
+        - {x: -14, y: 12}
     - name: DI_Enemy_Spritesheet_13
       rect:
         serializedVersion: 2
         x: 96
-        y: 32
+        y: 34
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -16, y: 16}
-        - {x: -16, y: -3}
-        - {x: -9, y: -16}
-        - {x: 14, y: -16}
-        - {x: 16, y: -11}
-        - {x: 16, y: 11}
-        - {x: 6, y: 16}
+      - - {x: -6, y: 17}
+        - {x: -16, y: 9}
+        - {x: -16, y: -17}
+        - {x: 16, y: -17}
+        - {x: 16, y: 17}
     - name: DI_Enemy_Spritesheet_14
       rect:
         serializedVersion: 2
         x: 128
-        y: 32
+        y: 34
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -11, y: 16}
-        - {x: -16, y: 9}
-        - {x: -16, y: -14}
-        - {x: -15, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 9}
-        - {x: 4, y: 16}
+      - - {x: 7, y: 17}
+        - {x: -4, y: 17}
+        - {x: -10, y: 15}
+        - {x: -16, y: 1}
+        - {x: -16, y: -17}
+        - {x: 15, y: -17}
+        - {x: 16, y: -15}
+        - {x: 16, y: 11}
     - name: DI_Enemy_Spritesheet_15
       rect:
         serializedVersion: 2
         x: 160
-        y: 32
+        y: 34
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 8, y: 11}
-        - {x: -4, y: 12}
-        - {x: -9, y: 12}
-        - {x: -16, y: 8}
-        - {x: -16, y: -13}
-        - {x: -12, y: -16}
-        - {x: 15, y: -16}
-        - {x: 16, y: -12}
-        - {x: 16, y: 0}
-        - {x: 15, y: 5}
+      - - {x: -16, y: 13}
+        - {x: -16, y: -17}
+        - {x: 16, y: -17}
+        - {x: 16, y: 9}
+        - {x: 14, y: 13}
     - name: DI_Enemy_Spritesheet_16
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -7, y: 11}
-        - {x: -15, y: 6}
-        - {x: -15, y: -15}
-        - {x: -14, y: -16}
-        - {x: 15, y: -16}
-        - {x: 16, y: -15}
-        - {x: 16, y: 2}
-        - {x: 11, y: 11}
+      - - {x: -12, y: 12}
+        - {x: -16, y: 3}
+        - {x: -16, y: -17}
+        - {x: 15, y: -17}
+        - {x: 15, y: 8}
+        - {x: 11, y: 12}
     - name: DI_Enemy_Spritesheet_17
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 10, y: 13}
-        - {x: -6, y: 13}
-        - {x: -15, y: 12}
-        - {x: -15, y: -15}
-        - {x: -14, y: -16}
-        - {x: 14, y: -16}
-        - {x: 16, y: -11}
-        - {x: 16, y: 0}
-        - {x: 15, y: 7}
+      - - {x: -10, y: 14}
+        - {x: -16, y: 7}
+        - {x: -16, y: -17}
+        - {x: 15, y: -17}
+        - {x: 15, y: 6}
+        - {x: 7, y: 14}
     - name: DI_Enemy_Spritesheet_18
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -13, y: 11}
-        - {x: -15, y: 10}
-        - {x: -15, y: -15}
-        - {x: -14, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 8}
-        - {x: 8, y: 11}
+      - - {x: -16, y: -17}
+        - {x: 15, y: -17}
+        - {x: 15, y: 12}
+        - {x: -6, y: 12}
+        - {x: -16, y: 2}
     - name: DI_Enemy_Spritesheet_19
       rect:
         serializedVersion: 2
         x: 96
         y: 0
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -8, y: 6}
-        - {x: -16, y: 0}
-        - {x: -16, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 0}
-        - {x: 6, y: 6}
+      - - {x: -12, y: 7}
+        - {x: -16, y: -1}
+        - {x: -16, y: -17}
+        - {x: 16, y: -17}
+        - {x: 16, y: 5}
+        - {x: 15, y: 7}
     - name: DI_Enemy_Spritesheet_20
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 8, y: 3}
-        - {x: -5, y: 3}
-        - {x: -16, y: -8}
-        - {x: -16, y: -16}
-        - {x: 14, y: -16}
-        - {x: 16, y: -14}
-        - {x: 16, y: -4}
-        - {x: 14, y: 1}
+      - - {x: -6, y: 4}
+        - {x: -7, y: 3}
+        - {x: -16, y: -4}
+        - {x: -16, y: -17}
+        - {x: 16, y: -17}
+        - {x: 16, y: -5}
+        - {x: 8, y: 4}
     - name: DI_Enemy_Spritesheet_21
       rect:
         serializedVersion: 2
         x: 160
         y: 0
         width: 32
-        height: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -6, y: 4}
-        - {x: -16, y: -8}
-        - {x: -16, y: -16}
-        - {x: 15, y: -16}
-        - {x: 16, y: -13}
-        - {x: 16, y: -2}
-        - {x: 7, y: 4}
+      - - {x: -7, y: 5}
+        - {x: -16, y: 2}
+        - {x: -16, y: -17}
+        - {x: 16, y: -17}
+        - {x: 16, y: -7}
+        - {x: 9, y: 5}
     outline: []
   spritePackingTag: 
   userData: 
