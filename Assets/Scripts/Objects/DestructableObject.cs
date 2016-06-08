@@ -84,7 +84,7 @@ public class DestructableObject : NetworkBehaviour {
     {
         if (ParentSpawner)
         {
-            ParentSpawner.GetComponent<Spawner>().CmdRemoveObject(transform.position);
+            ParentSpawner.GetComponent<Spawner>().RemoveObject(transform.position);
         }
     }
 

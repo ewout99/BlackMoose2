@@ -18,8 +18,6 @@ public class ExtendedLobbyHook : LobbyHook {
         gameRef.typeIngame = lobbyRef.playerSprite;
         gameRef.colorIngame = lobbyRef.playerColor;
 
-        Debug.Log("Color and name set");
-
         base.OnLobbyServerSceneLoadedForPlayer(manager, lobbyPlayer, gamePlayer);
     }
 }

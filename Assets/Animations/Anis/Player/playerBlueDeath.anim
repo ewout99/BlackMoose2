@@ -19,7 +19,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300034, guid: 27e3cb25c05d455499d1df12a1044490, type: 3}
+      value: {fileID: 21300010, guid: 27e3cb25c05d455499d1df12a1044490, type: 3}
     - time: 0.083333336
       value: {fileID: 21300036, guid: 27e3cb25c05d455499d1df12a1044490, type: 3}
     - time: 0.16666667
@@ -48,7 +48,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300034, guid: 27e3cb25c05d455499d1df12a1044490, type: 3}
+    - {fileID: 21300010, guid: 27e3cb25c05d455499d1df12a1044490, type: 3}
     - {fileID: 21300036, guid: 27e3cb25c05d455499d1df12a1044490, type: 3}
     - {fileID: 21300038, guid: 27e3cb25c05d455499d1df12a1044490, type: 3}
     - {fileID: 21300040, guid: 27e3cb25c05d455499d1df12a1044490, type: 3}
@@ -79,4 +79,11 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: SetWeaponDisplay
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

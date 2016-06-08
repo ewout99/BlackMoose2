@@ -4,18 +4,22 @@ using System.Collections;
 
 public class CustomNetworkAnim : NetworkBehaviour {
 
+    // SyncVars
     [SyncVar(hook = "SetFire")]
     private bool firing;
 
     [SyncVar(hook = "SetDirection")]
     private bool direction;
 
+    //Private refrences
     private Animator weaponAniRef;
+    private GameObject weaponRef;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
-        weaponAniRef = transform.FindChild("Temp Weapon").gameObject.GetComponent<Animator>();
+        weaponRef = transform.FindChild("Temp Weapon").gameObject;
+        weaponAniRef = weaponRef.GetComponent<Animator>();
     }
 
     // Send network commands
@@ -28,6 +32,7 @@ public class CustomNetworkAnim : NetworkBehaviour {
     [Command]
     public void CmdDirection(bool right)
     {
+        Debug.Log("Cmd Direction");
         direction = right;
     }
 
@@ -43,7 +48,17 @@ public class CustomNetworkAnim : NetworkBehaviour {
 
     void SetDirection(bool state)
     {
+        Debug.Log("Facing hook");
         weaponAniRef.SetBool("facingRight", state);
         direction = state;
+    }
+
+    void SetWeaponDisplay(int inputInt)
+    {
+        if (inputInt == 0)
+            weaponRef.SetActive(false);
+        else
+            weaponRef.SetActive(true);
+        Debug.Log("Weapon Display Animation"); 
     }
 }

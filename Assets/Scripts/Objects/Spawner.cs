@@ -84,8 +84,7 @@ public class Spawner :  NetworkBehaviour{
     }
 
     // Remove a object from the network
-    [Command]
-    public void CmdRemoveObject(Vector2 objectPosition)
+    public void RemoveObject(Vector2 objectPosition)
     {
         objectPosition = ((Vector2)transform.position - objectPosition);
         NotAvailible.Remove(objectPosition);

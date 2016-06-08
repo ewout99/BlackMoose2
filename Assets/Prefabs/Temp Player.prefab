@@ -48,6 +48,7 @@ GameObject:
   - 114: {fileID: 11423288}
   - 114: {fileID: 11453656}
   - 114: {fileID: 11449336}
+  - 114: {fileID: 11447170}
   - 50: {fileID: 5046836}
   - 60: {fileID: 6092458}
   - 60: {fileID: 6083928}
@@ -57,7 +58,6 @@ GameObject:
   - 114: {fileID: 11417410}
   - 114: {fileID: 11489836}
   - 114: {fileID: 11413898}
-  - 114: {fileID: 11447170}
   m_Layer: 0
   m_Name: Temp Player
   m_TagString: Player
