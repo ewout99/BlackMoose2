@@ -501,7 +501,7 @@ Transform:
   - {fileID: 600192113}
   - {fileID: 710108468}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 9
 --- !u!4 &600192113 stripped
 Transform:
   m_PrefabParentObject: {fileID: 452930, guid: 2e1588e38202d97438cff2555edd95e9, type: 2}
@@ -661,7 +661,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 436212, guid: b7b0d292d36b1ba4b97a7285b7efb785, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 11426828, guid: b7b0d292d36b1ba4b97a7285b7efb785, type: 2}
       propertyPath: SizeX
@@ -922,7 +922,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 436212, guid: b7b0d292d36b1ba4b97a7285b7efb785, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11426828, guid: b7b0d292d36b1ba4b97a7285b7efb785, type: 2}
       propertyPath: SizeX
@@ -935,6 +935,10 @@ Prefab:
     - target: {fileID: 146664, guid: b7b0d292d36b1ba4b97a7285b7efb785, type: 2}
       propertyPath: m_Name
       value: Toom 7 Enemy Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 146664, guid: b7b0d292d36b1ba4b97a7285b7efb785, type: 2}
+      propertyPath: m_TagString
+      value: SpawnerEnemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7b0d292d36b1ba4b97a7285b7efb785, type: 2}
@@ -1095,7 +1099,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 436212, guid: b7b0d292d36b1ba4b97a7285b7efb785, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 11426828, guid: b7b0d292d36b1ba4b97a7285b7efb785, type: 2}
       propertyPath: SizeX
@@ -1142,7 +1146,7 @@ Transform:
   - {fileID: 776938730}
   - {fileID: 1961075604}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1001 &1006231249
 Prefab:
   m_ObjectHideFlags: 0
@@ -1510,7 +1514,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 436212, guid: b7b0d292d36b1ba4b97a7285b7efb785, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 11426828, guid: b7b0d292d36b1ba4b97a7285b7efb785, type: 2}
       propertyPath: SizeX
@@ -1571,7 +1575,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 4
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -1644,7 +1648,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &1305916892
 MonoBehaviour:
   m_ObjectHideFlags: 0

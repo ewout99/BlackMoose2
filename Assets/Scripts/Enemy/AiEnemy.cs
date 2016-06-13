@@ -139,7 +139,6 @@ public class AiEnemy : NetworkBehaviour {
     {
         if (path == null && !gettingPath)
         {
-            Debug.Log("No Path");
             if (targetObject != null)
             {
                 GoToTarget(targetObject);
@@ -177,7 +176,6 @@ public class AiEnemy : NetworkBehaviour {
         // If we are at the final way point ask the Ai Manager for priority
         if (currentWaypoint >= path.vectorPath.Count)
         {
-            Debug.Log("End Of Path Reached");
             // Ask for new path 
             ResetTarget();
             ResetPath();
@@ -319,12 +317,10 @@ public class AiEnemy : NetworkBehaviour {
     {
         if ( attackDistance > Vector3.Magnitude(transform.position - targetObject.transform.position))
         {
-            Debug.Log("attack succes");
             targetObject.GetComponent<Entity>().CmdSubtractHealth(attackDamage);
         }
         else
         {
-            Debug.Log("attack failed");
         }
     }
 
@@ -338,6 +334,11 @@ public class AiEnemy : NetworkBehaviour {
     private void ImDead()
     {
         aniRef.SetTrigger("die");
+        GetComponent<BoxCollider2D>().enabled = false;
+        if (!targetObject)
+        {
+            PathfinderRef.GetComponent<AiController>().UpPriority(targetObject);
+        }
     }
 
     private void Default()
@@ -353,7 +354,6 @@ public class AiEnemy : NetworkBehaviour {
 
     public void EnemyDestoryed()
     {
-        Debug.Log("EnemyDesrotyed Called");
         if (ParentSpawner)
         {
             ParentSpawner.GetComponent<EnemySpawner>().RemoveObject();

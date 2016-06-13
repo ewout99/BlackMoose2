@@ -133,7 +133,6 @@ public class Entity : NetworkBehaviour {
     private void HealthChange(float input)
     {
         healthPoints = input;
-        Debug.Log("Health Changed");
         if (healthPoints > previousHealth)
         {
             HealFlash();
@@ -149,7 +148,6 @@ public class Entity : NetworkBehaviour {
     // Flash when damaged
     private void HitFlash()
     {
-        Debug.Log("Health Down");
         StartCoroutine(ColorFlash(Color.red));
         if (isLocalPlayer)
         {

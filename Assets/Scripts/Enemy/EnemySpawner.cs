@@ -32,6 +32,8 @@ public class EnemySpawner : NetworkBehaviour
     private List<Vector2> Availible = new List<Vector2>();
     private List<Vector2> NotAvailible = new List<Vector2>();
 
+    public bool pleaseSpawnTings;
+
     // Use this for initialization
     void Start()
     {
@@ -54,7 +56,7 @@ public class EnemySpawner : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isServer)
+        if (!isServer || !pleaseSpawnTings)
         {
             return;
         }
@@ -89,7 +91,6 @@ public class EnemySpawner : NetworkBehaviour
     public void RemoveObject()
     {
         currentEnemyAmount--;
-        Debug.Log(currentEnemyAmount);
     }
 
     // Make A spot avaible after 5 second for enmies to spwan on

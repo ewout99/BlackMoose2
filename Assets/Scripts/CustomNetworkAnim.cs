@@ -57,6 +57,5 @@ public class CustomNetworkAnim : NetworkBehaviour {
             weaponRef.SetActive(false);
         else
             weaponRef.SetActive(true);
-        Debug.Log("Weapon Display Animation"); 
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11426828}
   m_Layer: 0
   m_Name: Enemy Spawner
-  m_TagString: Untagged
+  m_TagString: SpawnerEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,6 +45,7 @@ MonoBehaviour:
   SizeX: 3
   SizeY: 3
   maxEnemyAmount: 3
+  pleaseSpawnTings: 0
 --- !u!114 &11441650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,7 +84,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: SpawnerEnemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 146664}
