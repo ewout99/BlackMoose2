@@ -1,0 +1,1461 @@
+fileFormatVersion: 2
+guid: d224c5dc636924c9ba6fb5ccdce00106
+timeCreated: 1465836433
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: DI_Oracle_spritesheet_0
+    21300002: DI_Oracle_spritesheet_1
+    21300004: DI_Oracle_spritesheet_2
+    21300006: DI_Oracle_spritesheet_3
+    21300008: DI_Oracle_spritesheet_4
+    21300010: DI_Oracle_spritesheet_5
+    21300012: DI_Oracle_spritesheet_6
+    21300014: DI_Oracle_spritesheet_7
+    21300016: DI_Oracle_spritesheet_8
+    21300018: DI_Oracle_spritesheet_9
+    21300020: DI_Oracle_spritesheet_10
+    21300022: DI_Oracle_spritesheet_11
+    21300024: DI_Oracle_spritesheet_12
+    21300026: DI_Oracle_spritesheet_13
+    21300028: DI_Oracle_spritesheet_14
+    21300030: DI_Oracle_spritesheet_15
+    21300032: DI_Oracle_spritesheet_16
+    21300034: DI_Oracle_spritesheet_17
+    21300036: DI_Oracle_spritesheet_18
+    21300038: DI_Oracle_spritesheet_19
+    21300040: DI_Oracle_spritesheet_20
+    21300042: DI_Oracle_spritesheet_21
+    21300044: DI_Oracle_spritesheet_22
+    21300046: DI_Oracle_spritesheet_23
+    21300048: DI_Oracle_spritesheet_24
+    21300050: DI_Oracle_spritesheet_25
+    21300052: DI_Oracle_spritesheet_26
+    21300054: DI_Oracle_spritesheet_27
+    21300056: DI_Oracle_spritesheet_28
+    21300058: DI_Oracle_spritesheet_29
+    21300060: DI_Oracle_spritesheet_30
+    21300062: DI_Oracle_spritesheet_31
+    21300064: DI_Oracle_spritesheet_32
+    21300066: DI_Oracle_spritesheet_33
+    21300068: DI_Oracle_spritesheet_34
+    21300070: DI_Oracle_spritesheet_35
+    21300072: DI_Oracle_spritesheet_36
+    21300074: DI_Oracle_spritesheet_37
+    21300076: DI_Oracle_spritesheet_38
+    21300078: DI_Oracle_spritesheet_39
+    21300080: DI_Oracle_spritesheet_40
+    21300082: DI_Oracle_spritesheet_41
+    21300084: DI_Oracle_spritesheet_42
+    21300086: DI_Oracle_spritesheet_43
+    21300088: DI_Oracle_spritesheet_44
+    21300090: DI_Oracle_spritesheet_45
+    21300092: DI_Oracle_spritesheet_46
+    21300094: DI_Oracle_spritesheet_47
+    21300096: DI_Oracle_spritesheet_48
+    21300098: DI_Oracle_spritesheet_49
+    21300100: DI_Oracle_spritesheet_50
+    21300102: DI_Oracle_spritesheet_51
+    21300104: DI_Oracle_spritesheet_52
+    21300106: DI_Oracle_spritesheet_53
+    21300108: DI_Oracle_spritesheet_54
+    21300110: DI_Oracle_spritesheet_55
+    21300112: DI_Oracle_spritesheet_56
+    21300114: DI_Oracle_spritesheet_57
+    21300116: DI_Oracle_spritesheet_58
+    21300118: DI_Oracle_spritesheet_59
+    21300120: DI_Oracle_spritesheet_60
+    21300122: DI_Oracle_spritesheet_61
+    21300124: DI_Oracle_spritesheet_62
+    21300126: DI_Oracle_spritesheet_63
+    21300128: DI_Oracle_spritesheet_64
+    21300130: DI_Oracle_spritesheet_65
+    21300132: DI_Oracle_spritesheet_66
+    21300134: DI_Oracle_spritesheet_67
+    21300136: DI_Oracle_spritesheet_68
+    21300138: DI_Oracle_spritesheet_69
+    21300140: DI_Oracle_spritesheet_70
+    21300142: DI_Oracle_spritesheet_71
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: DI_Oracle_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 10}
+        - {x: -2, y: 10}
+        - {x: -8, y: 4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -14}
+        - {x: 7, y: -1}
+    - name: DI_Oracle_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 15}
+        - {x: -8, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -15}
+        - {x: 7, y: 8}
+        - {x: 3, y: 16}
+    - name: DI_Oracle_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -8, y: -9}
+        - {x: -8, y: -14}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -15}
+        - {x: 7, y: -3}
+        - {x: 4, y: 16}
+    - name: DI_Oracle_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 12}
+        - {x: -3, y: 11}
+        - {x: -8, y: -4}
+        - {x: -8, y: -15}
+        - {x: -6, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: -1}
+        - {x: 4, y: 12}
+      - - {x: -1, y: 12}
+        - {x: 2, y: 13}
+        - {x: 2, y: 16}
+        - {x: -2, y: 16}
+        - {x: -3, y: 15}
+    - name: DI_Oracle_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 10}
+        - {x: -2, y: 10}
+        - {x: -8, y: 4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -14}
+        - {x: 7, y: -1}
+    - name: DI_Oracle_spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 15}
+        - {x: -8, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -15}
+        - {x: 7, y: 8}
+        - {x: 3, y: 16}
+    - name: DI_Oracle_spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -8, y: -9}
+        - {x: -8, y: -14}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -15}
+        - {x: 7, y: -3}
+        - {x: 4, y: 16}
+    - name: DI_Oracle_spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 12}
+        - {x: -3, y: 11}
+        - {x: -8, y: -4}
+        - {x: -8, y: -15}
+        - {x: -6, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: -1}
+        - {x: 4, y: 12}
+      - - {x: -1, y: 12}
+        - {x: 2, y: 13}
+        - {x: 2, y: 16}
+        - {x: -2, y: 16}
+        - {x: -3, y: 15}
+    - name: DI_Oracle_spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -8, y: -4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -13}
+        - {x: 7, y: -4}
+    - name: DI_Oracle_spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 10}
+        - {x: -2, y: 10}
+        - {x: -8, y: 4}
+        - {x: -8, y: -13}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -14}
+        - {x: 7, y: -1}
+    - name: DI_Oracle_spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 15}
+        - {x: -8, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -15}
+        - {x: 7, y: 8}
+        - {x: 3, y: 16}
+    - name: DI_Oracle_spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -8, y: -9}
+        - {x: -8, y: -14}
+        - {x: -5, y: -16}
+        - {x: 4, y: -16}
+        - {x: 7, y: -15}
+        - {x: 7, y: -3}
+        - {x: 4, y: 16}
+    - name: DI_Oracle_spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 12}
+        - {x: -3, y: 11}
+        - {x: -8, y: -4}
+        - {x: -8, y: -15}
+        - {x: -6, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: -1}
+        - {x: 4, y: 12}
+      - - {x: -1, y: 12}
+        - {x: 2, y: 13}
+        - {x: 2, y: 16}
+        - {x: -2, y: 16}
+        - {x: -3, y: 15}
+    - name: DI_Oracle_spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 2}
+        - {x: -8, y: -2}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: -1}
+        - {x: 6, y: 2}
+    - name: DI_Oracle_spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 3}
+        - {x: -8, y: -1}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 0}
+        - {x: 6, y: 3}
+    - name: DI_Oracle_spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 3}
+        - {x: -8, y: -1}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 0}
+        - {x: 6, y: 3}
+    - name: DI_Oracle_spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 3}
+        - {x: -8, y: -1}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 0}
+        - {x: 6, y: 3}
+    - name: DI_Oracle_spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 2}
+        - {x: -8, y: -2}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: -1}
+        - {x: 6, y: 2}
+    - name: DI_Oracle_spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 2}
+        - {x: -8, y: -2}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: -1}
+        - {x: 6, y: 2}
+    - name: DI_Oracle_spritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 3}
+        - {x: -8, y: -1}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 0}
+        - {x: 6, y: 3}
+    - name: DI_Oracle_spritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 3}
+        - {x: -8, y: -1}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 0}
+        - {x: 6, y: 3}
+    - name: DI_Oracle_spritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 10}
+        - {x: -8, y: -2}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: -1}
+        - {x: 2, y: 8}
+        - {x: 0, y: 10}
+    - name: DI_Oracle_spritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 6}
+        - {x: 2, y: 16}
+    - name: DI_Oracle_spritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 16}
+        - {x: -8, y: -3}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: -5}
+        - {x: 3, y: 16}
+    - name: DI_Oracle_spritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 12}
+        - {x: -3, y: 11}
+        - {x: -8, y: -4}
+        - {x: -8, y: -15}
+        - {x: -6, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 2}
+        - {x: 1, y: 12}
+      - - {x: -1, y: 12}
+        - {x: 2, y: 13}
+        - {x: 2, y: 16}
+        - {x: -2, y: 16}
+        - {x: -3, y: 15}
+    - name: DI_Oracle_spritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 3}
+        - {x: -8, y: -1}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 0}
+        - {x: 6, y: 3}
+    - name: DI_Oracle_spritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 4}
+        - {x: -8, y: 0}
+        - {x: -8, y: -15}
+        - {x: 7, y: -15}
+        - {x: 7, y: 1}
+        - {x: 6, y: 4}
+    - name: DI_Oracle_spritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 4}
+        - {x: -8, y: 0}
+        - {x: -8, y: -15}
+        - {x: 7, y: -15}
+        - {x: 7, y: 1}
+        - {x: 6, y: 4}
+    - name: DI_Oracle_spritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 4}
+        - {x: -8, y: 0}
+        - {x: -8, y: -15}
+        - {x: 7, y: -15}
+        - {x: 7, y: 1}
+        - {x: 6, y: 4}
+    - name: DI_Oracle_spritesheet_52
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 3}
+        - {x: -8, y: -1}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 0}
+        - {x: 6, y: 3}
+    - name: DI_Oracle_spritesheet_53
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 3}
+        - {x: -8, y: -1}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 0}
+        - {x: 6, y: 3}
+    - name: DI_Oracle_spritesheet_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 3}
+        - {x: -8, y: -1}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 0}
+        - {x: 6, y: 3}
+    - name: DI_Oracle_spritesheet_55
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 3}
+        - {x: -8, y: -1}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 0}
+        - {x: 6, y: 3}
+    - name: DI_Oracle_spritesheet_56
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 10}
+        - {x: -8, y: -2}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: -1}
+        - {x: 2, y: 8}
+        - {x: 0, y: 10}
+    - name: DI_Oracle_spritesheet_57
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 16}
+        - {x: -6, y: 14}
+        - {x: -6, y: 10}
+        - {x: -8, y: 1}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 6}
+        - {x: 2, y: 16}
+    - name: DI_Oracle_spritesheet_58
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 16}
+        - {x: -8, y: -3}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: -5}
+        - {x: 3, y: 16}
+    - name: DI_Oracle_spritesheet_59
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 12}
+        - {x: -3, y: 11}
+        - {x: -8, y: -4}
+        - {x: -8, y: -15}
+        - {x: -6, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 2}
+        - {x: 1, y: 12}
+      - - {x: -1, y: 12}
+        - {x: 2, y: 13}
+        - {x: 2, y: 16}
+        - {x: -2, y: 16}
+        - {x: -3, y: 15}
+    - name: DI_Oracle_spritesheet_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 3}
+        - {x: -8, y: -1}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 0}
+        - {x: 6, y: 3}
+    - name: DI_Oracle_spritesheet_61
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 4}
+        - {x: -8, y: 0}
+        - {x: -8, y: -15}
+        - {x: 7, y: -15}
+        - {x: 7, y: 1}
+        - {x: 6, y: 4}
+    - name: DI_Oracle_spritesheet_62
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 4}
+        - {x: -8, y: 0}
+        - {x: -8, y: -15}
+        - {x: 7, y: -15}
+        - {x: 7, y: 1}
+        - {x: 6, y: 4}
+    - name: DI_Oracle_spritesheet_63
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 4}
+        - {x: -8, y: 0}
+        - {x: -8, y: -15}
+        - {x: 7, y: -15}
+        - {x: 7, y: 1}
+        - {x: 6, y: 4}
+    - name: DI_Oracle_spritesheet_64
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 3}
+        - {x: -8, y: -1}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 0}
+        - {x: 6, y: 3}
+    - name: DI_Oracle_spritesheet_65
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 3}
+        - {x: -8, y: -1}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 0}
+        - {x: 6, y: 3}
+    - name: DI_Oracle_spritesheet_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 3}
+        - {x: -8, y: -1}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 0}
+        - {x: 6, y: 3}
+    - name: DI_Oracle_spritesheet_67
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 3}
+        - {x: -8, y: -1}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 0}
+        - {x: 6, y: 3}
+    - name: DI_Oracle_spritesheet_68
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 10}
+        - {x: -8, y: -2}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: -1}
+        - {x: 2, y: 8}
+        - {x: 0, y: 10}
+    - name: DI_Oracle_spritesheet_69
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 6}
+        - {x: 2, y: 16}
+    - name: DI_Oracle_spritesheet_70
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 16}
+        - {x: -8, y: -3}
+        - {x: -8, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: -5}
+        - {x: 3, y: 16}
+    - name: DI_Oracle_spritesheet_71
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 12}
+        - {x: -3, y: 11}
+        - {x: -8, y: -4}
+        - {x: -8, y: -15}
+        - {x: -6, y: -16}
+        - {x: 7, y: -16}
+        - {x: 7, y: 2}
+        - {x: 1, y: 12}
+      - - {x: -1, y: 12}
+        - {x: 2, y: 13}
+        - {x: 2, y: 16}
+        - {x: -2, y: 16}
+        - {x: -3, y: 15}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
