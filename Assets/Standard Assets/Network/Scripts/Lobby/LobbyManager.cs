@@ -13,6 +13,8 @@ namespace UnityStandardAssets.Network
     {
         static short MsgKicked = MsgType.Highest + 1;
 
+        public short playerPrefabIndex;
+
         static public LobbyManager s_Singleton;
 
 
@@ -213,13 +215,34 @@ namespace UnityStandardAssets.Network
             ChangeTo(mainMenuPanel);
         }
 
+        //=================
+
+        public class MsgTypes
+        {
+            public const short PlayerPrefab = MsgType.Highest + 2;
+
+            public class PlayerPrefabMsg : MessageBase
+            {
+                public short controllerID;
+                public short prefabIndex;
+            }
+        }
+
+        public void ChangePrefab(NetworkConnection conn)
+        {
+            /// Make edit here to change the prefab
+            MsgTypes.PlayerPrefabMsg msg = new MsgTypes.PlayerPrefabMsg();
+            msg.prefabIndex = playerPrefabIndex;
+            msg.controllerID = 1;
+            conn.Send(MsgTypes.PlayerPrefab, msg);
+        }
+
+
         class KickMsg : MessageBase { }
         public void KickPlayer(NetworkConnection conn)
         {
             conn.Send(MsgKicked, new KickMsg());
         }
-
-
 
 
         public void KickedMessageHandler(NetworkMessage netMsg)
@@ -263,6 +286,8 @@ namespace UnityStandardAssets.Network
             int localPlayerCount = 0;
             foreach (PlayerController p in ClientScene.localPlayers)
                 localPlayerCount += (p == null || p.playerControllerId == -1) ? 0 : 1;
+
+            minPlayers = _playerNumber;
 
             addPlayerButton.SetActive(localPlayerCount < maxPlayersPerConnection && _playerNumber < maxPlayers);
         }
@@ -381,6 +406,8 @@ namespace UnityStandardAssets.Network
 
         public override void OnClientConnect(NetworkConnection conn)
         {
+            client.RegisterHandler(MsgTypes.PlayerPrefab, OnRequestPrefab);
+
             base.OnClientConnect(conn);
 
             infoPanel.gameObject.SetActive(false);
@@ -406,6 +433,33 @@ namespace UnityStandardAssets.Network
         {
             ChangeTo(mainMenuPanel);
             infoPanel.Display("Cient error : " + (errorCode == 6 ? "timeout" : errorCode.ToString()), "Close", null);
+        }
+
+        public override void OnStartServer()
+        {
+            NetworkServer.RegisterHandler(MsgTypes.PlayerPrefab, OnResponsePrefab);
+            base.OnStartServer();
+        }
+
+        public void OnRequestPrefab(NetworkMessage netMsg)
+        {
+            MsgTypes.PlayerPrefabMsg msg = new MsgTypes.PlayerPrefabMsg();
+            msg.controllerID = netMsg.ReadMessage<MsgTypes.PlayerPrefabMsg>().controllerID;
+            msg.prefabIndex = playerPrefabIndex;
+            client.Send(MsgTypes.PlayerPrefab, msg);
+        }
+
+        private void OnResponsePrefab(NetworkMessage netMsg)
+        {
+            MsgTypes.PlayerPrefabMsg msg = netMsg.ReadMessage<MsgTypes.PlayerPrefabMsg>();
+            base.OnServerAddPlayer(netMsg.conn, msg.controllerID);
+        }
+
+        public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId)
+        {
+            MsgTypes.PlayerPrefabMsg msg = new MsgTypes.PlayerPrefabMsg();
+            msg.controllerID = playerControllerId;
+            NetworkServer.SendToClient(conn.connectionId, MsgTypes.PlayerPrefab, msg);
         }
     }
 }

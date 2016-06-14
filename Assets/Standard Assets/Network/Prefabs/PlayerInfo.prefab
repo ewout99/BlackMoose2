@@ -1065,6 +1065,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: adb051d02e730064282dcf4cf7717e9c, type: 3}
   - {fileID: 21300000, guid: 25efc96878c919347af216f75393c5ca, type: 3}
   - {fileID: 21300000, guid: 03939b10255c94fe3bf305f772e69ac2, type: 3}
+  - {fileID: 21300000, guid: 24ed21be5a73cf74cbf67de426ed9796, type: 3}
   colorButton: {fileID: 11412396}
   nameInput: {fileID: 11487112}
   spriteButton: {fileID: 11488840}

@@ -44,6 +44,8 @@ public class AiEnemy : NetworkBehaviour {
 
     private States currentState = States.Idle;
 
+    private bool attacking;
+
     //The calculated path
     public Path path;
     //The AI's speed per second
@@ -104,7 +106,7 @@ public class AiEnemy : NetworkBehaviour {
             currentState = States.Idle;
         }
 
-        if (targetObject != null && (attackDistance > Vector3.Distance(targetObject.transform.position, transform.position)))
+        if ((targetObject != null && (attackDistance > Vector3.Distance(targetObject.transform.position, transform.position))) || attacking == true)
         {
             currentState = States.Attacking;
         }
@@ -114,13 +116,16 @@ public class AiEnemy : NetworkBehaviour {
             currentState = States.Death;
         }
 
-            switch (currentState)
+        switch (currentState)
         {
             case States.Walking:
                 Move();
                 break;
             case States.Attacking:
-                Attack();
+                if (!attacking)
+                {
+                    Attack();
+                }  
                 break;
             case States.Idle:
                 Idling();
@@ -305,6 +310,7 @@ public class AiEnemy : NetworkBehaviour {
     // Attack functions
     private void Attack()
     {
+        attacking = true;
         if (targetObject.GetComponent<Entity>().deathState)
         {
             targetObject = PathfinderRef.GetComponent<AiController>().GetTarget();
@@ -321,7 +327,9 @@ public class AiEnemy : NetworkBehaviour {
         }
         else
         {
+
         }
+        attacking = false;
     }
 
     // Idle functions

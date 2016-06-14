@@ -18,7 +18,7 @@ public class IngamePlayer : NetworkBehaviour {
 
     // Editor refrences
     public GameObject Player_Camera;
-    public GameObject Oracle_Camer;
+    public GameObject Oracle_Ref;
 
     // Editor Variaels
     public float fluxDeliveryRange;
@@ -38,21 +38,24 @@ public class IngamePlayer : NetworkBehaviour {
     // Use this for initialization
     void Start ()
     {
-        GetComponent<Animator>().runtimeAnimatorController = ((RuntimeAnimatorController)(Resources.Load(AnimCons[typeIngame])));
         nameField.text = nameIngame;
         nameField.color = colorIngame;
         pickRef = GetComponent<PickUp>();
+        GetComponent<Animator>().runtimeAnimatorController = ((RuntimeAnimatorController)(Resources.Load(AnimCons[typeIngame])));
 
-        // Create Camera if this is the local player
-        if (isLocalPlayer)
+        if (isLocalPlayer && typeIngame == 4)
+        {
+            CmdReplaceMe();
+        }
+        else if (isLocalPlayer)
         {
             Instantiate(Player_Camera, transform.position, Quaternion.identity);
             GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>().target = gameObject.transform;
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update () {
 
         // Check if its the local player
         if (!isLocalPlayer)
@@ -71,4 +74,19 @@ public class IngamePlayer : NetworkBehaviour {
             flux = 0;
         }
 	}
+
+    [Command]
+    void CmdReplaceMe()
+    {
+        GameObject tempOracle = Instantiate(Oracle_Ref, transform.position, Quaternion.identity) as GameObject;
+        IngameOracle IGO = tempOracle.GetComponent<IngameOracle>();
+        NetworkIdentity nIGO = tempOracle.GetComponent<NetworkIdentity>();
+        IGO.nameIngame = nameIngame;
+        IGO.typeIngame = typeIngame;
+        IGO.colorIngame = colorIngame;
+        nIGO.localPlayerAuthority = true;
+        NetworkServer.Spawn(tempOracle);
+        NetworkServer.ReplacePlayerForConnection(connectionToClient, tempOracle, playerControllerId);
+        NetworkServer.Destroy(gameObject);
+    }
 }

@@ -12,7 +12,7 @@ namespace UnityStandardAssets.Network
     public class LobbyPlayer : NetworkLobbyPlayer
     {
         static Color[] Colors = new Color[] { Color.magenta, Color.red, Color.cyan, Color.blue, Color.green, Color.yellow };
-        static int[] Sprites = new int[] { 0, 1, 2, 3};
+        static int[] Sprites = new int[] { 0, 1, 2, 3, 4};
 
         [SerializeField]
         private Sprite[] localSprites;
@@ -358,6 +358,17 @@ namespace UnityStandardAssets.Network
                 }
 
                 playerSprite = Sprites[idx];
+            }
+            if (playerSprite == 4)
+            {
+                // Switch player to oracle
+                LobbyManager.s_Singleton.playerPrefabIndex = 1;
+                // LobbyManager.s_Singleton.ChangePrefab(connectionToServer);
+            } 
+            else
+            {
+                LobbyManager.s_Singleton.playerPrefabIndex = 0;
+                // LobbyManager.s_Singleton.ChangePrefab(connectionToServer);
             }
         }
         //Cleanup thing when get destroy (which happen when client kick or disconnect)

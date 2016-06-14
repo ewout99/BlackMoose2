@@ -64,7 +64,6 @@ public class CameraFollow : MonoBehaviour {
     // Corotine for camera shake
     IEnumerator StartScreenShake()
     {
-        Debug.Log("Camera Shake Intesity: " + shakeIntesity + " Times: " + shakeCount);
         Vector3 newPos;
         for (int i = 0; i < shakeCount; i++)
         {

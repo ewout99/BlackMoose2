@@ -17,9 +17,9 @@ public class AiController : NetworkBehaviour {
     //Private Ref
     private GameObject PathfinderRef;
 
-    private float minSpawningDistance = 5;
-    private float maxSpawningDistance = 30;
-    private int amountOfSquadrons = 4;
+    private float minSpawningDistance = 7;
+    private float maxSpawningDistance = 50;
+    private int amountOfSquadrons = 2;
     private int activePoints;
 
     // Use this for initialization
@@ -55,7 +55,6 @@ public class AiController : NetworkBehaviour {
         {
             Temp.Add(local);
         }
-        Debug.Log(Temp.Count + "Temp Leght before");
         // Check which spwaners can be activeted
         foreach (GameObject spGameOb in Spawners)
         {
@@ -74,7 +73,6 @@ public class AiController : NetworkBehaviour {
                 Temp.Remove(spGameOb);
             }
         }
-        Debug.Log(Temp.Count + "Temp Leght after");
 
         for (int i = 0; i < amountOfSquadrons; i++)
         {
@@ -82,7 +80,6 @@ public class AiController : NetworkBehaviour {
             {
                 break;
             }
-            Debug.Log("Activating point " + Temp.Count);
             int rValue = Random.Range(0, Temp.Count - 1);
             Temp[rValue].GetComponent<EnemySpawner>().pleaseSpawnTings = true;
             Temp.RemoveAt(rValue);
@@ -114,7 +111,7 @@ public class AiController : NetworkBehaviour {
 
         if (amountOfSquadrons > activePoints)
         {
-            Debug.Log("Meh... not enough points, we have " + activePoints +" activepoints atm");
+            Debug.Log("Not enough active points");
             SetupSpawners();
         }
         // Check for priorities
@@ -197,7 +194,6 @@ public class AiController : NetworkBehaviour {
         }
         else
         {
-            Debug.Log(" ");
             Temp[Random.Range(0, Temp.Count - 1)].GetComponent<EnemySpawner>().pleaseSpawnTings = true;
             activePoints++;
         }

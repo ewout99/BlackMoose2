@@ -2986,6 +2986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57f5ab73b429b045a301c5bc837c405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OraclePrefab: {fileID: 0}
 --- !u!114 &11471648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3196,11 +3197,13 @@ MonoBehaviour:
   m_OfflineScene: 03LobbyScreen
   m_OnlineScene: 
   m_SpawnPrefabs:
-  - {fileID: 187820, guid: 88370fc409e007e4fbebfc602b5f8257, type: 2}
-  - {fileID: 190470, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
+  - {fileID: 138796, guid: 428a60be8bc71944797bbc42a3697bae, type: 2}
+  - {fileID: 149500, guid: 00757d1fb6efb4f4ba6d5448982448c6, type: 2}
   - {fileID: 190470, guid: 67bd8609cc5df864788cde0c0a35cb1b, type: 2}
   - {fileID: 138732, guid: 2e1588e38202d97438cff2555edd95e9, type: 2}
   - {fileID: 121480, guid: 84a710ac8b4f4664691d16a79dbcfd31, type: 2}
+  - {fileID: 187820, guid: 88370fc409e007e4fbebfc602b5f8257, type: 2}
+  - {fileID: 190470, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -3262,6 +3265,7 @@ MonoBehaviour:
   hostInfo: {fileID: 11415712}
   _playerNumber: 0
   _isMatchmaking: 0
+  playerPrefabIndex: 0
 --- !u!114 &11476426
 MonoBehaviour:
   m_ObjectHideFlags: 1
