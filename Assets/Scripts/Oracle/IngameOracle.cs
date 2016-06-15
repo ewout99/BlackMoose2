@@ -16,29 +16,24 @@ public class IngameOracle : NetworkBehaviour {
     [SerializeField]
     GameObject Oracle_Camera;
 
+    // Refrences
+    private Entity entityRef;
+    private Animator aniRef;
+
     // Use this for initialization
     void Start ()
     {
-        if (typeIngame != 4)
-        {
-            Debug.LogError("AAAAH error, this is not the oracle");
-        }
-        else
-        {
-            Debug.Log("Succes oracle");
-        }
-
         nameField = GetComponentInChildren<Text>();
-
-        Debug.Log(isLocalPlayer);
+        nameField.text = nameIngame;
+        nameField.color = colorIngame;
+        entityRef = GetComponent<Entity>();
+        aniRef = GetComponent<Animator>();
         if (isLocalPlayer)
         {
-            Debug.Log("Making Camera");
             Instantiate(Oracle_Camera, transform.position, Quaternion.identity);
             GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>().target = gameObject.transform;
         }
-        nameField.text = nameIngame;
-        nameField.color = colorIngame;
+
     }
 	
 	// Update is called once per frame
@@ -48,5 +43,7 @@ public class IngameOracle : NetworkBehaviour {
         {
             return;
         }
+        aniRef.SetFloat("HealthPercent", entityRef.healthPoints/100);
+
 	}
 }

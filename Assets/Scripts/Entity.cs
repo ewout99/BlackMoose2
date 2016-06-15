@@ -89,7 +89,10 @@ public class Entity : NetworkBehaviour {
             // Play Animation           
 
             // Contrain rigidbody
-            rBody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            if (GetComponent<Rigidbody2D>())
+            {
+                rBody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            }
 
             // For Players
             if (gameObject.tag == "Player")
