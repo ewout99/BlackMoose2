@@ -9,7 +9,7 @@ public class Turret : NetworkBehaviour
     private float shotsPerSecond;
     private float inversedShotsPerSecond;
     [SerializeField]
-    private float shootRange;
+    private float shootRange, lifeTime;
 
     private bool reloading;
 
@@ -18,11 +18,18 @@ public class Turret : NetworkBehaviour
 
     // Targeting
     private List<GameObject> AvaibleEnemies = new List<GameObject>();
-    private GameObject target = null;
+    private GameObject target;
     // Use this for initialization
     void Start()
     {
+        if (!isServer)
+        {
+            return;
+        }
+
         inversedShotsPerSecond = 1 / shotsPerSecond;
+
+        NetworkDestroy(lifeTime);
     }
 
     // Update is called once per frame
@@ -37,9 +44,10 @@ public class Turret : NetworkBehaviour
         // Are we reloading
         if (!reloading)
         {
-            if (target = null)
+            if (!target)
             {
                 target = getTarget();
+                Debug.Log(target.name);
                 return;
             }
 
@@ -47,6 +55,7 @@ public class Turret : NetworkBehaviour
             if (Vector3.Distance(gameObject.transform.position, target.transform.position) >= shootRange)
             {
                 Debug.Log("Distance to big");
+                target = getTarget();
                 return;
             }
             else
@@ -116,6 +125,19 @@ public class Turret : NetworkBehaviour
             }
         }
         AvaibleEnemies.Clear();
+        Debug.Log(optimalTarget.name);
         return optimalTarget;
+    }
+
+    IEnumerator NetworkDestroy(float Wait)
+    {
+        yield return new WaitForSeconds(Wait);
+        CmdDestroyGameObject();
+    }
+
+    [Command]
+    void CmdDestroyGameObject()
+    {
+        NetworkServer.Destroy(gameObject);
     }
 }

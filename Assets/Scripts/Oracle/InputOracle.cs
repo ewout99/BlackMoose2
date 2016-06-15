@@ -129,7 +129,6 @@ public class InputOracle : NetworkBehaviour  {
             aniRef.SetTrigger("Attack");
             entityRef.CmdSubtractHealth(turretCost);
             GameObject turret = Instantiate(InputOptions[1], mousePosition, Quaternion.identity) as GameObject;
-            turret.transform.SetParent(transform, true);
             NetworkServer.Spawn(turret);
             // SpawnTurrert
         }

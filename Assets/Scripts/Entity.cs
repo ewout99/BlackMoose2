@@ -29,7 +29,7 @@ public class Entity : NetworkBehaviour {
         rBody2D = gameObject.GetComponent<Rigidbody2D>();
         hold = spRef.color;
 
-        if (isLocalPlayer || isServer)
+        if (isLocalPlayer)
         {
             StartCoroutine(GetCameraDealy());
         }
@@ -105,11 +105,15 @@ public class Entity : NetworkBehaviour {
                 }
             }
             // For Enemies
-            else
+            else if (gameObject.tag == "Enemy")
             {
                 // Add animtion on complete network destroy float 0.1f
                 StartCoroutine(NetworkDestroy(1f));
                 gameObject.GetComponent<AiEnemy>().EnemyDestoryed();
+            }
+            else
+            {
+                StartCoroutine(NetworkDestroy(0.1f));
             }
         }
 
