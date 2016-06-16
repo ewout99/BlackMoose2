@@ -7,6 +7,12 @@ public class Wall : NetworkBehaviour {
 	void Ondestroy()
     {
         if (isServer)
-            FindObjectOfType<InputOracle>().RemovePosFromUsed(transform.position);
+            RpcCopy();       
+    }
+
+    [ClientRpc]
+    void RpcCopy()
+    {
+        FindObjectOfType<InputOracle>().RemovePosFromUsed(transform.position);
     }
 }

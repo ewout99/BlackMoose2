@@ -1,15 +1,26 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class IngameEnemy: NetworkBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    [SerializeField]
+    private GameObject orbRef;
+    private bool spawned = false;
+
+    void Update()
+    {
+        if (isServer && GetComponent<Entity>().deathState && !spawned)
+        {
+            CmdSpawnOrb();
+        }
+    }
+
+    [Command]
+    private void CmdSpawnOrb()
+    {
+        spawned = true;
+        GameObject orb = Instantiate(orbRef, transform.position, Quaternion.identity) as GameObject;
+        NetworkServer.Spawn(orb);
+    }
 }

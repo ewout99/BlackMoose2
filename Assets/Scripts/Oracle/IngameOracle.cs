@@ -13,6 +13,9 @@ public class IngameOracle : NetworkBehaviour {
     [SyncVar]
     public Color colorIngame;
 
+    [SyncVar]
+    public float flux = 0;
+
     [SerializeField]
     GameObject Oracle_Camera;
     GameObject camRef;
@@ -44,6 +47,32 @@ public class IngameOracle : NetworkBehaviour {
         {
             return;
         }
+        if (flux != 0)
+        {
+            entityRef.CmdAddHealth(flux);
+            CmdResetFlux();
+        }
         aniRef.SetFloat("HealthPercent", entityRef.healthPoints/100);
 	}
+
+    //==================
+    // Flux adding, reducing and reseting
+    [Command]
+    public void CmdAddFlux(float amount)
+    {
+        flux += amount;
+    }
+
+    [Command]
+    public void CmdSubtractFlux(float amount)
+    {
+        flux -= amount;
+    }
+
+    [Command]
+    public void CmdResetFlux()
+    {
+        flux = 0;
+    }
+    //======================
 }

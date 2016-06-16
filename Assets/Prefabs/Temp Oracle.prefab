@@ -197,12 +197,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc6778131ec6f0478a8769f3bdac7ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugGUI: 1
+  btnTexture: {fileID: 10904, guid: 0000000000000000f000000000000000, type: 0}
+  buttonSize: {x: 200, y: 100}
+  buttonStartPos: {x: 0, y: 120}
+  buttonSpacing: 300
   InputOptions:
   - {fileID: 137802, guid: d175bb778e9c4394bbbe4a503be5a1ef, type: 2}
   - {fileID: 157560, guid: b8e4c2c33a521954cb82920206c811a7, type: 2}
   - {fileID: 153714, guid: 7cdfc02452bc63a46806324cdda2fbb8, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 144174, guid: 962bbfee50d32f743bc64562406c48a2, type: 2}
+  - {fileID: 113562, guid: 1ff04983e061ad64393b780956ef1209, type: 2}
   healCost: 5
   turretCost: 10
   reviveCost: 20
@@ -497,6 +502,42 @@ Prefab:
       propertyPath: InputOptions.Array.data[2]
       value: 
       objectReference: {fileID: 153714, guid: 7cdfc02452bc63a46806324cdda2fbb8, type: 2}
+    - target: {fileID: 0}
+      propertyPath: btnTexture
+      value: 
+      objectReference: {fileID: 10904, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 0}
+      propertyPath: buttonSize.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: buttonSize.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: buttonStartPos.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: buttonStartPos.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: buttonSpacing
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InputOptions.Array.data[3]
+      value: 
+      objectReference: {fileID: 144174, guid: 962bbfee50d32f743bc64562406c48a2, type: 2}
+    - target: {fileID: 0}
+      propertyPath: InputOptions.Array.data[4]
+      value: 
+      objectReference: {fileID: 113562, guid: 1ff04983e061ad64393b780956ef1209, type: 2}
+    - target: {fileID: 0}
+      propertyPath: debugGUI
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 149500}

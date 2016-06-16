@@ -410,7 +410,7 @@ MonoBehaviour:
   flux: 0
   Player_Camera: {fileID: 122702, guid: 9c8d6ad983965ac4c8b65e0f49ca32cc, type: 2}
   Oracle_Ref: {fileID: 149500, guid: 00757d1fb6efb4f4ba6d5448982448c6, type: 2}
-  fluxDeliveryRange: 0
+  fluxDeliveryRange: 5
   AnimCons:
   - PlayerConBlue
   - PlayerConGreen
@@ -765,6 +765,10 @@ Prefab:
       propertyPath: Oracle_Ref
       value: 
       objectReference: {fileID: 149500, guid: 00757d1fb6efb4f4ba6d5448982448c6, type: 2}
+    - target: {fileID: 0}
+      propertyPath: fluxDeliveryRange
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 138796}

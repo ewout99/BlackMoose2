@@ -1,15 +1,34 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class IngameOrb : MonoBehaviour {
+public class IngameOrb : NetworkBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public float fluxValue = 5;
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (!isServer)
+        {
+            return;
+        }
+
+        if (col.collider.tag == "Player" && col.collider.GetComponent<IngamePlayer>())
+        {
+            Debug.Log("Flux for player");
+            col.collider.GetComponent<IngamePlayer>().CmdAddFlux(fluxValue);
+            GetComponent<MovementOrb>().CmdDestroyGameObject();
+        }
+
+        if(col.collider.tag == "Player" && col.collider.GetComponent<IngameOracle>())
+        {
+            Debug.Log("Flux for Oracle");
+            col.collider.GetComponent<IngameOracle>().CmdAddFlux(fluxValue);
+            GetComponent<MovementOrb>().CmdDestroyGameObject();
+        }
+        else
+        {
+            Debug.Log("Not A flux target: " + col.collider.tag);
+        }
+    }
 }

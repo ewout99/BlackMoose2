@@ -148,7 +148,7 @@ public class AiEnemy : NetworkBehaviour {
     {
         if (path == null && !gettingPath)
         {
-            if (targetObject != null)
+            if (targetObject)
             {
                 if (targetObject.GetComponent<Entity>().deathState)
                 {

@@ -6,7 +6,6 @@ using System.Linq;
 
 public class MovementOrb : NetworkBehaviour {
 
-    public float fluxValue;
     public float orbSpeed;
     public float lifeTime = 10;
 
@@ -39,14 +38,17 @@ public class MovementOrb : NetworkBehaviour {
 
         foreach (GameObject player in Players)
         {
-            float distance = Vector3.Magnitude(transform.position - player.transform.position);
-            if (!player.GetComponent<IngameOracle>())
+            if (player)
             {
-                Distances.Add(distance);
-            }
-            else
-            {
-                Distances.Add(100f);
+                float distance = Vector3.Magnitude(transform.position - player.transform.position);
+                if (!player.GetComponent<IngameOracle>())
+                {
+                    Distances.Add(distance);
+                }
+                else
+                {
+                    Distances.Add(100f);
+                }
             }
         }
 
@@ -63,26 +65,15 @@ public class MovementOrb : NetworkBehaviour {
         }
     }
 
-
-    IEnumerator NetworkDestroy(float Wait)
-    {
-        yield return new WaitForSeconds(Wait);
-        CmdDestroyGameObject();
-    }
-
+    // Start destory
     [Command]
     public void CmdDestroyGameObject()
     {
         RpcDeath();
-        Invoke("CmdDestory2", 0.7f);
+        NetworkDestroy(0.7f);
     }
 
-    [Command]
-    void CmdDestroy2()
-    {
-        NetworkServer.Destroy(gameObject);
-    }
-
+    // Play sound and disbale render and collider
     [ClientRpc]
     void RpcDeath()
     {
@@ -90,5 +81,19 @@ public class MovementOrb : NetworkBehaviour {
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         audioRef.clip = orbPickup;
         audioRef.Play();
+    }
+
+    // Wait for while
+    IEnumerator NetworkDestroy(float Wait)
+    {
+        yield return new WaitForSeconds(Wait);
+        CmdDestroyGameObject2();
+    }
+
+    // Yeea we get to kill it
+    [Command]
+    private void CmdDestroyGameObject2()
+    {
+        NetworkServer.Destroy(gameObject);
     }
 }

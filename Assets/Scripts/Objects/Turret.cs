@@ -49,7 +49,6 @@ public class Turret : NetworkBehaviour
             if (!target)
             {
                 target = getTarget();
-                Debug.Log(target.name);
                 return;
             }
 

@@ -21,7 +21,7 @@ public class IngamePlayer : NetworkBehaviour {
     public GameObject Oracle_Ref;
 
     // Editor Variaels
-    public float fluxDeliveryRange;
+    public float fluxDeliveryRange = 4f;
 
     // Private refrences
     private PickUp pickRef;
@@ -56,29 +56,59 @@ public class IngamePlayer : NetworkBehaviour {
 
     // Update is called once per frame
     void Update () {
-
         // Check if its the local player
         if (!isLocalPlayer)
             return;
 
-        // If the oracle is near by send your flux to the oracle
-        if (true)
+
+        if (!oracleRef)
         {
-            // Temp blockade
+            oracleRef = GameObject.Find("Temp Oracle(Clone)");
         }
-        else if (flux > 0 || (oracleRef.transform.position - transform.position).magnitude <= fluxDeliveryRange)
+
+       
+        // If the oracle is near by send your flux to the oracle
+        if (flux > 0 && Vector3.Distance(oracleRef.transform.position , transform.position) <= fluxDeliveryRange)
         {
+            Debug.Log(Vector3.Distance(oracleRef.transform.position, transform.position));
             // Call oracle ref send flux to it
 
+            oracleRef.GetComponent<IngameOracle>().CmdAddFlux(flux);
+            // Play flux delivery animation here
+            // Play flux delivery sounds here
+
             //Reset the Flux to zero
-            flux = 0;
+            CmdResetFlux();
         }
 	}
+
+    //==================
+    // Flux adding, reducing and reseting
+
+    [Command]
+    public void CmdAddFlux(float amount)
+    {
+        flux += amount;
+    }
+
+    [Command]
+    public void CmdSubtractFlux(float amount)
+    {
+        flux -= amount;
+    }
+
+    [Command]
+    public void CmdResetFlux()
+    {
+        flux = 0;
+    }
+
+    //==============
+
 
     [Command]
     void CmdReplaceMe()
     {
-        Debug.Log("Replacing Me");
         GameObject tempOracle = Instantiate(Oracle_Ref, transform.position, Quaternion.identity) as GameObject;
         IngameOracle IGO = tempOracle.GetComponent<IngameOracle>();
         NetworkIdentity nIGO = tempOracle.GetComponent<NetworkIdentity>();

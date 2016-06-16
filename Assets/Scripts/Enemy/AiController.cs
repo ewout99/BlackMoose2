@@ -63,7 +63,11 @@ public class AiController : NetworkBehaviour {
             {
                 foreach (GameObject pGameOb in Players)
                 {
-                    if (Vector3.Distance(spGameOb.transform.position, pGameOb.transform.position) < minSpawningDistance && Vector3.Distance(spGameOb.transform.position, pGameOb.transform.position) > maxSpawningDistance)
+                    if (!pGameOb || !spGameOb)
+                    {
+                        // Catch for fails
+                    }
+                    else if (Vector3.Distance(spGameOb.transform.position, pGameOb.transform.position) < minSpawningDistance && Vector3.Distance(spGameOb.transform.position, pGameOb.transform.position) > maxSpawningDistance)
                     {
                         Temp.Remove(spGameOb);
                     }
@@ -102,7 +106,11 @@ public class AiController : NetworkBehaviour {
             {
                 foreach (GameObject pGameOb in Players)
                 {
-                    if (Vector3.Distance(spGameOb.transform.position, pGameOb.transform.position) < minSpawningDistance || Vector3.Distance(spGameOb.transform.position, pGameOb.transform.position) > maxSpawningDistance)
+                    if (!pGameOb || !spGameOb)
+                    {
+                        // Catch for fails
+                    }
+                    else if (Vector3.Distance(spGameOb.transform.position, pGameOb.transform.position) < minSpawningDistance || Vector3.Distance(spGameOb.transform.position, pGameOb.transform.position) > maxSpawningDistance)
                     {
                         DisablePoint(spGameOb);
                     }
@@ -142,7 +150,11 @@ public class AiController : NetworkBehaviour {
         KeyValuePair<GameObject, int> bestTarget = Priortity.First();
         foreach (KeyValuePair<GameObject, int> pTarget in Priortity)
         {
-            if (pTarget.Value > bestTarget.Value) bestTarget = pTarget;
+            // This needs fixing gives errors :@
+            if (!pTarget.Key.GetComponent<Entity>().deathState)
+            {
+                if (pTarget.Value > bestTarget.Value) bestTarget = pTarget;
+            }
         }
         DownPriorty(bestTarget.Key);
         return bestTarget.Key;
@@ -182,6 +194,10 @@ public class AiController : NetworkBehaviour {
             {
                 foreach (GameObject pGameOb in Players)
                 {
+                    if (!pGameOb || !spGameOb)
+                    {
+                        // Catch for fails
+                    }
                     if (Vector3.Distance(spGameOb.transform.position, pGameOb.transform.position) < minSpawningDistance && Vector3.Distance(spGameOb.transform.position, pGameOb.transform.position) > maxSpawningDistance)
                     {
                         Temp.Remove(spGameOb);
