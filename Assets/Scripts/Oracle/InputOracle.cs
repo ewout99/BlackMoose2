@@ -107,9 +107,19 @@ public class InputOracle : NetworkBehaviour  {
     void CmdHealPlacement()
     {
         // Check cost
-        if (AddPosToUsed(mousePosition))
+        if (entityRef.healthPoints <= healCost)
         {
-            // Place Heal at mouseposition
+            Debug.Log("Not enough health to spawn");
+            // Add feedback not enough
+            return;
+        }
+        else
+        {
+            Debug.Log("Placing Heal");
+            aniRef.SetTrigger("attack");
+            entityRef.CmdSubtractHealth(healCost);
+            GameObject heal = Instantiate(InputOptions[0], mousePosition, Quaternion.identity) as GameObject;
+            NetworkServer.Spawn(heal);
         }
     }
 
@@ -117,13 +127,13 @@ public class InputOracle : NetworkBehaviour  {
     void CmdTurretPlacement()
     {
         // Check cost
-        if (entityRef.healthPoints < turretCost)
+        if (entityRef.healthPoints <= turretCost)
         {
             Debug.Log("Not enough health to spawn");
             // Add feedback not enough
             return;
         }
-        if (AddPosToUsed(mousePosition))
+        else if (AddPosToUsed(mousePosition))
         {
             Debug.Log("Making the turrert");
             aniRef.SetTrigger("Attack");
@@ -133,43 +143,51 @@ public class InputOracle : NetworkBehaviour  {
             // SpawnTurrert
         }
     }
+
     [Command]
     void CmdRevivePlacement()
     {
         // Check cost
-        if (entityRef.healthPoints < turretCost)
+        if (entityRef.healthPoints <= reviveCost)
         {
             // Add feedback not enough
             return;
         }
-        if (AddPosToUsed(mousePosition))
+        else
         {
             aniRef.SetTrigger("Attack");
             entityRef.CmdSubtractHealth(reviveCost);
-            // SpawnTurrert
+            GameObject revive = Instantiate(InputOptions[2], mousePosition, Quaternion.identity) as GameObject;
+            NetworkServer.Spawn(revive);
         }
     }
     [Command]
     void CmdWallPlacement()
     {
         // Check cost
-        if (entityRef.healthPoints < turretCost)
+        if (entityRef.healthPoints <= wallCost)
         {
+            Debug.Log("Not enough healt");
             // Add feedback not enough
             return;
         }
+
         if (AddPosToUsed(mousePosition))
         {
             aniRef.SetTrigger("Attack");
             entityRef.CmdSubtractHealth(wallCost);
-            // SpawnTurrert
+            GameObject wall = Instantiate(InputOptions[3], mousePosition, Quaternion.identity) as GameObject;
+            NetworkServer.Spawn(wall);
         }
+
+        // Rescan pathfinder
+        GameObject.Find("PathFinder").GetComponent<AstarPath>().Scan();
     }
     [Command]
     void CmdWeaponPlacement()
     {
         // Check cost
-        if (entityRef.healthPoints < turretCost)
+        if (entityRef.healthPoints <= weaponCost)
         {
             // Add feedback not enough
             return;
@@ -178,7 +196,8 @@ public class InputOracle : NetworkBehaviour  {
         {
             aniRef.SetTrigger("Attack");
             entityRef.CmdSubtractHealth(weaponCost);
-            // SpawnTurrert
+            GameObject weaponRack = Instantiate(InputOptions[4], mousePosition, Quaternion.identity) as GameObject;
+            NetworkServer.Spawn(weaponRack);
         }
     }
 

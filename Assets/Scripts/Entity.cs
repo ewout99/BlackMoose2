@@ -103,6 +103,11 @@ public class Entity : NetworkBehaviour {
                 {
                     camRef.GetComponent<CameraFollow>().ScreenShake(deathShakeIntesity, deathShakeAmount);
                 }
+
+                else if (GetComponent<Turret>())
+                {
+                    StartCoroutine(NetworkDestroy(1f));
+                }
             }
             // For Enemies
             else if (gameObject.tag == "Enemy")
@@ -120,7 +125,6 @@ public class Entity : NetworkBehaviour {
         else 
         {
             // Play Respawn animation
-            healthPoints = 100;
             CmdAddHealth(100);
         }
     }
@@ -144,7 +148,7 @@ public class Entity : NetworkBehaviour {
     private void HealthChange(float input)
     {
         healthPoints = input;
-        if (healthPoints >= previousHealth)
+        if (healthPoints > previousHealth)
         {
             HealFlash();
             previousHealth = healthPoints;
@@ -162,6 +166,10 @@ public class Entity : NetworkBehaviour {
         StartCoroutine(ColorFlash(Color.red));
         if (isLocalPlayer)
         {
+            if (!camRef)
+            {
+                camRef = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+            }
             camRef.GetComponent<CameraFollow>().ScreenShake(hitShakeIntesity, hitShakeAmount);
         }
     }

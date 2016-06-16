@@ -29,10 +29,9 @@ public class Turret : NetworkBehaviour
         {
             return;
         }
-
+        aniRef = GetComponent<Animator>();
         inversedShotsPerSecond = 1 / shotsPerSecond;
-
-        NetworkDestroy(lifeTime);
+        StartCoroutine(NetworkDestroy(lifeTime));
     }
 
     // Update is called once per frame
@@ -57,15 +56,9 @@ public class Turret : NetworkBehaviour
             // Is target within range
             if (Vector3.Distance(gameObject.transform.position, target.transform.position) >= shootRange)
             {
-                Debug.Log("Distance to big");
                 target = getTarget();
                 return;
-            }
-            else
-            {
-                Debug.Log("Target in range proceeding to fire");
-            }
-            
+            }            
             Vector2 direction = GetDirection(transform, target.transform);
             CmdShoot(direction);
             aniRef.SetTrigger("attack");
@@ -129,19 +122,27 @@ public class Turret : NetworkBehaviour
             }
         }
         AvaibleEnemies.Clear();
-        Debug.Log(optimalTarget.name);
         return optimalTarget;
     }
 
     IEnumerator NetworkDestroy(float Wait)
     {
         yield return new WaitForSeconds(Wait);
+        aniRef.SetTrigger("death");
+        yield return new WaitForSeconds(1f);
         CmdDestroyGameObject();
     }
 
     [Command]
     void CmdDestroyGameObject()
     {
+
         NetworkServer.Destroy(gameObject);
+    }
+
+    void Ondestroy()
+    {
+        if (isServer)
+            FindObjectOfType<InputOracle>().RemovePosFromUsed(transform.position);
     }
 }

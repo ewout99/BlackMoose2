@@ -42,6 +42,7 @@ public class AiController : NetworkBehaviour {
             Priortity.Add(player, 10);
         }
         SetupSpawners();
+        StartCoroutine(UpdatePriority());
     }
 
     /// <summary>
@@ -197,5 +198,37 @@ public class AiController : NetworkBehaviour {
             Temp[Random.Range(0, Temp.Count - 1)].GetComponent<EnemySpawner>().pleaseSpawnTings = true;
             activePoints++;
         }
+    }
+
+    IEnumerator UpdatePriority()
+    {
+        Debug.Log("Getting new Priorities");
+        yield return new WaitForSeconds(5f);
+        Priortity.Clear();
+        Players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (var player in Players)
+        {
+            if (player.GetComponent<Entity>().deathState)
+            {
+                Priortity.Add(player, 0);
+            }
+            else if (player.GetComponent<IngameOracle>())
+            {
+                Priortity.Add(player, 12);
+            }
+            else if (player.GetComponent<IngamePlayer>())
+            {
+                Priortity.Add(player, 10);
+            }
+            else if(player.GetComponent<Turret>())
+            {
+                Priortity.Add(player, 9);
+            }
+            else
+            {
+                Priortity.Add(player, 8);
+            }
+        }
+        StartCoroutine(UpdatePriority());
     }
 }

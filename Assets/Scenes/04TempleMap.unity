@@ -501,7 +501,7 @@ Transform:
   - {fileID: 600192113}
   - {fileID: 710108468}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
 --- !u!4 &600192113 stripped
 Transform:
   m_PrefabParentObject: {fileID: 452930, guid: 2e1588e38202d97438cff2555edd95e9, type: 2}
