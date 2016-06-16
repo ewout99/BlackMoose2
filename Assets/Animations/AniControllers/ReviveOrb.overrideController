@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: ReviveOrb
+  m_Controller: {fileID: 9100000, guid: fcdf29adc29b54232a4343fed8d5986f, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 66c42aed3a87b4f0c8daf72ed510f1f5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ca5d0581092d742ccb4cf061bb226e06, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: cf0311d7908c8458b8475722591db6ad, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a0625edfdd71048a690964c7f0e215dc, type: 2}
