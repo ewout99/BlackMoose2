@@ -119,7 +119,9 @@ public class Entity : NetworkBehaviour {
 
         else 
         {
+            // Play Respawn animation
             healthPoints = 100;
+            CmdAddHealth(100);
         }
     }
 
@@ -128,19 +130,21 @@ public class Entity : NetworkBehaviour {
     public void CmdAddHealth(float amount)
     {
         healthPoints += amount;
+        healthPoints = Mathf.Clamp(healthPoints, -100f, 100f);
     }
 
     [Command]
     public void CmdSubtractHealth(float amount)
     {
         healthPoints -= amount;
+        healthPoints = Mathf.Clamp(healthPoints, -100f, 100f);
     }
 
     // Hook for the healthvariable
     private void HealthChange(float input)
     {
         healthPoints = input;
-        if (healthPoints > previousHealth)
+        if (healthPoints >= previousHealth)
         {
             HealFlash();
             previousHealth = healthPoints;
@@ -165,7 +169,6 @@ public class Entity : NetworkBehaviour {
     // Flash when healed
     private void HealFlash()
     {
-        Debug.Log("Health up");
         StartCoroutine(ColorFlash(Color.green));
     }
 

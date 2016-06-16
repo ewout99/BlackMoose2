@@ -14,6 +14,8 @@ GameObject:
   - 114: {fileID: 11473644}
   - 114: {fileID: 11456256}
   - 114: {fileID: 11436364}
+  - 95: {fileID: 9561040}
+  - 114: {fileID: 11444058}
   m_Layer: 0
   m_Name: Temp Turrert
   m_TagString: Player
@@ -45,6 +47,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &9561040
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157560}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f67ae7ef055b54bdc9a80dd7a663a809, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11436364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65,6 +84,25 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &11444058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 9561040}
+  m_ParameterSendBits: 0
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
 --- !u!114 &11456256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,7 +148,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotsPerSecond: 2
   shootRange: 10
-  bulletPrefab: {fileID: 187820, guid: 88370fc409e007e4fbebfc602b5f8257, type: 2}
+  lifeTime: 20
+  bulletPrefab: {fileID: 185686, guid: 2881862a5b07a374bacee60f829341f3, type: 2}
 --- !u!114 &11496470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,9 +191,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -354108773
+  m_SortingLayerID: 1859086223
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300008, guid: 27e3cb25c05d455499d1df12a1044490, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8e3bd6dabfb1a4359b8dd0d2309669da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -185,6 +224,31 @@ Prefab:
       propertyPath: shotsPerSecond
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SortingLayerID
+      value: 1859086223
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f67ae7ef055b54bdc9a80dd7a663a809, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Animator
+      value: 
+      objectReference: {fileID: 9561040}
+    - target: {fileID: 0}
+      propertyPath: lifeTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 185686, guid: 2881862a5b07a374bacee60f829341f3, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8e3bd6dabfb1a4359b8dd0d2309669da,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 157560}

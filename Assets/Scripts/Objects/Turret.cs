@@ -19,6 +19,9 @@ public class Turret : NetworkBehaviour
     // Targeting
     private List<GameObject> AvaibleEnemies = new List<GameObject>();
     private GameObject target;
+
+    // Refrences
+    private Animator aniRef;
     // Use this for initialization
     void Start()
     {
@@ -62,9 +65,10 @@ public class Turret : NetworkBehaviour
             {
                 Debug.Log("Target in range proceeding to fire");
             }
-
+            
             Vector2 direction = GetDirection(transform, target.transform);
             CmdShoot(direction);
+            aniRef.SetTrigger("attack");
             reloading = true;
             StartCoroutine(Reload());
         }

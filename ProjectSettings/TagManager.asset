@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - SpawnerEnemy
   - Turret
+  - Health
   layers:
   - Default
   - TransparentFX
