@@ -31,11 +31,15 @@ public class Bullet : NetworkBehaviour {
 
 
     // Use this for initialization
-    void Awake () {
+    void Awake() {
         aniRef = gameObject.GetComponent<Animator>();
         rBody2D = gameObject.GetComponent<Rigidbody2D>();
         col2D = gameObject.GetComponent<Collider2D>();
-        StartCoroutine(NetworkDestroy(autoDestroy));
+
+        if (isServer)
+        {
+            StartCoroutine(NetworkDestroy(autoDestroy));
+        }
         // Play Fireing sound
         // Player firing Animation
         // Play start particle

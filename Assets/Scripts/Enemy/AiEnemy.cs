@@ -66,8 +66,12 @@ public class AiEnemy : NetworkBehaviour {
         sRef = GetComponent<Seeker>();
         spRef = GetComponent<SpriteRenderer>();
         entiyRef = GetComponent<Entity>();
-        PathfinderRef = GameObject.Find("PathFinder");
-        targetObject = PathfinderRef.GetComponent<AiController>().GetTarget();
+
+        if (isServer)
+        {
+            PathfinderRef = GameObject.Find("PathFinder");
+            targetObject = PathfinderRef.GetComponent<AiController>().GetTarget();
+        }
     }
 
     // Update is called once per frame
@@ -146,7 +150,16 @@ public class AiEnemy : NetworkBehaviour {
         {
             if (targetObject != null)
             {
-                GoToTarget(targetObject);
+                if (targetObject.GetComponent<Entity>().deathState)
+                {
+                    currentState = States.Idle;
+                    targetObject = null;
+                    targetObject = PathfinderRef.GetComponent<AiController>().GetTarget();
+                }
+                else
+                {
+                    GoToTarget(targetObject);
+                }
                 return;
             }
             else if (targetTransform != null)
@@ -343,7 +356,7 @@ public class AiEnemy : NetworkBehaviour {
     {
         aniRef.SetTrigger("die");
         GetComponent<BoxCollider2D>().enabled = false;
-        if (!targetObject)
+        if (!targetObject || targetObject == null)
         {
             PathfinderRef.GetComponent<AiController>().UpPriority(targetObject);
         }

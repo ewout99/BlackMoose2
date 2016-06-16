@@ -36,15 +36,14 @@ public class InputOracle : NetworkBehaviour  {
 
     // Use this for initialization
     void Start () {
-        if(!isLocalPlayer)
-        {
-            return;
-        }
         // Get refrences
-        oracleCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         aniRef = gameObject.GetComponent<Animator>();
         entityRef = gameObject.GetComponent<Entity>();
 
+        if (isLocalPlayer)
+        {
+            oracleCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        }
         // Spawn buttons
     }
 
@@ -74,19 +73,19 @@ public class InputOracle : NetworkBehaviour  {
             switch (activePower)
             {
                 case "heal":
-                    CmdHealPlacement();
+                    HealLocalCheck();
                     break;
                 case "turret":
-                    CmdTurretPlacement();
+                    TurrertLocalCheck();
                     break;
                 case "revive":
-                    CmdRevivePlacement();
+                    ReviveLocalCheck();
                     break;
                 case "wall":
-                    CmdWallPlacement();
+                    WallLocalCheck();
                     break;
                 case "weapon":
-                    CmdWeaponPlacement();
+                    WeaponLocalCheck();
                     break;
                 default:
                     Debug.LogError("Oracle Input defaulting");
@@ -103,28 +102,29 @@ public class InputOracle : NetworkBehaviour  {
 
     // =================
     // Placement function for powers
-    [Command]
-    void CmdHealPlacement()
+
+    void HealLocalCheck()
     {
-        // Check cost
         if (entityRef.healthPoints <= healCost)
         {
             Debug.Log("Not enough health to spawn");
             // Add feedback not enough
             return;
         }
-        else
-        {
-            Debug.Log("Placing Heal");
-            aniRef.SetTrigger("attack");
-            entityRef.CmdSubtractHealth(healCost);
-            GameObject heal = Instantiate(InputOptions[0], mousePosition, Quaternion.identity) as GameObject;
-            NetworkServer.Spawn(heal);
-        }
+        aniRef.SetTrigger("Attack");
+        CmdHealPlacement(mousePosition);
     }
 
     [Command]
-    void CmdTurretPlacement()
+    void CmdHealPlacement(Vector3 targetPos)
+    {   
+            Debug.Log("Placing Heal");
+            entityRef.CmdSubtractHealth(healCost);
+            GameObject heal = Instantiate(InputOptions[0], targetPos, Quaternion.identity) as GameObject;
+            NetworkServer.Spawn(heal);
+    }
+
+    void TurrertLocalCheck()
     {
         // Check cost
         if (entityRef.healthPoints <= turretCost)
@@ -135,17 +135,21 @@ public class InputOracle : NetworkBehaviour  {
         }
         else if (AddPosToUsed(mousePosition))
         {
-            Debug.Log("Making the turrert");
             aniRef.SetTrigger("Attack");
-            entityRef.CmdSubtractHealth(turretCost);
-            GameObject turret = Instantiate(InputOptions[1], mousePosition, Quaternion.identity) as GameObject;
-            NetworkServer.Spawn(turret);
-            // SpawnTurrert
+            CmdTurretPlacement(mousePosition);
         }
     }
 
     [Command]
-    void CmdRevivePlacement()
+    void CmdTurretPlacement(Vector3 targetPos)
+    {
+            Debug.Log("Making the turrert");
+            entityRef.CmdSubtractHealth(turretCost);
+            GameObject turret = Instantiate(InputOptions[1], targetPos, Quaternion.identity) as GameObject;
+            NetworkServer.Spawn(turret);
+    }
+
+    void ReviveLocalCheck()
     {
         // Check cost
         if (entityRef.healthPoints <= reviveCost)
@@ -156,13 +160,19 @@ public class InputOracle : NetworkBehaviour  {
         else
         {
             aniRef.SetTrigger("Attack");
-            entityRef.CmdSubtractHealth(reviveCost);
-            GameObject revive = Instantiate(InputOptions[2], mousePosition, Quaternion.identity) as GameObject;
-            NetworkServer.Spawn(revive);
+            CmdRevivePlacement(mousePosition);
         }
     }
+
     [Command]
-    void CmdWallPlacement()
+    void CmdRevivePlacement(Vector3 targetPos)
+    {
+        entityRef.CmdSubtractHealth(reviveCost);
+        GameObject revive = Instantiate(InputOptions[2], targetPos, Quaternion.identity) as GameObject;
+        NetworkServer.Spawn(revive);
+    }
+
+    void WallLocalCheck()
     {
         // Check cost
         if (entityRef.healthPoints <= wallCost)
@@ -171,20 +181,24 @@ public class InputOracle : NetworkBehaviour  {
             // Add feedback not enough
             return;
         }
-
-        if (AddPosToUsed(mousePosition))
+        else if (AddPosToUsed(mousePosition))
         {
             aniRef.SetTrigger("Attack");
-            entityRef.CmdSubtractHealth(wallCost);
-            GameObject wall = Instantiate(InputOptions[3], mousePosition, Quaternion.identity) as GameObject;
-            NetworkServer.Spawn(wall);
+            CmdWallPlacement(mousePosition);
         }
+    }
 
-        // Rescan pathfinder
+    [Command]
+    void CmdWallPlacement(Vector3 targetPos)
+    {
+        Debug.Log("Placing wall");
+        entityRef.CmdSubtractHealth(wallCost);
+        GameObject wall = Instantiate(InputOptions[3], targetPos, Quaternion.identity) as GameObject;
+        NetworkServer.Spawn(wall);
         GameObject.Find("PathFinder").GetComponent<AstarPath>().Scan();
     }
-    [Command]
-    void CmdWeaponPlacement()
+
+    void WeaponLocalCheck()
     {
         // Check cost
         if (entityRef.healthPoints <= weaponCost)
@@ -192,13 +206,20 @@ public class InputOracle : NetworkBehaviour  {
             // Add feedback not enough
             return;
         }
-        if (AddPosToUsed(mousePosition))
+        else if (AddPosToUsed(mousePosition))
         {
             aniRef.SetTrigger("Attack");
-            entityRef.CmdSubtractHealth(weaponCost);
-            GameObject weaponRack = Instantiate(InputOptions[4], mousePosition, Quaternion.identity) as GameObject;
-            NetworkServer.Spawn(weaponRack);
+            CmdWeaponPlacement(mousePosition);
         }
+    }
+
+    [Command]
+    void CmdWeaponPlacement(Vector3 targetPos)
+    {
+        Debug.Log("Placing weapon");
+        entityRef.CmdSubtractHealth(weaponCost);
+        GameObject weaponRack = Instantiate(InputOptions[4], targetPos, Quaternion.identity) as GameObject;
+        NetworkServer.Spawn(weaponRack);
     }
 
     // ====================

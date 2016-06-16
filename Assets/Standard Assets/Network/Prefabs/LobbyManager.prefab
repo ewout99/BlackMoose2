@@ -3205,6 +3205,8 @@ MonoBehaviour:
   - {fileID: 190470, guid: ed230fcbfd801cc42aefb7f2edb3292b, type: 2}
   - {fileID: 157560, guid: b8e4c2c33a521954cb82920206c811a7, type: 2}
   - {fileID: 137802, guid: d175bb778e9c4394bbbe4a503be5a1ef, type: 2}
+  - {fileID: 185686, guid: 2881862a5b07a374bacee60f829341f3, type: 2}
+  - {fileID: 153714, guid: 7cdfc02452bc63a46806324cdda2fbb8, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -3252,7 +3254,7 @@ MonoBehaviour:
     type: 2}
   m_GamePlayerPrefab: {fileID: 138796, guid: 428a60be8bc71944797bbc42a3697bae, type: 2}
   m_LobbyScene: 03LobbyScreen
-  m_PlayScene: 05CaveMap
+  m_PlayScene: 04TempleMap
   lobbySlots: []
   playerPrefabIndex: 0
   prematchCountdown: 3

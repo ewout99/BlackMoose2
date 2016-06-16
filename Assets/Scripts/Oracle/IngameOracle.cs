@@ -15,6 +15,7 @@ public class IngameOracle : NetworkBehaviour {
 
     [SerializeField]
     GameObject Oracle_Camera;
+    GameObject camRef;
 
     // Refrences
     private Entity entityRef;
@@ -30,8 +31,8 @@ public class IngameOracle : NetworkBehaviour {
         aniRef = GetComponent<Animator>();
         if (isLocalPlayer)
         {
-            Instantiate(Oracle_Camera, transform.position, Quaternion.identity);
-            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>().target = gameObject.transform;
+            camRef = Instantiate (Oracle_Camera, transform.position, Quaternion.identity) as GameObject;
+            camRef.GetComponent<CameraFollow>().target = gameObject.transform;
         }
 
     }
@@ -39,11 +40,10 @@ public class IngameOracle : NetworkBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-	    if (!isLocalPlayer)
+        if (!isLocalPlayer)
         {
             return;
         }
         aniRef.SetFloat("HealthPercent", entityRef.healthPoints/100);
-
 	}
 }

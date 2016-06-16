@@ -78,6 +78,7 @@ public class IngamePlayer : NetworkBehaviour {
     [Command]
     void CmdReplaceMe()
     {
+        Debug.Log("Replacing Me");
         GameObject tempOracle = Instantiate(Oracle_Ref, transform.position, Quaternion.identity) as GameObject;
         IngameOracle IGO = tempOracle.GetComponent<IngameOracle>();
         NetworkIdentity nIGO = tempOracle.GetComponent<NetworkIdentity>();

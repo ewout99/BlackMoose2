@@ -52,6 +52,10 @@ public class InputPlayer : NetworkBehaviour {
 
     // Use this for initialization
     void Start () {
+        if (GetComponent<IngamePlayer>().typeIngame == 4)
+        {
+            return;
+        }
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         moveRef = gameObject.GetComponent<MovementPlayer>();
         aniRef = gameObject.GetComponent<Animator>();

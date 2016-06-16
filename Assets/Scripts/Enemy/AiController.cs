@@ -121,13 +121,19 @@ public class AiController : NetworkBehaviour {
     // Up the priority of a player
     public void UpPriority(GameObject target)
     {
-        Priortity[target] = Priortity[target] + 1;
+        if (Priortity.ContainsKey(target))
+        {
+            Priortity[target] = Priortity[target] + 1;
+        }
     }
 
     // Lower priority of a player
     public void DownPriorty(GameObject target)
     {
-        Priortity[target] = Priortity[target] - 1;
+        if (Priortity.ContainsKey(target))
+        {
+            Priortity[target] = Priortity[target] - 1;
+        }
     }
 
     // Get a target to attack based on priority system
@@ -202,7 +208,6 @@ public class AiController : NetworkBehaviour {
 
     IEnumerator UpdatePriority()
     {
-        Debug.Log("Getting new Priorities");
         yield return new WaitForSeconds(5f);
         Priortity.Clear();
         Players = GameObject.FindGameObjectsWithTag("Player");

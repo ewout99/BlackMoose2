@@ -200,7 +200,7 @@ MonoBehaviour:
   InputOptions:
   - {fileID: 137802, guid: d175bb778e9c4394bbbe4a503be5a1ef, type: 2}
   - {fileID: 157560, guid: b8e4c2c33a521954cb82920206c811a7, type: 2}
-  - {fileID: 0}
+  - {fileID: 153714, guid: 7cdfc02452bc63a46806324cdda2fbb8, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   healCost: 5
@@ -493,6 +493,10 @@ Prefab:
       propertyPath: InputOptions.Array.data[0]
       value: 
       objectReference: {fileID: 137802, guid: d175bb778e9c4394bbbe4a503be5a1ef, type: 2}
+    - target: {fileID: 0}
+      propertyPath: InputOptions.Array.data[2]
+      value: 
+      objectReference: {fileID: 153714, guid: 7cdfc02452bc63a46806324cdda2fbb8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 149500}
