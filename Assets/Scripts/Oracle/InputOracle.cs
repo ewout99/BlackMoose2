@@ -92,6 +92,10 @@ public class InputOracle : NetworkBehaviour  {
         {
             return;
         }
+        if (!entityRef)
+        {
+            entityRef = gameObject.GetComponent<Entity>();
+        }
         else if (entityRef.deathState)
         {
             return;

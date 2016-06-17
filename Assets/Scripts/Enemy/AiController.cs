@@ -150,8 +150,11 @@ public class AiController : NetworkBehaviour {
         KeyValuePair<GameObject, int> bestTarget = Priortity.First();
         foreach (KeyValuePair<GameObject, int> pTarget in Priortity)
         {
-            // This needs fixing gives errors :@
-            if (!pTarget.Key.GetComponent<Entity>().deathState)
+            if (!pTarget.Key)
+            {
+                // This needs fixing gives errors :@
+            }
+            else if (!pTarget.Key.GetComponent<Entity>().deathState)
             {
                 if (pTarget.Value > bestTarget.Value) bestTarget = pTarget;
             }

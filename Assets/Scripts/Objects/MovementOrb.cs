@@ -13,6 +13,9 @@ public class MovementOrb : NetworkBehaviour {
     private List<float> Distances = new List<float>();
     private float smallestDistance;
 
+    //References
+    private Rigidbody2D rBody2D;
+
     // Audiosrouce
     private AudioSource audioRef;
     // AudioClips
@@ -22,10 +25,12 @@ public class MovementOrb : NetworkBehaviour {
     void Start()
     {
         Players = GameObject.FindGameObjectsWithTag("Player");
+        rBody2D = GetComponent<Rigidbody2D>();
         audioRef = gameObject.GetComponent<AudioSource>();
         audioRef.clip = orbSpawn;
         audioRef.Play();
         StartCoroutine(NetworkDestroy(lifeTime));
+        
     }
 
     // Update is called once per frame
@@ -36,6 +41,9 @@ public class MovementOrb : NetworkBehaviour {
             return;
         }
 
+        Distances.Clear();
+
+        rBody2D.velocity = Vector2.zero;
         foreach (GameObject player in Players)
         {
             if (player)
@@ -51,14 +59,13 @@ public class MovementOrb : NetworkBehaviour {
                 }
             }
         }
-
-        Distances.Sort();
-        smallestDistance = Distances[0];
+        smallestDistance = Distances.Min();
+        // Debug.Log ("Smallest distancc " + Distances.Min());
+        // Debug.Log(" Indexy Distance" + Distances.IndexOf(smallestDistance));
 
         if (smallestDistance <= 2)
         {
-            float minVal = Distances.Min();
-            int index = Distances.IndexOf(minVal);
+            int index = Distances.IndexOf(smallestDistance);
             GameObject targetPlayer = Players[index];
             float step = Time.deltaTime * orbSpeed;
             transform.position = Vector3.MoveTowards(transform.position, targetPlayer.transform.position, step);

@@ -14,6 +14,7 @@ public class InputPlayer : NetworkBehaviour {
     private float normalSpeed;
     
     public bool canShoot;
+    [SyncVar]
     public bool oracleAttached;
 
     //Private Variables
@@ -77,6 +78,10 @@ public class InputPlayer : NetworkBehaviour {
         }
         else if (entiRef.deathState)
         {
+            if(oracleAttached)
+            {
+                CmdDettachOracle();
+            }
             return;
         }
 
@@ -155,7 +160,7 @@ public class InputPlayer : NetworkBehaviour {
        
 
         // Firing bullet
-        if (Input.GetButton("Fire") && canShoot)
+        if (Input.GetButton("Fire") && canShoot && !oracleAttached)
         {
             canShoot = false;
             playerCamera.GetComponent<CameraFollow>().ScreenShake(shakeIntesityFire, shakeAmountFire);
@@ -168,12 +173,23 @@ public class InputPlayer : NetworkBehaviour {
         // Pick up and drop the oracle
         if (Input.GetButtonDown("PickUp"))
         {
-            CmdAttachOracle();
+            if (!OracleRef)
+            {
+                OracleRef = GameObject.Find("Temp Oracle(Clone)");
+            }
+            if (!oracleAttached && !OracleRef.GetComponent<MovementOracle>().beingCarried )
+            {
+                CmdAttachOracle(netId);
+            }
+            
         }
 
         if (Input.GetButtonDown("PutDown"))
         {
-            CmdDettachOracle();
+            if (oracleAttached)
+            {
+                CmdDettachOracle();
+            }
         }
 
     }
@@ -206,15 +222,21 @@ public class InputPlayer : NetworkBehaviour {
     }
 
     [Command]
-    void CmdAttachOracle()
+    void CmdAttachOracle(NetworkInstanceId InputNetworkId)
     {
-
+        weaponAniRef.SetWeaponDisplay(0);
+        OracleRef = GameObject.Find("Temp Oracle(Clone)");
+        oracleAttached = true;
+        OracleRef.GetComponent<MovementOracle>().CmdSetTargetObject(InputNetworkId);
     }
 
     [Command]
     void CmdDettachOracle()
     {
-
+        weaponAniRef.SetWeaponDisplay(1);
+        OracleRef = GameObject.Find("Temp Oracle(Clone)");
+        oracleAttached = false;
+        OracleRef.GetComponent<MovementOracle>().CmdResetTarget();
     }
 
     // A Command and a hook to set the flipX for the SpriteRenderer

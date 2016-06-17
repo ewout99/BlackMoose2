@@ -38,6 +38,7 @@ public class IngamePlayer : NetworkBehaviour {
     // Use this for initialization
     void Start ()
     {
+        nameIngame = nameIngame.Length > 12 ? nameIngame.Substring(0, 12) : nameIngame;
         nameField.text = nameIngame;
         nameField.color = colorIngame;
         pickRef = GetComponent<PickUp>();
@@ -64,8 +65,8 @@ public class IngamePlayer : NetworkBehaviour {
         if (!oracleRef)
         {
             oracleRef = GameObject.Find("Temp Oracle(Clone)");
+            return;
         }
-
        
         // If the oracle is near by send your flux to the oracle
         if (flux > 0 && Vector3.Distance(oracleRef.transform.position , transform.position) <= fluxDeliveryRange)

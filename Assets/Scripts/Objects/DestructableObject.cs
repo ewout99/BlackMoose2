@@ -27,6 +27,11 @@ public class DestructableObject : NetworkBehaviour {
     {
         if (!isServer)
             return;
+        if (coll.gameObject.tag == "Player")
+        {
+            return;
+        }
+
         if (transform.tag != coll.gameObject.tag && !objectHit)
         {
             Hit();
@@ -37,6 +42,12 @@ public class DestructableObject : NetworkBehaviour {
     {
         if (!isServer)
             return;
+
+        if (other.gameObject.tag == "Player")
+        {
+            return;
+        }
+
         if (transform.tag != other.tag && !objectHit)
         {
             Hit();

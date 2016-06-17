@@ -70,7 +70,7 @@ public class Turret : NetworkBehaviour
     [Command]
     void CmdShoot(Vector2 direction)
     {
-        GameObject bullet = (GameObject)Instantiate(bulletPrefab, transform.position + new Vector3(direction.x, direction.y, 0).normalized * 1f, transform.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(direction.x, direction.y, 0).normalized * 0.8f, Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg))) as GameObject;
         bullet.GetComponent<Bullet>().Go(direction, "Player");
         bullet.transform.SetParent(transform, true);
         NetworkServer.Spawn(bullet);
