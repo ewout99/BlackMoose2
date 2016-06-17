@@ -59,6 +59,7 @@ public class MovementOracle : NetworkBehaviour {
     public void CmdSetTargetObject(NetworkInstanceId inputID)
     {
         beingCarried = true;
+        GetComponent<Collider2D>().enabled = false;
         target = inputID;
         targetObject = NetworkServer.FindLocalObject(target);
         RpcSetTargetObject(inputID);
@@ -67,6 +68,7 @@ public class MovementOracle : NetworkBehaviour {
     [ClientRpc]
     private void RpcSetTargetObject(NetworkInstanceId inputID)
     {
+        GetComponent<Collider2D>().enabled = false;
         beingCarried = true;
         target = inputID;
         targetObject = ClientScene.FindLocalObject(target);
@@ -76,6 +78,7 @@ public class MovementOracle : NetworkBehaviour {
     public void CmdResetTarget()
     {
         beingCarried = false;
+        GetComponent<Collider2D>().enabled = true;
         target = netId;
         targetVector = Vector3.down;
         targetVector.y -= carryOffSet;
