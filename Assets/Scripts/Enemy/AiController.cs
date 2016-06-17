@@ -120,7 +120,6 @@ public class AiController : NetworkBehaviour {
 
         if (amountOfSquadrons > activePoints)
         {
-            Debug.Log("Not enough active points");
             SetupSpawners();
         }
         // Check for priorities
@@ -174,7 +173,6 @@ public class AiController : NetworkBehaviour {
         }
         else
         {
-            Debug.LogError("No players in scene");
             return null;
         }
     }
@@ -216,7 +214,6 @@ public class AiController : NetworkBehaviour {
         // Activate a random one
         if (Temp.Count == 0)
         {
-            Debug.LogWarning("No avaibles spawners to activate");
         }
         else
         {
