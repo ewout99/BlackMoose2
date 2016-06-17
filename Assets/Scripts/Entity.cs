@@ -125,7 +125,10 @@ public class Entity : NetworkBehaviour {
         else 
         {
             // Play Respawn animation
+            rBody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
             CmdAddHealth(100);
+            aniRef.SetTrigger("revive");
+            GetComponent<CustomNetworkAnim>().SetWeaponDisplay(1);
         }
     }
 

@@ -51,7 +51,7 @@ public class CustomNetworkAnim : NetworkBehaviour {
         direction = state;
     }
 
-    void SetWeaponDisplay(int inputInt)
+    public void SetWeaponDisplay(int inputInt)
     {
         if (inputInt == 0)
             weaponRef.SetActive(false);

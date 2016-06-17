@@ -19,6 +19,9 @@ public class Revive: NetworkBehaviour
         }
         else
         {
+            Debug.Log(col.collider.tag);
+            Debug.Log("IngamePlayer = " + col.collider.GetComponent<IngamePlayer>());
+            Debug.Log("DeathStae = " + col.collider.GetComponent<Entity>().deathState);
             Debug.Log("Im not reviving you: " + col.collider.name);
         }
     }
