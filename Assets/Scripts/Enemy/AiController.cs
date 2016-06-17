@@ -17,9 +17,9 @@ public class AiController : NetworkBehaviour {
     //Private Ref
     private GameObject PathfinderRef;
 
-    private float minSpawningDistance = 7;
-    private float maxSpawningDistance = 50;
-    private int amountOfSquadrons = 2;
+    private float minSpawningDistance = 10;
+    private float maxSpawningDistance = 40;
+    private int amountOfSquadrons = 4;
     private int activePoints;
 
     // Use this for initialization
@@ -51,7 +51,7 @@ public class AiController : NetworkBehaviour {
     void SetupSpawners()
     {
         List<GameObject> Temp = new List<GameObject>();
-
+        Temp.Clear();
         foreach (GameObject local in Spawners)
         {
             Temp.Add(local);
