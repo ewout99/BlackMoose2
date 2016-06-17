@@ -207,7 +207,6 @@ MonoBehaviour:
   - {fileID: 157560, guid: b8e4c2c33a521954cb82920206c811a7, type: 2}
   - {fileID: 153714, guid: 7cdfc02452bc63a46806324cdda2fbb8, type: 2}
   - {fileID: 144174, guid: 962bbfee50d32f743bc64562406c48a2, type: 2}
-  - {fileID: 113562, guid: 1ff04983e061ad64393b780956ef1209, type: 2}
   healCost: 5
   turretCost: 10
   reviveCost: 20
@@ -225,6 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6388513416b7b614abd8e54a86739b30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beingCarried: 0
+  carryOffSet: 1.5
 --- !u!114 &11421026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -341,6 +342,7 @@ MonoBehaviour:
   nameField: {fileID: 0}
   typeIngame: 0
   colorIngame: {r: 0, g: 0, b: 0, a: 0}
+  flux: 0
   Oracle_Camera: {fileID: 122702, guid: 4aa098303e36cad4ca8e2f674a2d781e, type: 2}
 --- !u!114 &11479782
 MonoBehaviour:
@@ -475,7 +477,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: InputOptions.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Sprite
