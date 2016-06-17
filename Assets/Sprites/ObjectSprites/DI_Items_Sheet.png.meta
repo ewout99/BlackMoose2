@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 97708ead22551447894b432cb56881d2
-timeCreated: 1464265174
+timeCreated: 1466170743
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -10,6 +10,10 @@ TextureImporter:
     21300006: DI_Items_Sheet_3
     21300008: DI_Items_Sheet_4
     21300010: DI_Items_Sheet_5
+    21300012: DI_Items_Sheet_6
+    21300014: DI_Items_Sheet_7
+    21300016: DI_Items_Sheet_8
+    21300018: DI_Items_Sheet_9
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -60,7 +64,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 48
         width: 16
         height: 24
       alignment: 0
@@ -71,7 +75,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 0
+        y: 48
         width: 16
         height: 24
       alignment: 0
@@ -82,7 +86,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 48
         width: 16
         height: 24
       alignment: 0
@@ -93,7 +97,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 0
+        y: 48
         width: 16
         height: 24
       alignment: 0
@@ -104,7 +108,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
+        y: 48
         width: 16
         height: 24
       alignment: 0
@@ -115,7 +119,51 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 0
+        y: 48
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DI_Items_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DI_Items_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 24
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DI_Items_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 24
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: DI_Items_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 24
         width: 16
         height: 24
       alignment: 0

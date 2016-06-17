@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: do_Crate
+  m_Controller: {fileID: 9100000, guid: cc5079a5974708e4f8470a804b030877, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 217da935643d94dd793dba8132f9fd41, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 678bcb850c5e44bb5bd1c71f5d0ab391, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9f02300f9fa1d4606a439d52e5eaca10, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f2232cc845efe4808a214706f67a2ab7, type: 2}
