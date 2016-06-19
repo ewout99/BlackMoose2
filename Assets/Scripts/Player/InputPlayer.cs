@@ -57,7 +57,6 @@ public class InputPlayer : NetworkBehaviour {
         {
             return;
         }
-        playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         moveRef = gameObject.GetComponent<MovementPlayer>();
         aniRef = gameObject.GetComponent<Animator>();
         spRef = gameObject.GetComponent<SpriteRenderer>();
@@ -66,7 +65,8 @@ public class InputPlayer : NetworkBehaviour {
         weaponAniRef = gameObject.GetComponent<CustomNetworkAnim>();
         bulletSpawnRef = weaponRef.gameObject.transform.FindChild("Temp Spawn");
         inverseAttackspeed = 1f / attackSpeed;
-	}
+        playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+    }
 	
 	// Update is called once per frame
 	void Update () {

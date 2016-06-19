@@ -121,8 +121,7 @@ public class Entity : NetworkBehaviour {
                 StartCoroutine(NetworkDestroy(0.1f));
             }
         }
-
-        else 
+        else if (!state)
         {
             // Play Respawn animation
             rBody2D.constraints = RigidbodyConstraints2D.FreezeRotation;

@@ -106,8 +106,15 @@ public class InputOracle : NetworkBehaviour  {
         {
             if (!(GUIUtility.hotControl == 0))
             {
+                // Debug UI input
                 return;
             }
+            if(EventSystem.current.IsPointerOverGameObject())
+            {
+                // Canvas UI input
+                return;
+            }
+            
             mousePosition = oracleCamera.ScreenToWorldPoint(Input.mousePosition);
             mousePosition = FloorPosition(mousePosition);
             if(entityRef.healthPoints < minimumFlux)
@@ -141,7 +148,7 @@ public class InputOracle : NetworkBehaviour  {
     }
 
     // Listener for powerselection
-    void SelectPower(string input)
+    public void SelectPower(string input)
     {
         activePower = input;
     }

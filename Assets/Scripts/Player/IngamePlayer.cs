@@ -7,7 +7,6 @@ public class IngamePlayer : NetworkBehaviour {
 
     [SyncVar]
     public string nameIngame;
-    public Text nameField;
     [SyncVar]
     public int typeIngame;
     [SyncVar]
@@ -18,7 +17,12 @@ public class IngamePlayer : NetworkBehaviour {
 
     // Editor refrences
     public GameObject Player_Camera;
+    private GameObject camRef;
+    public GameObject UI_Ref;
     public GameObject Oracle_Ref;
+
+    public Image healthBar;
+    public Image colorDisplay;
 
     // Editor Variaels
     public float fluxDeliveryRange = 4f;
@@ -38,29 +42,44 @@ public class IngamePlayer : NetworkBehaviour {
     // Use this for initialization
     void Start ()
     {
+        colorDisplay.color = colorIngame;
         nameIngame = nameIngame.Length > 12 ? nameIngame.Substring(0, 12) : nameIngame;
-        nameField.text = nameIngame;
-        nameField.color = colorIngame;
         pickRef = GetComponent<PickUp>();
         GetComponent<Animator>().runtimeAnimatorController = ((RuntimeAnimatorController)(Resources.Load(AnimCons[typeIngame])));
 
         if (isLocalPlayer && typeIngame == 4)
         {
             CmdReplaceMe();
+            return;
         }
         else if (isLocalPlayer)
         {
-            Instantiate(Player_Camera, transform.position, Quaternion.identity);
-            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>().target = gameObject.transform;
+            camRef = Instantiate(Player_Camera, transform.position, Quaternion.identity) as GameObject;
+            camRef.GetComponent<CameraFollow>().target = gameObject.transform;
+            UI_Ref = Instantiate(UI_Ref);
+            Invoke("AddWithDealy", 2f);
         }
     }
 
     // Update is called once per frame
     void Update () {
+
+        healthBar.transform.localScale = new Vector2((Mathf.Clamp(gameObject.GetComponent<Entity>().healthPoints, 0, 100) / 100),1);
+        if (gameObject.GetComponent<Entity>().healthPoints > 50)
+        {
+            healthBar.color = Color.green;
+        }
+        else if (gameObject.GetComponent<Entity>().healthPoints <= 50 && gameObject.GetComponent<Entity>().healthPoints >= 20)
+        {
+            healthBar.color = Color.yellow;
+        }
+        else
+        {
+            healthBar.color = Color.red;
+        }
         // Check if its the local player
         if (!isLocalPlayer)
             return;
-
 
         if (!oracleRef)
         {
@@ -106,7 +125,6 @@ public class IngamePlayer : NetworkBehaviour {
 
     //==============
 
-
     [Command]
     void CmdReplaceMe()
     {
@@ -120,5 +138,10 @@ public class IngamePlayer : NetworkBehaviour {
         NetworkServer.Spawn(tempOracle);
         NetworkServer.ReplacePlayerForConnection(connectionToClient, tempOracle, playerControllerId);
         NetworkServer.Destroy(gameObject);
+    }
+
+    void AddWithDealy()
+    {
+        CentralScript.instance.CmdAddPlayer(nameIngame, typeIngame, colorIngame);
     }
 }

@@ -18,7 +18,11 @@ public class IngameOracle : NetworkBehaviour {
 
     [SerializeField]
     GameObject Oracle_Camera;
-    GameObject camRef;
+    private GameObject camRef;
+    [SerializeField]
+    private GameObject UI_Ref;
+    public Image healthBar;
+    public Image colorDisplay;
 
     // Refrences
     private Entity entityRef;
@@ -28,12 +32,15 @@ public class IngameOracle : NetworkBehaviour {
     void Start ()
     {
         nameField = GetComponentInChildren<Text>();
-        nameField.text = nameIngame;
-        nameField.color = colorIngame;
+        colorDisplay.color = colorIngame;
         entityRef = GetComponent<Entity>();
         aniRef = GetComponent<Animator>();
         if (isLocalPlayer)
         {
+            UI_Ref = Instantiate(UI_Ref);
+            UI_Ref.GetComponent<InGameUI>().oracleRef = gameObject;
+            UI_Ref.GetComponent<InGameUI>().EnableOracle();
+            Invoke("AddWithDealy", 1f);
             camRef = Instantiate (Oracle_Camera, transform.position, Quaternion.identity) as GameObject;
             camRef.GetComponent<CameraFollow>().target = gameObject.transform;
         }
@@ -43,6 +50,20 @@ public class IngameOracle : NetworkBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        healthBar.transform.localScale = new Vector2((Mathf.Clamp(gameObject.GetComponent<Entity>().healthPoints, 0, 100) / 100), 1);
+        if (gameObject.GetComponent<Entity>().healthPoints > 50)
+        {
+            healthBar.color = Color.green;
+        }
+        else if (gameObject.GetComponent<Entity>().healthPoints <= 50 && gameObject.GetComponent<Entity>().healthPoints >= 20)
+        {
+            healthBar.color = Color.yellow;
+        }
+        else
+        {
+            healthBar.color = Color.red;
+        }
+
         if (!isLocalPlayer)
         {
             return;
@@ -75,4 +96,9 @@ public class IngameOracle : NetworkBehaviour {
         flux = 0;
     }
     //======================
+
+    void AddWithDealy()
+    {
+        CentralScript.instance.CmdAddPlayer(nameIngame, typeIngame, colorIngame);
+    }
 }

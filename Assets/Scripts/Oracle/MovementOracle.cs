@@ -37,7 +37,6 @@ public class MovementOracle : NetworkBehaviour {
             return;
         }
 
-        Debug.Log("|Is being Carried =" + beingCarried);
         if(!beingCarried)
         {
             aniRef.SetBool("Carried", false);
