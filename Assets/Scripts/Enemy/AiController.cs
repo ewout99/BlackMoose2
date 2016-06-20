@@ -22,6 +22,8 @@ public class AiController : NetworkBehaviour {
     private int amountOfSquadrons = 4;
     private int activePoints;
 
+    private bool levelDelayComplete;
+
     // Use this for initialization
     void Start ()
     {
@@ -41,7 +43,7 @@ public class AiController : NetworkBehaviour {
         {
             Priortity.Add(player, 10);
         }
-        SetupSpawners();
+        StartCoroutine(levelDelayStart());
         StartCoroutine(UpdatePriority());
     }
 
@@ -95,7 +97,7 @@ public class AiController : NetworkBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (!isServer)
+        if (!isServer || !levelDelayComplete)
         {
             return;
         }
@@ -251,5 +253,11 @@ public class AiController : NetworkBehaviour {
             }
         }
         StartCoroutine(UpdatePriority());
+    }
+
+    IEnumerator levelDelayStart()
+    {
+        yield return new WaitForSeconds(3f);
+        levelDelayComplete = true;
     }
 }

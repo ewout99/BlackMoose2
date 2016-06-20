@@ -73,8 +73,20 @@ public class IngameOracle : NetworkBehaviour {
             entityRef.CmdAddHealth(flux);
             CmdResetFlux();
         }
+        if (gameObject.GetComponent<Entity>().healthPoints <= 0)
+        {
+            CentralScript.instance.CmdDefeat();
+        }
         aniRef.SetFloat("HealthPercent", entityRef.healthPoints/100);
 	}
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.name == "EndOfLevel")
+        {
+            CentralScript.instance.CmdVictory();
+        }
+    }
 
     //==================
     // Flux adding, reducing and reseting

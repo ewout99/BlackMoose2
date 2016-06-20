@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
 public class CentralScript : NetworkBehaviour {
 
-    public static CentralScript instance;
+    public static CentralScript instance = null;
 
     public GameObject UIref;
     public InGameUI UICodeRef;
@@ -18,8 +19,10 @@ public class CentralScript : NetworkBehaviour {
 
     [SyncVar]
     private bool victory = false;
+    private bool victoryCalled;
     [SyncVar]
     private bool defeat = false;
+    private bool defeatCalled;
 
     [SyncVar]
     private Color pc1 = Color.white;
@@ -32,13 +35,14 @@ public class CentralScript : NetworkBehaviour {
 
     // Use this for initialization
     void Start () {
-        if(!instance)
+        if(instance == null)
         {
+            Debug.Log("Singleton made");
             instance = this;
         }
         else
         {
-            Debug.Log("Singleton fail");
+            Debug.LogError("Singleton fail");
         }
         StartCoroutine(GetUI());
 	}
@@ -70,13 +74,17 @@ public class CentralScript : NetworkBehaviour {
             UICodeRef.playerColor4.color = pc4;
         }
 
-        if(victory)
+        if(victory && !defeat && !victoryCalled)
         {
+            victoryCalled = true;
             UICodeRef.victory.gameObject.SetActive(true);
+            StartCoroutine(LoadLevel("02MenuScreen"));
         }
-        if(defeat)
+        if(defeat && !victory && !defeatCalled)
         {
+            defeatCalled= true;
             UICodeRef.defeat.gameObject.SetActive(true);
+            StartCoroutine(LoadLevel("02MenuScreen"));
         }
     }
 
@@ -124,5 +132,11 @@ public class CentralScript : NetworkBehaviour {
             UICodeRef = UIref.GetComponent<InGameUI>();
             yield return null;
         }
+    }
+
+    IEnumerator LoadLevel(string levelToLoad)
+    {
+        yield return new WaitForSeconds(3.0f);
+        SceneManager.LoadScene(levelToLoad);
     }
 }
