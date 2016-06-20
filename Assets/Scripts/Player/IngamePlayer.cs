@@ -57,7 +57,7 @@ public class IngamePlayer : NetworkBehaviour {
             camRef = Instantiate(Player_Camera, transform.position, Quaternion.identity) as GameObject;
             camRef.GetComponent<CameraFollow>().target = gameObject.transform;
             UI_Ref = Instantiate(UI_Ref);
-            Invoke("CmdAddWithDealy", 2f);
+            StartCoroutine(AddWithDealy());
         }
     }
 
@@ -136,13 +136,19 @@ public class IngamePlayer : NetworkBehaviour {
         IGO.colorIngame = colorIngame;
         nIGO.localPlayerAuthority = true;
         NetworkServer.Spawn(tempOracle);
-        NetworkServer.ReplacePlayerForConnection(connectionToClient, tempOracle, playerControllerId);
         NetworkServer.Destroy(gameObject);
+        NetworkServer.ReplacePlayerForConnection(connectionToClient, tempOracle, playerControllerId);
     }
 
-    [Command]
-    void CmdAddWithDealy()
+    IEnumerator AddWithDealy()
     {
-        CentralScript.instance.CmdAddPlayer(nameIngame, typeIngame, colorIngame);
+        yield return new WaitForSeconds(1f);
+        CmdAdd();
+    }
+    [Command]
+    void CmdAdd()
+    {
+        Debug.Log(isLocalPlayer);
+        CentralScript.instance.AddPlayer(nameIngame, typeIngame, colorIngame);
     }
 }

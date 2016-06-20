@@ -2070,11 +2070,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400108, guid: 8ae39a042a116854c8238012c0b9ca96, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 113.44
+      value: 113
       objectReference: {fileID: 0}
     - target: {fileID: 400108, guid: 8ae39a042a116854c8238012c0b9ca96, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 140.9
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 400108, guid: 8ae39a042a116854c8238012c0b9ca96, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2099,6 +2099,10 @@ Prefab:
     - target: {fileID: 400108, guid: 8ae39a042a116854c8238012c0b9ca96, type: 2}
       propertyPath: m_RootOrder
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 410434, guid: 8ae39a042a116854c8238012c0b9ca96, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ae39a042a116854c8238012c0b9ca96, type: 2}
@@ -2727,7 +2731,6 @@ GameObject:
   - 114: {fileID: 1305916890}
   - 114: {fileID: 1305916893}
   - 114: {fileID: 1305916892}
-  - 114: {fileID: 1305916894}
   m_Layer: 0
   m_Name: PathFinder
   m_TagString: Untagged
@@ -2846,6 +2849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23787d8d07bdb0448949ff060136ab4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amountOfSquadrons: 4
 --- !u!114 &1305916893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2876,21 +2880,8 @@ MonoBehaviour:
     i13: 0
     i14: 0
     i15: 0
-  m_ServerOnly: 0
+  m_ServerOnly: 1
   m_LocalPlayerAuthority: 0
---- !u!114 &1305916894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1305916889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 969dd090e9c29154dad05fbd297b56b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UIref: {fileID: 0}
-  UICodeRef: {fileID: 0}
 --- !u!1001 &1367579627
 Prefab:
   m_ObjectHideFlags: 0
@@ -3489,6 +3480,55 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b674f1df6e734b40971a778db477503, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1472336322 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 113924, guid: 5b674f1df6e734b40971a778db477503, type: 2}
+  m_PrefabInternal: {fileID: 1472336321}
+--- !u!114 &1472336323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1472336322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 969dd090e9c29154dad05fbd297b56b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIref: {fileID: 0}
+  UICodeRef: {fileID: 0}
+--- !u!114 &1472336324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1472336322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 91
+    i1: 103
+    i2: 79
+    i3: 29
+    i4: 246
+    i5: 231
+    i6: 52
+    i7: 180
+    i8: 9
+    i9: 113
+    i10: 167
+    i11: 120
+    i12: 219
+    i13: 71
+    i14: 117
+    i15: 3
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!1 &1481954280
 GameObject:
   m_ObjectHideFlags: 0

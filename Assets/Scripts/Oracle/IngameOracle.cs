@@ -16,6 +16,8 @@ public class IngameOracle : NetworkBehaviour {
     [SyncVar]
     public float flux = 0;
 
+    private bool defeatCalled;
+
     [SerializeField]
     GameObject Oracle_Camera;
     private GameObject camRef;
@@ -40,11 +42,10 @@ public class IngameOracle : NetworkBehaviour {
             UI_Ref = Instantiate(UI_Ref);
             UI_Ref.GetComponent<InGameUI>().oracleRef = gameObject;
             UI_Ref.GetComponent<InGameUI>().EnableOracle();
-            Invoke("CmdAddWithDealy", 1f);
             camRef = Instantiate (Oracle_Camera, transform.position, Quaternion.identity) as GameObject;
             camRef.GetComponent<CameraFollow>().target = gameObject.transform;
+            StartCoroutine(AddWithDealy());
         }
-
     }
 	
 	// Update is called once per frame
@@ -73,9 +74,10 @@ public class IngameOracle : NetworkBehaviour {
             entityRef.CmdAddHealth(flux);
             CmdResetFlux();
         }
-        if (gameObject.GetComponent<Entity>().healthPoints <= 0)
+        if (gameObject.GetComponent<Entity>().deathState == true && defeatCalled == false)
         {
-            CentralScript.instance.CmdDefeat();
+            defeatCalled = true;
+            CentralScript.instance.Defeat();
         }
         aniRef.SetFloat("HealthPercent", entityRef.healthPoints/100);
 	}
@@ -84,7 +86,7 @@ public class IngameOracle : NetworkBehaviour {
     {
         if (other.name == "EndOfLevel")
         {
-            CentralScript.instance.CmdVictory();
+            CmdVictory();
         }
     }
 
@@ -108,20 +110,27 @@ public class IngameOracle : NetworkBehaviour {
         flux = 0;
     }
     //======================
-    [Command]
-    void CmdAddWithDealy()
+
+    IEnumerator AddWithDealy()
     {
-        CentralScript.instance.CmdAddPlayer(nameIngame, typeIngame, colorIngame);
+        yield return new WaitForSeconds(1f);
+        CmdAdd();
+    }
+    [Command]
+    void CmdAdd()
+    {
+        Debug.Log(isLocalPlayer);
+        CentralScript.instance.AddPlayer(nameIngame, typeIngame, colorIngame);
     }
     [Command]
     void CmdVictory()
     {
-        CentralScript.instance.CmdVictory();
+        CentralScript.instance.Victory();
     }
     [Command]
     void CmdDefeat()
     {
-        CentralScript.instance.CmdDefeat();
+        CentralScript.instance.Defeat();
     }
 
 }

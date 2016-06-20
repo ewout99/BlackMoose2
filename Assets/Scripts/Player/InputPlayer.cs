@@ -16,6 +16,7 @@ public class InputPlayer : NetworkBehaviour {
     public bool canShoot;
     [SyncVar]
     public bool oracleAttached;
+    public float pickUpRange = 1.7f;
 
     //Private Variables
     private Vector3 mousePosition = Vector3.zero;
@@ -177,7 +178,7 @@ public class InputPlayer : NetworkBehaviour {
             {
                 OracleRef = GameObject.Find("Temp Oracle(Clone)");
             }
-            if (!oracleAttached && !OracleRef.GetComponent<MovementOracle>().beingCarried )
+            if (!oracleAttached && !OracleRef.GetComponent<MovementOracle>().beingCarried && Vector3.Distance(OracleRef.transform.position, transform.position) <= pickUpRange)
             {
                 CmdAttachOracle(netId);
             }
