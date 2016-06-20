@@ -88,8 +88,7 @@ public class CentralScript : NetworkBehaviour {
         }
     }
 
-    [Command]
-    public void CmdAddPlayer(string playerName, int typeIngame, Color playerColor)
+    public void AddPlayer(string playerName, int typeIngame, Color playerColor)
     {
         Names.Add(playerName);
         Types.Add(typeIngame);
@@ -110,16 +109,15 @@ public class CentralScript : NetworkBehaviour {
             pc4 = playerColor;
         }
         updatePlease = true;
+        SetDirtyBit(syncVarDirtyBits);
     }
 
-    [Command]
-    public void CmdDefeat()
+    public void Defeat()
     {
         defeat = true;
     }
 
-    [Command]
-    public void CmdVictory()
+    public void Victory()
     {
         victory = true;
     }

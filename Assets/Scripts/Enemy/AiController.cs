@@ -18,8 +18,8 @@ public class AiController : NetworkBehaviour {
     private GameObject PathfinderRef;
 
     private float minSpawningDistance = 10;
-    private float maxSpawningDistance = 40;
-    private int amountOfSquadrons = 4;
+    private float maxSpawningDistance = 30;
+    public int amountOfSquadrons = 3;
     private int activePoints;
 
     private bool levelDelayComplete;

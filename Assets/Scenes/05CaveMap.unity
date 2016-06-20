@@ -2418,11 +2418,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 468826, guid: a7fcd309f711f824e95834647e755b12, type: 2}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
       value: 44.93
+=======
+      value: 113
+>>>>>>> origin/master
       objectReference: {fileID: 0}
     - target: {fileID: 468826, guid: a7fcd309f711f824e95834647e755b12, type: 2}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
       value: 129.14
+=======
+      value: 140
+>>>>>>> origin/master
       objectReference: {fileID: 0}
     - target: {fileID: 468826, guid: a7fcd309f711f824e95834647e755b12, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2471,6 +2479,10 @@ Prefab:
     - target: {fileID: 130152, guid: a7fcd309f711f824e95834647e755b12, type: 2}
       propertyPath: m_Name
       value: Rock Spawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 410434, guid: 8ae39a042a116854c8238012c0b9ca96, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7fcd309f711f824e95834647e755b12, type: 2}
@@ -3074,6 +3086,7 @@ Transform:
 --- !u!1001 &640638056
 Prefab:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 194074745}
@@ -3131,6 +3144,25 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!1001 &663787211
 Prefab:
+=======
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1305916891}
+  - 114: {fileID: 1305916890}
+  - 114: {fileID: 1305916893}
+  - 114: {fileID: 1305916892}
+  m_Layer: 0
+  m_Name: PathFinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1305916890
+MonoBehaviour:
+>>>>>>> origin/master
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
@@ -3222,6 +3254,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 679639339}
@@ -3299,6 +3332,48 @@ Prefab:
   m_ParentPrefab: {fileID: 100100000, guid: 4df9c80de86a380438bbee7c96904858, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &680842784
+=======
+  m_GameObject: {fileID: 1305916889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23787d8d07bdb0448949ff060136ab4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountOfSquadrons: 4
+--- !u!114 &1305916893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1305916889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 1
+  m_LocalPlayerAuthority: 0
+--- !u!1001 &1367579627
+>>>>>>> origin/master
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8158,7 +8233,75 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7b0d292d36b1ba4b97a7285b7efb785, type: 2}
   m_IsPrefabParent: 0
+<<<<<<< HEAD
 --- !u!4 &1897159946 stripped
+=======
+--- !u!1 &1472336322 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 113924, guid: 5b674f1df6e734b40971a778db477503, type: 2}
+  m_PrefabInternal: {fileID: 1472336321}
+--- !u!114 &1472336323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1472336322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 969dd090e9c29154dad05fbd297b56b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIref: {fileID: 0}
+  UICodeRef: {fileID: 0}
+--- !u!114 &1472336324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1472336322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 91
+    i1: 103
+    i2: 79
+    i3: 29
+    i4: 246
+    i5: 231
+    i6: 52
+    i7: 180
+    i8: 9
+    i9: 113
+    i10: 167
+    i11: 120
+    i12: 219
+    i13: 71
+    i14: 117
+    i15: 3
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
+--- !u!1 &1481954280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1481954281}
+  m_Layer: 0
+  m_Name: Object Holder (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1481954281
+>>>>>>> origin/master
 Transform:
   m_PrefabParentObject: {fileID: 475846, guid: 4df9c80de86a380438bbee7c96904858, type: 2}
   m_PrefabInternal: {fileID: 1094806644}
