@@ -6,6 +6,15 @@ public class HealthOrb : NetworkBehaviour{
 
     [SerializeField]
     private float healAmount = 10;
+    private AudioSource aSRef;
+    public AudioClip spawnSound;
+
+    void Start()
+    {
+        aSRef = GetComponent<AudioSource>();
+        aSRef.clip = spawnSound;
+        aSRef.Play();
+    }
 
     void OnCollisionEnter2D(Collision2D col)
     {

@@ -4,6 +4,16 @@ using System.Collections;
 
 public class Revive: NetworkBehaviour
 {
+    private AudioSource aSRef;
+    public AudioClip spawnSound;
+
+    void Start()
+    {
+        aSRef = GetComponent<AudioSource>();
+        aSRef.clip = spawnSound;
+        aSRef.Play();
+    }
+
     void OnCollisionEnter2D(Collision2D col)
     {
         if (!isServer)

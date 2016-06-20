@@ -94,6 +94,7 @@ GameObject:
   - 114: {fileID: 11477604}
   - 114: {fileID: 11412196}
   - 114: {fileID: 11492884}
+  - 82: {fileID: 8260586}
   m_Layer: 0
   m_Name: Temp Player
   m_TagString: Player
@@ -247,6 +248,80 @@ PolygonCollider2D:
       - {x: -0.39442676, y: -0.99464136}
       - {x: -0.40631577, y: -0.43932945}
       - {x: -0.17762168, y: -0.27879333}
+--- !u!82 &8260586
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179874}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &9558838
 Animator:
   serializedVersion: 3
@@ -361,6 +436,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 100
   deathState: 0
+  hitSound: {fileID: 8300000, guid: 48085c24ed84b4f368c00c6b8be98068, type: 3}
+  deathSound: {fileID: 8300000, guid: 51e997ad635c14f7daac8f71b8579290, type: 3}
   hitShakeIntesity: 9
   hitShakeAmount: 17
   deathShakeIntesity: 12
@@ -622,12 +699,13 @@ MonoBehaviour:
   normalSpeed: 5
   canShoot: 1
   oracleAttached: 0
+  pickUpRange: 1.7
   bulletPrefabs:
   - {fileID: 187820, guid: 88370fc409e007e4fbebfc602b5f8257, type: 2}
   gunPrefabs:
   - {fileID: 0}
   weaponsFire1: {fileID: 8300000, guid: 217910dfeb13346e4b850f150c7ccc32, type: 3}
-  weaponsFire2: {fileID: 8300000, guid: 217910dfeb13346e4b850f150c7ccc32, type: 3}
+  walking1: {fileID: 8300000, guid: a98812f2f15674bb481fd514df04a4f7, type: 3}
   shakeIntesityFire: 7
   shakeAmountFire: 14
 --- !u!114 &11492884
@@ -881,7 +959,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: weaponsFire2
       value: 
-      objectReference: {fileID: 8300000, guid: 217910dfeb13346e4b850f150c7ccc32, type: 3}
+      objectReference: {fileID: 8300000, guid: a98812f2f15674bb481fd514df04a4f7, type: 3}
     - target: {fileID: 0}
       propertyPath: attackSpeed
       value: 4
@@ -890,6 +968,30 @@ Prefab:
       propertyPath: walkSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 48085c24ed84b4f368c00c6b8be98068, type: 3}
+    - target: {fileID: 0}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 51e997ad635c14f7daac8f71b8579290, type: 3}
+    - target: {fileID: 0}
+      propertyPath: walking1
+      value: 
+      objectReference: {fileID: 8300000, guid: a98812f2f15674bb481fd514df04a4f7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 179874}

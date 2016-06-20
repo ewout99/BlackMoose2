@@ -12,10 +12,14 @@ public class Entity : NetworkBehaviour {
     public bool deathState = false;
 
     private Animator aniRef;
+    private AudioSource aSRef;
     private SpriteRenderer spRef;
     private Camera camRef;
     private Rigidbody2D rBody2D;
     private Color hold;
+
+    public AudioClip hitSound;
+    public AudioClip deathSound;
 
     [SerializeField]
     private int hitShakeIntesity, hitShakeAmount, deathShakeIntesity, deathShakeAmount;
@@ -27,6 +31,7 @@ public class Entity : NetworkBehaviour {
         spRef = gameObject.GetComponent<SpriteRenderer>();
         aniRef = gameObject.GetComponent<Animator>();
         rBody2D = gameObject.GetComponent<Rigidbody2D>();
+        aSRef = gameObject.GetComponent<AudioSource>();
         hold = spRef.color;
 
         if (isLocalPlayer)
@@ -85,6 +90,8 @@ public class Entity : NetworkBehaviour {
         if (state)
         {
             // Play Sound
+            aSRef.clip = deathSound;
+            aSRef.Play();
 
             // Play Animation           
 
@@ -142,6 +149,8 @@ public class Entity : NetworkBehaviour {
     [Command]
     public void CmdSubtractHealth(float amount)
     {
+        aSRef.clip = hitSound;
+        aSRef.Play();
         healthPoints -= amount;
         healthPoints = Mathf.Clamp(healthPoints, -100f, 100f);
     }
@@ -165,6 +174,8 @@ public class Entity : NetworkBehaviour {
     // Flash when damaged
     private void HitFlash()
     {
+        aSRef.clip = hitSound;
+        aSRef.Play();
         StartCoroutine(ColorFlash(Color.red));
         if (isLocalPlayer)
         {
