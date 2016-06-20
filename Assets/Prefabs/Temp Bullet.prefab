@@ -151,7 +151,7 @@ MonoBehaviour:
   bulletDmg: 19
   bulletSpeed: 25
   attackSpeed: 5
-  randomFactor: 0
+  randomFactor: 0.15
   friendlyFire: 0
   freezOnDeath: 1
 --- !u!114 &11462514
@@ -236,7 +236,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: randomFactor
-      value: 0
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: attackSpeed

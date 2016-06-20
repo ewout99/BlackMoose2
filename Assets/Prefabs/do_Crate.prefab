@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ee321cecc31d548a34a9ea94e3e280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectHitSound: {fileID: 0}
+  objectHitSound: {fileID: 8300000, guid: 8aa5a548d4c694bb6b74726e711d9bf1, type: 3}
 --- !u!212 &21240176
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -171,7 +171,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: objectHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8aa5a548d4c694bb6b74726e711d9bf1, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 167574}
