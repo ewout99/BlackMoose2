@@ -19,7 +19,7 @@ public class IngamePlayer : NetworkBehaviour {
     public GameObject Player_Camera;
     private GameObject camRef;
     public GameObject UI_Ref;
-    public GameObject Oracle_Ref;
+    public GameObject Oracle_Ref = null;
 
     public Image healthBar;
     public Image colorDisplay;
@@ -57,7 +57,7 @@ public class IngamePlayer : NetworkBehaviour {
             camRef = Instantiate(Player_Camera, transform.position, Quaternion.identity) as GameObject;
             camRef.GetComponent<CameraFollow>().target = gameObject.transform;
             UI_Ref = Instantiate(UI_Ref);
-            Invoke("AddWithDealy", 2f);
+            Invoke("CmdAddWithDealy", 2f);
         }
     }
 
@@ -81,7 +81,7 @@ public class IngamePlayer : NetworkBehaviour {
         if (!isLocalPlayer)
             return;
 
-        if (!oracleRef)
+        if (oracleRef == null)
         {
             oracleRef = GameObject.Find("Temp Oracle(Clone)");
             return;
@@ -140,7 +140,8 @@ public class IngamePlayer : NetworkBehaviour {
         NetworkServer.Destroy(gameObject);
     }
 
-    void AddWithDealy()
+    [Command]
+    void CmdAddWithDealy()
     {
         CentralScript.instance.CmdAddPlayer(nameIngame, typeIngame, colorIngame);
     }

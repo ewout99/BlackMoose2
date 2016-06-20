@@ -40,7 +40,7 @@ public class IngameOracle : NetworkBehaviour {
             UI_Ref = Instantiate(UI_Ref);
             UI_Ref.GetComponent<InGameUI>().oracleRef = gameObject;
             UI_Ref.GetComponent<InGameUI>().EnableOracle();
-            Invoke("AddWithDealy", 1f);
+            Invoke("CmdAddWithDealy", 1f);
             camRef = Instantiate (Oracle_Camera, transform.position, Quaternion.identity) as GameObject;
             camRef.GetComponent<CameraFollow>().target = gameObject.transform;
         }
@@ -108,9 +108,20 @@ public class IngameOracle : NetworkBehaviour {
         flux = 0;
     }
     //======================
-
-    void AddWithDealy()
+    [Command]
+    void CmdAddWithDealy()
     {
         CentralScript.instance.CmdAddPlayer(nameIngame, typeIngame, colorIngame);
     }
+    [Command]
+    void CmdVictory()
+    {
+        CentralScript.instance.CmdVictory();
+    }
+    [Command]
+    void CmdDefeat()
+    {
+        CentralScript.instance.CmdDefeat();
+    }
+
 }
