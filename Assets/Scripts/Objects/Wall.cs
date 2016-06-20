@@ -4,6 +4,15 @@ using System.Collections;
 
 public class Wall : NetworkBehaviour {
 
+    private AudioSource aSRef;
+    public AudioClip spawnSound;
+
+    void Start()
+    {
+        aSRef.clip = spawnSound;
+        aSRef.Play();
+    }
+
 	void Ondestroy()
     {
         if (isServer)

@@ -73,6 +73,7 @@ GameObject:
   - 114: {fileID: 11426786}
   - 114: {fileID: 11463540}
   - 114: {fileID: 11498608}
+  - 82: {fileID: 8215034}
   m_Layer: 0
   m_Name: Temp Oracle
   m_TagString: Player
@@ -185,6 +186,80 @@ PolygonCollider2D:
       - {x: -0.3298444, y: 0.014450073}
       - {x: -0.15070394, y: -0.23429942}
       - {x: 0.23828283, y: -0.23429942}
+--- !u!82 &8215034
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149500}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &9595052
 Animator:
   serializedVersion: 3
@@ -272,6 +347,7 @@ MonoBehaviour:
   wallCost: 5
   weaponCost: 10
   minimumFlux: 0
+  inputSound: {fileID: 0}
 --- !u!114 &11416020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -309,6 +385,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 100
   deathState: 0
+  hitSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: eec1a2cbf99bc4396a493a0c39dd943d, type: 3}
   hitShakeIntesity: 9
   hitShakeAmount: 17
   deathShakeIntesity: 12
@@ -747,6 +825,10 @@ Prefab:
       propertyPath: healCost
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: eec1a2cbf99bc4396a493a0c39dd943d, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 149500}

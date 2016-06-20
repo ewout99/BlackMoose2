@@ -6,6 +6,7 @@ public class DestructableObject : NetworkBehaviour {
 
     // Sound Played when hit
     public AudioClip objectHitSound;
+    private AudioSource aSRef;
 
     // Refrences to the attached animator
     private Animator aniRef;
@@ -20,6 +21,7 @@ public class DestructableObject : NetworkBehaviour {
     void Start ()
     {
         aniRef = GetComponent<Animator>();
+        aSRef = GetComponent<AudioSource>();
 	}
 
     // Collision
@@ -62,7 +64,8 @@ public class DestructableObject : NetworkBehaviour {
         aniRef.SetTrigger("destroy");
 
         // Play sound
-
+        aSRef.clip = objectHitSound;
+        aSRef.Play();
         // Play Particle Effect
 
         gameObject.GetComponent<PolygonCollider2D>().enabled = false;

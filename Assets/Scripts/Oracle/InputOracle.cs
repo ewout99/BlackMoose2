@@ -42,6 +42,9 @@ public class InputOracle : NetworkBehaviour  {
     // References
     private Entity entityRef;
     private Animator aniRef;
+    private AudioSource aSRef;
+
+    public AudioClip inputSound;
 
 
     // Use this for initialization
@@ -166,6 +169,8 @@ public class InputOracle : NetworkBehaviour  {
         }
         aniRef.SetTrigger("Attack");
         CmdHealPlacement(mousePosition);
+        aSRef.clip = inputSound;
+        aSRef.Play();
     }
 
     [Command]
@@ -191,6 +196,8 @@ public class InputOracle : NetworkBehaviour  {
             aniRef.SetTrigger("Attack");
             CmdTurretPlacement(mousePosition);
         }
+        aSRef.clip = inputSound;
+        aSRef.Play();
     }
 
     [Command]
@@ -215,6 +222,8 @@ public class InputOracle : NetworkBehaviour  {
             aniRef.SetTrigger("Attack");
             CmdRevivePlacement(mousePosition);
         }
+        aSRef.clip = inputSound;
+        aSRef.Play();
     }
 
     [Command]
@@ -240,6 +249,8 @@ public class InputOracle : NetworkBehaviour  {
             aniRef.SetTrigger("Attack");
             CmdWallPlacement(mousePosition);
         }
+        aSRef.clip = inputSound;
+        aSRef.Play();
     }
 
     [Command]
@@ -265,6 +276,8 @@ public class InputOracle : NetworkBehaviour  {
             aniRef.SetTrigger("Attack");
             CmdWeaponPlacement(mousePosition);
         }
+        aSRef.clip = inputSound;
+        aSRef.Play();
     }
 
     [Command]

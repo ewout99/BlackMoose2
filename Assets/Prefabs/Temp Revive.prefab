@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a205cdb1337e2143937d0a6074bb855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnSound: {fileID: 8300000, guid: 1f050397542e54218954860ed171a8d9, type: 3}
 --- !u!212 &21201602
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -307,6 +308,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: orbSpawn
+      value: 
+      objectReference: {fileID: 8300000, guid: 1f050397542e54218954860ed171a8d9, type: 3}
+    - target: {fileID: 0}
+      propertyPath: spawnSound
       value: 
       objectReference: {fileID: 8300000, guid: 1f050397542e54218954860ed171a8d9, type: 3}
     m_RemovedComponents: []

@@ -34,8 +34,9 @@ public class InputPlayer : NetworkBehaviour {
     public Sprite[] gunPrefabs;
 
     //Audio Clips
+    private AudioSource aSREF;
     public AudioClip weaponsFire1;
-    public AudioClip weaponsFire2;
+    public AudioClip walking1;
 
     //Private Refrences
     private Camera playerCamera;
@@ -62,6 +63,7 @@ public class InputPlayer : NetworkBehaviour {
         aniRef = gameObject.GetComponent<Animator>();
         spRef = gameObject.GetComponent<SpriteRenderer>();
         entiRef = gameObject.GetComponent<Entity>();
+        aSREF = gameObject.GetComponent<AudioSource>();
         weaponRef = transform.FindChild("Temp Weapon").gameObject;
         weaponAniRef = gameObject.GetComponent<CustomNetworkAnim>();
         bulletSpawnRef = weaponRef.gameObject.transform.FindChild("Temp Spawn");
@@ -146,6 +148,12 @@ public class InputPlayer : NetworkBehaviour {
             {
                 aniRef.SetBool("backwards", true);              
             }
+            if (!aSREF.isPlaying)
+            {
+                aSREF.clip = walking1;
+                aSREF.Play();
+            }
+      
         }
         // Not moving
         else
@@ -158,7 +166,7 @@ public class InputPlayer : NetworkBehaviour {
             }
         }
 
-       
+
 
         // Firing bullet
         if (Input.GetButton("Fire") && canShoot && !oracleAttached)
@@ -169,8 +177,12 @@ public class InputPlayer : NetworkBehaviour {
             StartCoroutine(ShootDelay());
             CmdShoot(aimVec);
             weaponAniRef.CmdFire(true);
+            if (!aSREF.isPlaying)
+            {
+                aSREF.clip = weaponsFire1;
+                aSREF.Play();
+            }
         }
-
         // Pick up and drop the oracle
         if (Input.GetButtonDown("PickUp"))
         {

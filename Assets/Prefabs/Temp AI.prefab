@@ -21,6 +21,7 @@ GameObject:
   - 114: {fileID: 11481172}
   - 114: {fileID: 11480140}
   - 114: {fileID: 11469802}
+  - 82: {fileID: 8261018}
   m_Layer: 8
   m_Name: Temp AI
   m_TagString: Enemy
@@ -71,6 +72,80 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -0.2}
   serializedVersion: 2
   m_Size: {x: 1.4, y: 1.4}
+--- !u!82 &8261018
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121480}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &9572578
 Animator:
   serializedVersion: 3
@@ -120,6 +195,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 100
   deathState: 0
+  hitSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 39177cb0916474b57b072c2d788e83d9, type: 3}
   hitShakeIntesity: 2
   hitShakeAmount: 2
   deathShakeIntesity: 2
@@ -378,6 +455,10 @@ Prefab:
       propertyPath: orbRef
       value: 
       objectReference: {fileID: 188210, guid: 894d710e43dc8834ba1cf4c3e941816f, type: 2}
+    - target: {fileID: 0}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 39177cb0916474b57b072c2d788e83d9, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 121480}
